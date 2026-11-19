@@ -23,6 +23,7 @@ Stand: 2026-11-19 — Updated per [meta/crawl-notes.md](meta/crawl-notes.md).
 ## Vault-wide Notes
 
 - [README.md](README.md) — Vault homepage (Welcome).
+- [meta/glossary.md](meta/glossary.md) — Glossar — Fachbegriffe (untereinander verknüpft: ICS/SDG/TC/Stages/Chat/Retrieval).
 - [[LICENSE]] — License of this Vault (CC0; see [meta/licensing.md](meta/licensing.md) for IEC terms).
 - [standards/index-standards.md](standards/index-standards.md) — Catalog of IEC products in this Vault.
 - [electropedia/electropedia.md](electropedia/electropedia.md) — IEV Online (IEV, IEC 60050 — free vocabulary).
