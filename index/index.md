@@ -25,6 +25,10 @@ Stand: 2026-11-19 — Updated per [meta/crawl-notes.md](meta/crawl-notes.md).
 - [README.md](README.md) — Vault homepage (Welcome).
 - [meta/glossary.md](meta/glossary.md) — Glossar — Fachbegriffe (untereinander verknüpft: ICS/SDG/TC/Stages/Chat/Retrieval).
 - [meta/iec-criticism.md](meta/iec-criticism.md) — Kritische Analyse (IEC/ISO/ANSI/ITU — journalistisch, Muster).
+- [meta/standards-bodies.md](meta/standards-bodies.md) — Verbände-Vergleich (ANSI/ISO/IEC/ITU).
+- [meta/obsidian-expertise.md](meta/obsidian-expertise.md) — Obsidian-Expertise 2026 (Hotkeys, Performance).
+- [meta/mac-llm-setup.md](meta/mac-llm-setup.md) — Mac+Ollama/LM Studio 2026-Expert.
+- [meta/final-analysis.md](meta/final-analysis.md) — Fresh Analysis (Stand, Muster, Optimierungen).
 - [[LICENSE]] — License of this Vault (CC0; see [meta/licensing.md](meta/licensing.md) for IEC terms).
 - [standards/index-standards.md](standards/index-standards.md) — Catalog of IEC products in this Vault.
 - [electropedia/electropedia.md](electropedia/electropedia.md) — IEV Online (IEV, IEC 60050 — free vocabulary).
