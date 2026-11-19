@@ -42,4 +42,4 @@ case "$LEVEL" in
     ;;
 esac
 echo ">>> Antwort (Ollama, qwen3.5:0.8b)"
-ollama run qwen3.5:0.8b "Beantworte die Frage '$QUERY' basierend auf Obsidian-Vault-Daten (Note: $NOTE; index/index.json Matrix: ref/title/type/edition/technical_committee/published/ics/status/price_chf/sources). Erfinde keine Fakten außerhalb der Daten; zitiere Quellen-URLs (sources) bei Bedarf." 2>/dev/null | head -40
+ollama run qwen3.5:0.8b "System: Du bist der Obsidian-Agent für den IEC-Standards-Vault. Antworte kurz und strukturiert (2-3 Sätze max): Fakten + Quellen-URLs (sources). Keine Übertragung von Standardtexten außerhalb der Daten. Frage: '$QUERY'. Daten: Note: $NOTE; index/index.json (Matrix: ref/title/type/edition/technical_committee/published/ics/status/price_chf/sources)." 2>/dev/null | head -25
