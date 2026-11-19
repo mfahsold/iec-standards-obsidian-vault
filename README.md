@@ -37,7 +37,7 @@ Obsidian vault with publicly available IEC information — built for Obsidian, o
 - **`news/` — Free newsletter “IEC Just Published”** (monthly, 1st).
 - **`index/` — Master index**: `index.md` (MOC), `index.json` (machine-readable).
 - **`meta/` — sources, licensing, data provenance, IEC logic/structure, Obsidian usage, Obsidian CLI check.**
-- **`meta/agent-loop.sh` — minimaler Agent-Loop: Obsidian CLI liest die Note, Ollama antwortet (`qwen3.5:0.8b`).**
+- **[meta/agent-loop.sh](meta/agent-loop.sh) — minimaler Agent-Loop: Obsidian CLI liest die Note, Ollama antwortet (`qwen3.5:0.8b`).**
 - **`templates/` — standard note template** (Obsidian Templates plugin).
 
 ## LLM/agent optimization
