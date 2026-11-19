@@ -1,40 +1,58 @@
-# IEC Standards Obsidian Vault (Prototyp)
+# IEC Standards Obsidian Vault (Prototype)
 
-Vault mit öffentlich verfügbaren IEC-Informationen, angelegt für Obsidian und für LLM/Agent-Nutzung optimiert.
+Obsidian vault with publicly available IEC information — built for Obsidian, optimized for LLM/agent usage, and vault-internal navigation via Obsidian wikilinks.
 
-> **Status: Prototyp, Datenstand 2026-11-19** – Das Repo ist noch **privat** (lokal, kein Push). Zum Public-Setup siehe `meta/licensing.md`.
+> **Status: Prototype, Data Stand: 2026-11-19** — Repo is currently **private** (local, no push). See [meta/licensing.md](meta/licensing.md) for public-setup notes.
 
-## Was in diesem Vault enthalten ist
+## Quick Start (Obsidian)
 
-- **`standards/` – Katalog von IEC-Produkten** mit Metadaten: Referenz (z. B. `IEC 62443-4-1:2018`), Typ (IS/TS/TR/PAS/…), Technischer Bereich, Technischer Ausschuss, Editionsdatum, Preis (CHF), Sprachen und Quelllinks. Enthält **keine Volltexte** der IEC-Dokumente (Urheberrecht IEC – siehe `LICENSE`, `meta/licensing.md`); für 18 abgedeckte Produkte auch kurze Beschreibungen, die aus den öffentlichen Webstore-Seiten stammen.
-- **`processes/` – IEC-Prozesse und -Typen**: IS-Definition (abgeschlossene Definition, Consensus, Public Enquiry, Approval, voluntary adoption), TS- und PAS-Definitionen (TS, PAS, Workflows IS/TS/TR/ISH/PAS/IEV), Entwicklungsabfolge (PWI → NP → WD → CD → CDV → FDIS → IS), Workprogramm von TC/SC, AGB/AGBs, Affiliate-Programm, Online-Standards-Development (OSD), Directives (öffentliche PDFs).
-- **`electropedia/` – IEV Online**: IEC 60050-Vokabular, kostenlos, mehrsprachig, offizielle Nutzungsbedingungen.
-- **`guides/` – IEC Guides** (GUIDE 103, 104, 107, 108, 109, …).
-- **`news/` – Free-Newsletter „IEC Just Published“** (jeden 1. des Monats, 12×/Jahr).
-- **`index/` – Master-Index**: `index.md` (lesbar), `index.json` (für Agents).
-- **`meta/` – Quellen, Lizenzierung, Erfassungs-/Staleness-Hinweise**.
+- Open the vault folder `iec-standards-obsidian-vault/` in Obsidian.
+- **Home/Welcome:** this `README.md` (vault root) + `index/index.md` (MOC — fully linked).
+- **Search** (Ctrl+Shift+F or Ctrl+P): full-text search.
+- **Quick Switcher** (Ctrl/Cmd+O): jump to any note.
+- **Graph View:** recommended; fully linked vault.
 
-## LLM-/Agent-Optimierung
+## What is in this vault
 
-- Atomare Notes mit YAML-Frontmatter (`ref`, `type`, `edition`, `technical_committee`, `status`, `price_chf`, `sources[]`, …).
-- `index/index.json` – maschinenlesbarer Index (Referenzen, ICS/TC, Status, Links) – direkt für Search/Retrieval/Tools nutzbar.
-- Kurze „Scope“-Bloecks pro Standard (Was deckt das Standard ab? falls bekannt).
-- Keine IEC-Volltexte (Urheberrecht), aber klare, kurze, facts-based Zusammenfassungen + offizielle Links.
+- **`standards/` — IEC product catalog** with metadata: Ref (e.g., `IEC 62443-4-1:2018`), Type (IS/TS/TR/PAS/...), Technical Area, Technical Committee, Edition date, Publication date, ICS, Price (CHF), Stability date, Languages, and source links. **No document bodies** of the IEC standards (copyright IEC — see `meta/licensing.md`).
+- **`processes/` — IEC processes and document types** (IS/TS/TR/PAS/ISH/IEV workflows, development stages, work programme, publication lifecycle, webstore AGBs, affiliate programme, OSD, Directives).
+- **`electropedia/` — IEV Online** (free): 22,000+ terms, ~30 languages.
+- **`guides/` — IEC Guides** (GUIDE 103, 104, 107, 108, 109, …).
+- **`news/` — Free newsletter “IEC Just Published”** (monthly, 1st).
+- **`index/` — Master index**: `index.md` (MOC), `index.json` (machine-readable).
+- **`meta/` — sources, licensing, data provenance, IEC logic/structure, Obsidian usage, Obsidian CLI check.**
+- **`templates/` — standard note template** (Obsidian Templates plugin).
 
-## Umfang („alle öffentlich verfügbaren IEC-Standards“)
+## LLM/agent optimization
 
-- „All products“ im IEC Webstore: https://webstore.iec.ch/en/products/ (incl. „Just Published“, „Bestsellers“, „Products by technical area“).
-- IEC Library Server (Login): https://library.iec.ch/ – Vollkatalog (alle IEC-Publikationen incl. „Replaced / Withdrawn“) für Mitglieder/Apointiesten.
-- Third-party Aggregatoren: https://www.normfile.com/iec.html, https://www.bsbedge.com/free-downloads/international-electrotechnical-commission/ – sehr große Kataloge aus fremden Listen (Referenzen).
-- Das Vault enthält derzeit **verifizierte Daten von offiziellen Webstore-Seiten + Classic-Sets** (≈20 abgedeckte Produkte). Für den vollständigen Katalog muss IEC-Webstore „All products“ eingelesen werden (mit schriftlicher Erlaubnis von IEC – siehe `meta/licensing.md`).
+- Atomic notes with YAML frontmatter (`ref`, `type`, `edition`, `technical_committee`, `published`, `ics`, `status`, `price_chf`, `sources[]`, `tags`) — machine-readable.
+- `index/index.json` — machine-readable index mirroring the frontmatter.
 
-## Verwendung in Obsidian
+## Obsidian Best Practices used
 
-- Vault-Ordner öffnen (`iec-standards-obsidian-vault/`).
-- Backlinks/Graph anschauen; Standard-Notes verlinken auf die Webstore-Produktseiten (Click zum Lesen bei Abonnement).
-- Erweiterungsvorschlag für später: `obsidian-mcp-tools` / Dataview-Indizes für API-Exposure.
+- Wikilinks between notes (`[[Note]]`/`[[Note|Alias]]`), Backlinks panel, Outgoing links panel, Quick Switcher, Search, Graph view — see [meta/obsidian-usage.md](meta/obsidian-usage.md).
+- Frontmatter (Properties) as the canonical data store.
+- Tags on standard notes (`IEC`, `IS`, `TC-65`, `Security`, …).
+- Dataview (optional plugin): [meta/dataview.md](meta/dataview.md) — ready queries.
+- Templates (Obsidian Templates plugin): [templates/standard-note.md](templates/standard-note.md).
 
-## Datenstand & Aktualisierung
+## IEC logic/structure (sorting)
 
-- 2026-11-19: Daten aus offiziellen Webstore-/IEC-Seiten abgerufen (manuell, Browser).
-- Preise und Publikationsdaten werden „aktuell“ gemarkt; Details in `meta/crawl-notes.md`.
+- [meta/iec-structure.md](meta/iec-structure.md) — TC/SC names, ICS codes, SDG anchors, statuses, project stages, IEC views.
+- Sorting rules: [meta/iec-structure.md](meta/iec-structure.md) §Sorting Rules (Type → TC/SC → ICS → Status → Edition → Date → Price).
+
+## Scope ("all publicly available IEC standards")
+
+- “All products” in the IEC Webstore: https://webstore.iec.ch/en/products/ (incl. “Just Published”, “Bestsellers”, “Products by technical area”).
+- IEC Library Server (login): https://library.iec.ch/ — full catalog (all IEC publications incl. “Replaced / Withdrawn”) for members/appointees.
+- Third-party aggregators: https://www.normfile.com/iec.html, https://www.bsbedge.com/free-downloads/international-electrotechnical-commission/ — large catalogs from foreign lists (references).
+- This vault currently contains **verified data from official webstore pages + classic sets** (≈20 covered products).
+
+## Data Stand & Updates
+
+- 2026-11-19: data retrieved from official webstore/IEC pages (manually, via browser) + IEC Webstore product pages (publication/33615, 63886, 106458, …).
+- Prices and publication dates are marked “as of Crawl-Date”; details in [meta/crawl-notes.md](meta/crawl-notes.md).
+
+## CLI
+
+- Obsidian CLI: enabled (Settings > General > Advanced → “Command line interface”), version 1.15.1 — check: [meta/obsidian-cli.md](meta/obsidian-cli.md).

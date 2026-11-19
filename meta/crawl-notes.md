@@ -48,6 +48,14 @@ Stand: 2026-11-19 — manuell recherchiert (Browser; offizielle Webseiten).
 - RLV = Redline Version („Redline version (RLV)“ — official standard + redline).
 - ISO/IEC 25791-2:2026 ist ein **ISO/IEC**-Standard (TDB 1 JTC 1) — in vault zusammengefasst unter standards/.
 
+## Links
+
+- [meta/licensing.md](licensing.md) — AGBs & rules (no scraping, no AI use of IEC products, affiliate).
+- [meta/iec-structure.md](iec-structure.md) — TC/SC, ICS, SDG anchors, statuses, sorting.
+- [meta/sources.md](sources.md) — all used URLs + origin.
+- [standards/index-standards.md](../standards/index-standards.md) — catalog of vault standards (wikilinks).
+- [meta/obsidian-usage.md](obsidian-usage.md), [meta/dataview.md](dataview.md), [meta/obsidian-cli.md](obsidian-cli.md).
+
 ## Updates
 
 ```

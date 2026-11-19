@@ -1,10 +1,17 @@
-# Classics – IEC Standards aus Third-Party-Aggregatoren
+---
+title: Classics — Third-Party Aggregators
+type: "classics"
+description: "IEC standards not in the Webstore catalog data; CSV references from third-party aggregators"
+tags: [IEC, classics, Third-Party]
+---
 
-Stand: 2026-11-19. Quellen: Third-Party-Aggregatoren (https://www.normfile.com/iec.html) — alle CSV-Listen der Site. Referenzen/Titel hier eingefügt; **keine rekonstruierten Preise/Details** (Aggregator-Qualität unklar).
+# Classics — IEC Standards from Third-Party Aggregators
+
+Stand: 2026-11-19. Source: Third-Party Aggregators (https://www.normfile.com/iec.html) — all CSV lists on the site. References/titles inserted here; **no re-used prices/details** (aggregator quality unclear).
 
 ## Technical specifications (TS)
 
-| Referenz | Typ |
+| Ref | Type |
 | --- | --- |
 | IEC 60601-2-66-2015 | IS — safety for electrical medical equipment intended for medical purposes |
 | IEC 60794-3-20-2009 | IS |
@@ -13,7 +20,7 @@ Stand: 2026-11-19. Quellen: Third-Party-Aggregatoren (https://www.normfile.com/i
 
 ## Technical reports (TR)
 
-| Referenz | Typ |
+| Ref | Type |
 | --- | --- |
 | IEC 60748-1-1984+AMD2-1993 | IS |
 | IEC 60335-2-76-2002+AMD1-2006 | IS |
@@ -23,16 +30,16 @@ Stand: 2026-11-19. Quellen: Third-Party-Aggregatoren (https://www.normfile.com/i
 
 ## Publicly Available Specifications (PAS)
 
-| Referenz | Typ |
+| Ref | Type |
 | --- | --- |
 | IEC PAS 62306-3-0-2022? | — |
 
-## Weitere Classics
+## Further Classics
 
-| Referenz | Typ |
+| Ref | Type |
 | --- | --- |
 | IEC 60871-1? | — |
 
-## Hinweis
+## Note
 
-Die vollständige Liste des Aggregators: https://www.normfile.com/iec.html. In `index-standards.md` und `index.json` sind classics dort zusammengefasst (≈7 Einträge). Umschaltung/Prüfung mit IEC möglich („Vendor-quality CSVs“).
+Full aggregator list: https://www.normfile.com/iec.html. In `index-standards.md` and `index.json` classics are summarised there (≈7 entries). Switch/validation with IEC possible (“vendor-quality CSVs”).

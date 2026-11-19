@@ -12,6 +12,8 @@ Quelle: https://iec.ch/news-resources/guides
 | IEC GUIDE 108:2019 | SMB | Edition 3.0 (2019-11-14) | Guidelines for ensuring the coherence of IEC publications - Horizontal functions, horizontal publications and their application |
 | IEC GUIDE 109:2026 | ACEA | Edition 4.0 (2026-02-19) | Environmental aspects - Inclusion in electrotechnical product standards |
 
-→ Details/Verknüpfungen: Webstore/member-login (s. `meta/licensing.md`); Verweise hier nachgehalten.
+→ Details/Verknüpfungen: Webstore/member-login (s. [meta/licensing.md](../meta/licensing.md)); Verweise hier nachgehalten.
 
 ## MASTER
+
+- [index/index.md](../index/index.md) — Vault MOC (links to this file).
