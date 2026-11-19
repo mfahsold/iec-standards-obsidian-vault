@@ -12,6 +12,7 @@ Stand: 2026-11-19 — Updated per [meta/crawl-notes.md](meta/crawl-notes.md).
 - [meta/hotkeys.json](meta/hotkeys.json) — CLI-generated Obsidian hotkeys reference.
 - [meta/tags.json](meta/tags.json) — CLI-generated tag index (JSON).
 - [meta/obsidian-usage.md](meta/obsidian-usage.md) — Obsidian Best Practices (Humans + Agents).
+- [meta/open-source-assessment.md](meta/open-source-assessment.md) — Open Source Eligibility Assessment (2026-11-19).
 
 ## Quick Stats
 
