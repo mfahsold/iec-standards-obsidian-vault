@@ -12,6 +12,22 @@ Obsidian vault with publicly available IEC information — built for Obsidian, o
 - **Quick Switcher** (Ctrl/Cmd+O): jump to any note.
 - **Graph View:** recommended; fully linked vault.
 
+## Quick Links (navigation)
+
+- 🏠 **Vault Home (you are here):** [README.md](README.md) — also the vault root.
+- 📑 **MOC (Map of Contents):** [index/index.md](index/index.md) — master index + full standards table.
+- 🔍 **Quick Switcher:** `Ctrl/Cmd + O` — jump to any note.
+- 🌐 **Global Search:** `Ctrl + Shift + F` (or `Ctrl + P`) — full-text search.
+- 🧭 **Graph View:** core plugin (`graph`) — enabled by default in this vault.
+- ⚙️ **Backlinks / Outgoing Links:** right sidebar — see connections of the current note.
+
+## Stats (2026-11-19)
+
+- Files: 56 (47 Markdown); Notes: 47
+- Standards: 18 product notes (+ classics set)
+- Types: IS 7, ISO/IEC 1, TRF 1, PAS 3, TR 6
+- Words: ~15.8k (`find . -name "*.md" -not -path "./.git/*" -print0 | xargs -0 wc -w | tail -1`)
+
 ## What is in this vault
 
 - **`standards/` — IEC product catalog** with metadata: Ref (e.g., `IEC 62443-4-1:2018`), Type (IS/TS/TR/PAS/...), Technical Area, Technical Committee, Edition date, Publication date, ICS, Price (CHF), Stability date, Languages, and source links. **No document bodies** of the IEC standards (copyright IEC — see `meta/licensing.md`).
@@ -46,7 +62,7 @@ Obsidian vault with publicly available IEC information — built for Obsidian, o
 - “All products” in the IEC Webstore: https://webstore.iec.ch/en/products/ (incl. “Just Published”, “Bestsellers”, “Products by technical area”).
 - IEC Library Server (login): https://library.iec.ch/ — full catalog (all IEC publications incl. “Replaced / Withdrawn”) for members/appointees.
 - Third-party aggregators: https://www.normfile.com/iec.html, https://www.bsbedge.com/free-downloads/international-electrotechnical-commission/ — large catalogs from foreign lists (references).
-- This vault currently contains **verified data from official webstore pages + classic sets** (≈20 covered products).
+- This vault currently contains **verified data from official webstore pages (18 product notes + classics set)** — see [index/index.md](index/index.md) for the catalog table.
 
 ## Data Stand & Updates
 

@@ -22,17 +22,24 @@ Per-standard notes — `ref`, `title`, `type`, `edition`, `technical_committee`,
 - **Quick Switcher** (Ctrl/Cmd+O): navigate to standard notes, index, meta pages.
 - **Search** (Ctrl+Shift+F / Ctrl+P): full-text — e.g., “IEC 61675-2”.
 
-## Dataview (optional plugin)
+## Dataview (community plugin — installed & enabled)
 
-- `meta/dataview.md` — ready-made queries (install Dataview plugin → paste into notes).
+- Community plugin installed via CLI: `obsidian plugin:install id=dataview` → **Dataview v0.5.68**; enabled in Obsidian (`obsidian plugins:enabled`).
+- `meta/dataview.md` — ready-made queries (paste into notes; query the vault from Obsidian).
 
-## Templates (Obsidian Templates plugin)
+## Templates (core plugin — enabled)
 
-- `templates/standard-note.md` — note template for future standards (same frontmatter schema).
+- `templates/standard-note.md` — note template for future standards (same frontmatter schema). Core Templates plugin is enabled by default (`obsidian plugins:enabled` includes `templates`).
 
 ## CLI (enabled in this environment)
 
-- `obsidian --version`, `obsidian --help` — check `meta/obsidian-cli.md` for this machine’s results.
+- `obsidian --version`, `obsidian --help`, `obsidian plugins:enabled --format=json` — check `meta/obsidian-cli.md` for this machine’s results.
+- `obsidian hotkeys format=json > meta/hotkeys.json` — hotkeys reference (generated).
+- `obsidian tags format=json > meta/tags.json` — tag index (generated).
+
+## Version Control
+
+- **Obsidian Git** (community plugin — installed & enabled: v2.43.0) — the vault is a private git repo (see [README.md](README.md)); commit/push via Obsidian Git UI or the CLI (`git push`).
 
 ## Anti-patterns (avoid)
 

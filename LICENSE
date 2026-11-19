@@ -2,6 +2,7 @@ Creative Commons CC0 1.0 Universal — Public Domain Dedication
 
 Except where noted otherwise (see `meta/licensing.md`):
 
-- Content of this Obsidian Vault is dedicated to the public domain to the extent possible under law.
-- Electropedia-derived content is licensed under CC BY 4.0 (attribution required, see `meta/licensing.md`).
-- IEC document PDFs are NOT included (copyright IEC; see `meta/licensing.md`).
+- Vault metadata, catalog data, process documentation and link structures are dedicated to the public domain (CC0) to the extent possible under law. Fact data (standard references, titles, ICS, dates, links) is treated as non-protected facts; IEC product data is quoted with attribution to IEC sources (`meta/sources.md`).
+- Electropedia-derived content: CC BY 4.0 (attribution required, see `meta/licensing.md`).
+- IEC document bodies (PDFs of IS/TS/TR/PAS/RLV/…) are NOT included (copyright IEC — see `meta/licensing.md`).
+- Note: see `meta/open-source-assessment.md` for the full "can we open source?" analysis (verbatim excerpts, action list).

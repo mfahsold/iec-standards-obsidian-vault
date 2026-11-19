@@ -2,6 +2,23 @@
 
 Stand: 2026-11-19 — Updated per [meta/crawl-notes.md](meta/crawl-notes.md).
 
+## Quick Links
+
+- [README.md](README.md) — Vault homepage (Welcome + stats).
+- [standards/index-standards.md](standards/index-standards.md) — Standards catalog table.
+- [electropedia/electropedia.md](electropedia/electropedia.md) — IEV Online (free vocabulary).
+- [processes/overview.md](processes/overview.md) — IEC processes overview.
+- [meta/iec-structure.md](meta/iec-structure.md) — IEC structure & logic (TC/SC, ICS, SDG anchors, sorting).
+- [meta/hotkeys.json](meta/hotkeys.json) — CLI-generated Obsidian hotkeys reference.
+- [meta/tags.json](meta/tags.json) — CLI-generated tag index (JSON).
+- [meta/obsidian-usage.md](meta/obsidian-usage.md) — Obsidian Best Practices (Humans + Agents).
+
+## Quick Stats
+
+- Standards in Vault: 18 (+ classics set).
+- Types: IS 7, ISO/IEC 1, TRF 1, PAS 3, TR 6.
+- TC/SCs: TC-65 (5), TC-31, TC-62/SC 62C (2), TC-22/SC 22G, TC-22/SC 22F, TC-40, TC-38, TC-111, TC-8/SC 8A, TC-47, CIS/CIS/B.
+
 ## Vault-wide Notes
 
 - [README.md](README.md) — Vault homepage (Welcome).

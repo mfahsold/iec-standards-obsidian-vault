@@ -1,0 +1,998 @@
+[
+  {
+    "id": "app:decrease-font-size",
+    "hotkey": ""
+  },
+  {
+    "id": "app:delete-file",
+    "hotkey": ""
+  },
+  {
+    "id": "app:go-back",
+    "hotkey": "⌘ ⌥ ←"
+  },
+  {
+    "id": "app:go-forward",
+    "hotkey": "⌘ ⌥ →"
+  },
+  {
+    "id": "app:increase-font-size",
+    "hotkey": ""
+  },
+  {
+    "id": "app:migrate-frontmatter",
+    "hotkey": ""
+  },
+  {
+    "id": "app:open-another-vault",
+    "hotkey": ""
+  },
+  {
+    "id": "app:open-file",
+    "hotkey": ""
+  },
+  {
+    "id": "app:open-help",
+    "hotkey": "F1"
+  },
+  {
+    "id": "app:open-sandbox-vault",
+    "hotkey": ""
+  },
+  {
+    "id": "app:open-settings",
+    "hotkey": "⌘ ,"
+  },
+  {
+    "id": "app:open-vault",
+    "hotkey": ""
+  },
+  {
+    "id": "app:reload",
+    "hotkey": ""
+  },
+  {
+    "id": "app:show-debug-info",
+    "hotkey": ""
+  },
+  {
+    "id": "app:show-release-notes",
+    "hotkey": ""
+  },
+  {
+    "id": "app:switch-vault",
+    "hotkey": ""
+  },
+  {
+    "id": "app:toggle-default-new-pane-mode",
+    "hotkey": ""
+  },
+  {
+    "id": "app:toggle-left-sidebar",
+    "hotkey": ""
+  },
+  {
+    "id": "app:toggle-ribbon",
+    "hotkey": ""
+  },
+  {
+    "id": "app:toggle-right-sidebar",
+    "hotkey": ""
+  },
+  {
+    "id": "backlink:open",
+    "hotkey": ""
+  },
+  {
+    "id": "backlink:open-backlinks",
+    "hotkey": ""
+  },
+  {
+    "id": "backlink:toggle-backlinks-in-document",
+    "hotkey": ""
+  },
+  {
+    "id": "bases:add-item",
+    "hotkey": ""
+  },
+  {
+    "id": "bases:add-view",
+    "hotkey": ""
+  },
+  {
+    "id": "bases:change-view",
+    "hotkey": ""
+  },
+  {
+    "id": "bases:copy-table",
+    "hotkey": ""
+  },
+  {
+    "id": "bases:insert",
+    "hotkey": ""
+  },
+  {
+    "id": "bases:new-file",
+    "hotkey": ""
+  },
+  {
+    "id": "bookmarks:bookmark-all-tabs",
+    "hotkey": ""
+  },
+  {
+    "id": "bookmarks:bookmark-current-heading",
+    "hotkey": ""
+  },
+  {
+    "id": "bookmarks:bookmark-current-search",
+    "hotkey": ""
+  },
+  {
+    "id": "bookmarks:bookmark-current-section",
+    "hotkey": ""
+  },
+  {
+    "id": "bookmarks:bookmark-current-view",
+    "hotkey": ""
+  },
+  {
+    "id": "bookmarks:open",
+    "hotkey": ""
+  },
+  {
+    "id": "bookmarks:unbookmark-current-view",
+    "hotkey": ""
+  },
+  {
+    "id": "canvas:convert-to-file",
+    "hotkey": ""
+  },
+  {
+    "id": "canvas:export-as-image",
+    "hotkey": ""
+  },
+  {
+    "id": "canvas:jump-to-group",
+    "hotkey": ""
+  },
+  {
+    "id": "canvas:new-file",
+    "hotkey": ""
+  },
+  {
+    "id": "command-palette:open",
+    "hotkey": "⌘ P"
+  },
+  {
+    "id": "daily-notes",
+    "hotkey": ""
+  },
+  {
+    "id": "daily-notes:goto-next",
+    "hotkey": ""
+  },
+  {
+    "id": "daily-notes:goto-prev",
+    "hotkey": ""
+  },
+  {
+    "id": "dataview:dataview-drop-cache",
+    "hotkey": ""
+  },
+  {
+    "id": "dataview:dataview-force-refresh-views",
+    "hotkey": ""
+  },
+  {
+    "id": "dataview:dataview-rebuild-current-view",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:add-cursor-above",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:add-cursor-below",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:attach-file",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:clear-formatting",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:context-menu",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:cycle-list-checklist",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:delete-paragraph",
+    "hotkey": "⌘ D"
+  },
+  {
+    "id": "editor:download-attachments",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:focus",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:focus-bottom",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:focus-left",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:focus-right",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:focus-top",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:fold-all",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:fold-less",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:fold-more",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:follow-link",
+    "hotkey": "⌥ Enter"
+  },
+  {
+    "id": "editor:indent-list",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:insert-callout",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:insert-codeblock",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:insert-embed",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:insert-footnote",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:insert-horizontal-rule",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:insert-link",
+    "hotkey": "⌘ K"
+  },
+  {
+    "id": "editor:insert-mathblock",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:insert-table",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:insert-tag",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:insert-wikilink",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:open-link-in-new-leaf",
+    "hotkey": "⌘ Enter"
+  },
+  {
+    "id": "editor:open-link-in-new-split",
+    "hotkey": "⌘ ⌥ Enter"
+  },
+  {
+    "id": "editor:open-link-in-new-window",
+    "hotkey": "⌘ ⌥ ⇧ Enter"
+  },
+  {
+    "id": "editor:open-search",
+    "hotkey": "⌘ F"
+  },
+  {
+    "id": "editor:open-search-replace",
+    "hotkey": "⌘ ⌥ F"
+  },
+  {
+    "id": "editor:rename-heading",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:save-file",
+    "hotkey": "⌘ S"
+  },
+  {
+    "id": "editor:set-heading",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:set-heading-0",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:set-heading-1",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:set-heading-2",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:set-heading-3",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:set-heading-4",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:set-heading-5",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:set-heading-6",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:swap-line-down",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:swap-line-up",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-col-after",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-col-align-center",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-col-align-left",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-col-align-right",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-col-before",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-col-copy",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-col-delete",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-col-left",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-col-right",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-row-after",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-row-before",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-row-copy",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-row-delete",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-row-down",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:table-row-up",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-blockquote",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-bold",
+    "hotkey": "⌘ B"
+  },
+  {
+    "id": "editor:toggle-bullet-list",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-checklist-status",
+    "hotkey": "⌘ L"
+  },
+  {
+    "id": "editor:toggle-code",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-comments",
+    "hotkey": "⌘ /"
+  },
+  {
+    "id": "editor:toggle-fold",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-fold-properties",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-highlight",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-highlight-blue",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-highlight-green",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-highlight-orange",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-highlight-purple",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-highlight-red",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-highlight-yellow",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-inline-math",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-italics",
+    "hotkey": "⌘ I"
+  },
+  {
+    "id": "editor:toggle-line-numbers",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-numbered-list",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-readable-line-length",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-source",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-spellcheck",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:toggle-strikethrough",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:unfold-all",
+    "hotkey": ""
+  },
+  {
+    "id": "editor:unindent-list",
+    "hotkey": ""
+  },
+  {
+    "id": "file-explorer:duplicate-file",
+    "hotkey": ""
+  },
+  {
+    "id": "file-explorer:move-file",
+    "hotkey": ""
+  },
+  {
+    "id": "file-explorer:new-file",
+    "hotkey": "⌘ N"
+  },
+  {
+    "id": "file-explorer:new-file-in-current-tab",
+    "hotkey": ""
+  },
+  {
+    "id": "file-explorer:new-file-in-new-pane",
+    "hotkey": "⌘ ⇧ N"
+  },
+  {
+    "id": "file-explorer:new-folder",
+    "hotkey": ""
+  },
+  {
+    "id": "file-explorer:open",
+    "hotkey": ""
+  },
+  {
+    "id": "file-explorer:reveal-active-file",
+    "hotkey": ""
+  },
+  {
+    "id": "file-recovery:open",
+    "hotkey": ""
+  },
+  {
+    "id": "global-search:open",
+    "hotkey": "⌘ ⇧ F"
+  },
+  {
+    "id": "graph:animate",
+    "hotkey": ""
+  },
+  {
+    "id": "graph:open",
+    "hotkey": "⌘ G"
+  },
+  {
+    "id": "graph:open-local",
+    "hotkey": ""
+  },
+  {
+    "id": "insert-current-date",
+    "hotkey": ""
+  },
+  {
+    "id": "insert-current-time",
+    "hotkey": ""
+  },
+  {
+    "id": "insert-template",
+    "hotkey": ""
+  },
+  {
+    "id": "markdown:add-alias",
+    "hotkey": ""
+  },
+  {
+    "id": "markdown:add-metadata-property",
+    "hotkey": "⌘ ;"
+  },
+  {
+    "id": "markdown:clear-metadata-properties",
+    "hotkey": ""
+  },
+  {
+    "id": "markdown:toggle-preview",
+    "hotkey": "⌘ E"
+  },
+  {
+    "id": "mobile:quick-action",
+    "hotkey": ""
+  },
+  {
+    "id": "note-composer:extract-heading",
+    "hotkey": ""
+  },
+  {
+    "id": "note-composer:merge-file",
+    "hotkey": ""
+  },
+  {
+    "id": "note-composer:split-file",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:add-to-gitignore",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:backup-and-close",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:clone-repo",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:commit",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:commit-amend-staged-specified-message",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:commit-push-specified-message",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:commit-smart",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:commit-smart-specified-message",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:commit-specified-message",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:commit-staged",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:commit-staged-specified-message",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:create-branch",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:delete-branch",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:delete-repo",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:discard-all",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:edit-gitignore",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:edit-remotes",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:fetch",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:init-repo",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:list-changed-files",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:next-hunk",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:open-diff-view",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:open-git-view",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:open-history-view",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:pause-automatic-routines",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:prev-hunk",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:preview-hunk",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:pull",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:push",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:push2",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:raw-command",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:remove-remote",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:reset-hunk",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:set-upstream-branch",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:stage-current-file",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:stage-hunk",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:switch-branch",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:switch-to-remote-branch",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:toggle-line-author-info",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:unstage-current-file",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:view-file-on-github",
+    "hotkey": ""
+  },
+  {
+    "id": "obsidian-git:view-history-on-github",
+    "hotkey": ""
+  },
+  {
+    "id": "open-with-default-app:open",
+    "hotkey": ""
+  },
+  {
+    "id": "open-with-default-app:show",
+    "hotkey": ""
+  },
+  {
+    "id": "outgoing-links:open",
+    "hotkey": ""
+  },
+  {
+    "id": "outgoing-links:open-for-current",
+    "hotkey": ""
+  },
+  {
+    "id": "outline:open",
+    "hotkey": ""
+  },
+  {
+    "id": "outline:open-for-current",
+    "hotkey": ""
+  },
+  {
+    "id": "properties:open",
+    "hotkey": ""
+  },
+  {
+    "id": "properties:open-local",
+    "hotkey": ""
+  },
+  {
+    "id": "switcher:open",
+    "hotkey": "⌘ O"
+  },
+  {
+    "id": "sync:open-sync-log",
+    "hotkey": ""
+  },
+  {
+    "id": "sync:open-sync-view",
+    "hotkey": ""
+  },
+  {
+    "id": "sync:setup",
+    "hotkey": ""
+  },
+  {
+    "id": "sync:view-version-history",
+    "hotkey": ""
+  },
+  {
+    "id": "tag-pane:open",
+    "hotkey": ""
+  },
+  {
+    "id": "theme:switch",
+    "hotkey": ""
+  },
+  {
+    "id": "theme:toggle-light-dark",
+    "hotkey": ""
+  },
+  {
+    "id": "window:reset-zoom",
+    "hotkey": ""
+  },
+  {
+    "id": "window:toggle-always-on-top",
+    "hotkey": ""
+  },
+  {
+    "id": "window:zoom-in",
+    "hotkey": ""
+  },
+  {
+    "id": "window:zoom-out",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:close",
+    "hotkey": "⌘ W"
+  },
+  {
+    "id": "workspace:close-others",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:close-others-tab-group",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:close-tab-group",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:close-window",
+    "hotkey": "⌘ ⇧ W"
+  },
+  {
+    "id": "workspace:copy-full-path",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:copy-path",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:copy-url",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:edit-file-title",
+    "hotkey": "F2"
+  },
+  {
+    "id": "workspace:export-pdf",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:goto-last-tab",
+    "hotkey": "⌘ 9"
+  },
+  {
+    "id": "workspace:goto-tab-1",
+    "hotkey": "⌘ 1"
+  },
+  {
+    "id": "workspace:goto-tab-2",
+    "hotkey": "⌘ 2"
+  },
+  {
+    "id": "workspace:goto-tab-3",
+    "hotkey": "⌘ 3"
+  },
+  {
+    "id": "workspace:goto-tab-4",
+    "hotkey": "⌘ 4"
+  },
+  {
+    "id": "workspace:goto-tab-5",
+    "hotkey": "⌘ 5"
+  },
+  {
+    "id": "workspace:goto-tab-6",
+    "hotkey": "⌘ 6"
+  },
+  {
+    "id": "workspace:goto-tab-7",
+    "hotkey": "⌘ 7"
+  },
+  {
+    "id": "workspace:goto-tab-8",
+    "hotkey": "⌘ 8"
+  },
+  {
+    "id": "workspace:move-to-new-window",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:new-tab",
+    "hotkey": "⌘ T"
+  },
+  {
+    "id": "workspace:new-window",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:next-tab",
+    "hotkey": "⌃ Tab, ⌘ ⇧ ]"
+  },
+  {
+    "id": "workspace:open-in-new-window",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:previous-tab",
+    "hotkey": "⌃ ⇧ Tab, ⌘ ⇧ ["
+  },
+  {
+    "id": "workspace:show-trash",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:split-horizontal",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:split-vertical",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:toggle-pin",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:toggle-stacked-tabs",
+    "hotkey": ""
+  },
+  {
+    "id": "workspace:undo-close-pane",
+    "hotkey": "⌘ ⇧ T"
+  }
+]
