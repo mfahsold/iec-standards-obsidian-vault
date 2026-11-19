@@ -26,7 +26,7 @@ Obsidian vault with publicly available IEC information — built for Obsidian, o
 - Files: 56 (47 Markdown); Notes: 47
 - Standards: 18 product notes (+ classics set)
 - Types: IS 7, ISO/IEC 1, TRF 1, PAS 3, TR 6
-- Words: ~15.8k (`find . -name "*.md" -not -path "./.git/*" -print0 | xargs -0 wc -w | tail -1`)
+- Words: ~17.5k (`find . -type f -not -path "./.git/*" -print0 | xargs -0 wc -w | tail -1` → 17,539 words)
 
 ## What is in this vault
 
