@@ -23,6 +23,11 @@ Stand: 2026-11-19 (`meta/crawl-notes.md`). All entries have full frontmatter met
 | [[standards/IEC-TR-63411-2025|IEC TR 63411:2025]] | TR | 1.0 | TC 8/SC 8A | 27.180 29.020 | 380 | Grid connection of offshore wind via VSC-HVDC systems |
 | [[standards/IEC-TR-62380-2004|IEC TR 62380]] | TR | 1.0 | TC 47 | — | — | Reliability data handbook - Universal model for reliability prediction of electronics components, PCBs and equipment |
 | [[standards/classics|Classics (Third-Party-Aggregator)]] | — | — | — | — | — | 7 classics: IEC 60335-2-76-2002+AMD1-2006, IEC 60601-2-66-2015, IEC 60748-1-1984+AMD2-1993, IEC 60335-2-54-2002+AMD1-2004, IEC 60335-2-10-2002, IEC 60794-3-20-2009, IEC 60614-2-6-1992 |
+| [[standards/IEC-61643-11-2025-COR1-2026|IEC 61643-11:2025/COR1:2026]] | COR1 | — | — | — | — | Corrigendum 1 — Low-voltage surge protective devices — Part 11: Requirements and test |
+| [[standards/IEC-60364-1-2025|IEC 60364-1:2025]] | IS | — | — | — | — | Principles of IEC 60364 series (Electrical installations in buildings) |
+| [[standards/IEC-62813-2025-COR1-2026|IEC 62813:2025/COR1:2026]] | COR1 | 2.0 | TC 40 | 31.060.99 | — | Resistors for electronic equipment (COR1, 2026) |
+| [[standards/IEC-60286-1-AMD2-2026|IEC 60286-1/AMD2:2026]] | AMD2 | — | — | — | — | Optical fiber-based passive optical networks — physical layer (voting 2026-10-16 to 11-27) |
+| [[standards/ISO-14678-2005|ISO 14678:2005]] | ISO | 1 | — | — | — | Adhesives — Determination of resistance to flow (sagging) — NOTE: scope is adhesives, not Internet |
 
 → Full MOC with wikilinks to every note: [index/index.md](../index/index.md).
 

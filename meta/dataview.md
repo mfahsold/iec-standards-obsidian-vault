@@ -69,4 +69,36 @@ FROM #security
 
 - [index/index.json](../index/index.json) — raw JSON array of all vault standards (ref, type, edition, TC, ICS, status, price, sources) — parse directly for tools/agents.
 
+## Mathematische Optimierungen (Dataview — SQL-ähnlich, 2026-11-20)
+
+Dataview ist aktiviert ([obsidian plugins:enabled](../obsidian-usage.md)) — „SQL-ähnliche“ Anfragen über YAML-Frontmatter.
+
+```dataview
+TABLE ics, type, price_chf, status, technical_committee
+FROM "standards"
+WHERE ics != ""
+GROUP BY ics
+SORT ics ASC
+```
+
+```dataview
+TABLE ref, price_chf
+FROM "standards"
+WHERE price_chf != null AND price_chf >= 400 AND price_chf <= 700 AND type = "IS"
+SORT price_chf ASC
+```
+
+```dataview
+TABLE ref, type, price_chf, tags
+FROM "standards"
+WHERE contains(tags, "SDG03") OR contains(tags, "SDG07")
+SORT price_chf ASC
+```
+
+```dataview
+LIST FROM "standards" WHERE contains(tags, "SUBSTANCE")
+```
+
+→ Fachbegriffe ↔ Dataview: [meta/glossary.md](glossary.md).
+
 ## MASTER

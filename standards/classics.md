@@ -40,6 +40,10 @@ Stand: 2026-11-19. Source: Third-Party Aggregators (https://www.normfile.com/iec
 | --- | --- |
 | IEC 60871-1? | — |
 
+## ITU-T (nicht-IEC — nachprüfen)
+- **ITU-T 308**: unter diesem Namen nicht explizit im Vault. Suche per ITU/ITU-T-Website (itu.int — „ITU-T Recommendations — SER=T“, „308-GEN — New baseline text of the new Recommendation ITU-T K.emc_satellite_ES 'Electromagnetic compatibility requirements and test methods for Earth stations for satellite communications' — Agreement on 2023-11-03“).
+- **Note:** Der User erwähnte „IEC ITU-T 308“ — offizielle Namen: ITU-T-Serie — „IEC“ gibt es nicht als Präfix bei ITU-T.
+
 ## Note
 
 Full aggregator list: https://www.normfile.com/iec.html. In `index-standards.md` and `index.json` classics are summarised there (≈7 entries). Switch/validation with IEC possible (“vendor-quality CSVs”).

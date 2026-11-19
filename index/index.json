@@ -247,5 +247,64 @@
     "price_chf": null,
     "sources": ["https://www.normservis.cz/download/view/iec/info_iec62380%7Bed1.0%7Den.pdf"],
     "tags": ["IEC", "TR", "TC-47", "Reliability", "Electronics"]
+  },
+  {
+    "ref": "IEC 61643-11:2025/COR1:2026",
+    "name": "IEC 61643-11:2025/COR1:2026",
+    "title": "Corrigendum 1 - Low-voltage surge protective devices - Part 11: Surge protective devices connected to AC low-voltage power systems - Requirements and test",
+    "type": "COR1",
+    "status": "active",
+    "languages": ["English"],
+    "price_chf": null,
+    "sources": ["https://webstore.iec.ch/en/publication/117200"],
+    "tags": ["IEC", "COR1", "61643"]
+  },
+  {
+    "ref": "IEC 60364-1:2025",
+    "title": "IEC 60364-1:2025 — Principles, assessment of general characteristics, and definitions",
+    "type": "IS",
+    "status": "active",
+    "languages": ["English"],
+    "price_chf": null,
+    "sources": ["https://webstore.iec.ch/en/publication/63699"],
+    "tags": ["IEC", "IS", "60364"]
+  },
+  {
+    "ref": "IEC 62813:2025/COR1:2026",
+    "name": "IEC 62813:2025/COR1:2026",
+    "title": "Resistors for electronic equipment",
+    "type": "COR1",
+    "edition": "2.0",
+    "technical_committee": "TC 40 Capacitors and resistors for electronic equipment",
+    "published": "2026-10-21",
+    "ics": "31.060.99",
+    "status": "active",
+    "languages": ["English"],
+    "price_chf": null,
+    "sources": ["https://webstore.iec.ch/en/publication/116778"],
+    "tags": ["IEC", "COR1", "62813"]
+  },
+  {
+    "ref": "IEC 60286-1/AMD2:2026",
+    "name": "IEC 60286-1/AMD2:2026",
+    "title": "Generating, receiving, transferring or converting electrical messages using light pulses in optical fibers - Amendment 2",
+    "type": "AMD2",
+    "status": "active",
+    "languages": ["English"],
+    "price_chf": null,
+    "sources": ["https://webstore.iec.ch/en/publication/117420"],
+    "tags": ["IEC", "AMD2", "60286"]
+  },
+  {
+    "ref": "ISO 14678:2005",
+    "title": "Adhesives — Determination of resistance to flow (sagging)",
+    "type": "ISO",
+    "edition": "1",
+    "published": "2005-08",
+    "status": "active",
+    "languages": ["English"],
+    "price_chf": null,
+    "sources": ["https://standards.iteh.ai/catalog/standards/iso/f23574ac-7b94-41c8-99e0-0ab89005c88b/iso-14678-2005"],
+    "tags": ["ISO", "14678", "Adhesives", "Sagging"]
   }
 ]
