@@ -41,5 +41,5 @@ case "$LEVEL" in
     obsidian backlinks path="$NOTE" 2>/dev/null | head -5
     ;;
 esac
-echo ">>> Antwort (Ollama, qwen3.5:0.8b)"
-ollama run qwen3.5:0.8b "System: Du bist der Obsidian-Agent für den IEC-Standards-Vault. Antworte kurz und strukturiert (2-3 Sätze max): Fakten + Quellen-URLs (sources). Keine Übertragung von Standardtexten außerhalb der Daten. Nenne bei IEC-Kritik/Mustern (siehe meta/iec-criticism.md): SLOW/Bureaucracy, 85%-Dominanz, Private SDO, Strategic Competition (ISO/IEC), Slow-Pattern — bei Kritik-Fragen: Kurz-Argument + Alternative (ANSI/ISO/ITU/Webstore-Preise, voluntary adoption) erwähnen. Frage: '$QUERY'. Daten: Note: $NOTE; index/index.json (Matrix: ref/title/type/edition/technical_committee/published/ics/status/price_chf/sources)." 2>/dev/null | head -25
+echo ">>> Antwort (Ollama, qwen3.5:2b)"
+ollama run qwen3.5:2b "System: Du bist der Obsidian-Agent für den IEC-Standards-Vault. Antworte kurz und strukturiert (2-3 Sätze max): Fakten + Quellen-URLs (sources). Keine Übertragung von Standardtexten außerhalb der Daten. Nenne bei IEC-Kritik/Mustern (siehe meta/iec-criticism.md): SLOW/Bureaucracy, 85%-Dominanz, Private SDO, Strategic Competition (ISO/IEC), Slow-Pattern — bei Kritik-Fragen: Kurz-Argument + Alternative (ANSI/ISO/ITU/Webstore-Preise, voluntary adoption) erwähnen. Frage: '$QUERY'. Daten: Note: $NOTE; index/index.json (Matrix: ref/title/type/edition/technical_committee/published/ics/status/price_chf/sources)." 2>/dev/null | head -25

@@ -3,24 +3,26 @@
 ## Stack (minimal)
 
 - **Chat:** `local-llm-helper` v2.6.2 (Community-Plugin, Obsidian GUI).
-- **LLM:** `qwen3.5:0.8b` (Ollama 0.40.15, Server http://localhost:11434; capabilities: completion, vision, thinking, tools — per `api/tags`).
+- **LLM:** `qwen3.5:2b` (Ollama 0.40.15, Server http://localhost:11434; capabilities: completion, vision, thinking, tools — per `api/tags` — „The small qwen3.5 models just dropped" — 2b ~1.5 GB — eher Qualität als 0.8b).
 - **Settings (Obsidian → Settings → Community Plugins → Local LLM Helper):**
   - Endpoint: `http://localhost:11434` (Ollama-Native-API — verifiziert: `/api/version` → 0.40.15).
-  - Model: `qwen3.5:0.8b` (genau wie in `api/tags` gelistet — string-equal — „The configured model was not found“-Fehler wenn falsch).
+  - Model: `qwen3.5:2b` (genau wie in `api/tags` gelistet — string-equal).
   - Temperature: 0.3–0.6 (kurze, präzise IEC-Fakten-Antworten).
-  - Context Window (num_ctx): 4096 (Vault klein — ≤100 Files; größer, wenn Analyse stattfindet).
+  - Context Window (num_ctx): **16384** (vorgeschlagen — Phase N: „deutlich größeres Kontextfenster" — GUI: 0.8b-Notiz → 2b: Settings → Local LLM Helper → Context Window —EMP: 8192–16384 verwertbar; 16384 = maximal „available" bei diesem Host).
+  - **Data-File:** `$V/.obsidian/plugins/local-llm-helper/data.json` (Batch N2a — aktualisiert: llmModel=`qwen3.5:2b`, endpoint, num_ctx=16384, temperature, maxTokens) — GUI-Pfad, falls GUI-Entry-Point geändert (Sandboxed-Plugin).
+  - **Thinking:** Standard ON (Qwen3.5 — „mehr Thinking“ — Chunk N1 —beobachtet: Thinking + Content im Streaming-Response (Ollama 0.40 — `message.thinking`/`message.content`).
   - System-Prompt (empfohlen): „Du bist der Obsidian-Agent für den IEC-Standards-Vault. Antworte kurz und strukturiert: Fakten + Quellen-URLs (sources).“
 
 ## Wie das Modell Daten abruft und verarbeitet (aktuell)
 
-- **Retrieval (CLI/agent-loop):** `obsidian search` (lexikalisch) → NOTE → `obsidian read` → Note-Body (frontmatter + Inhalt — kurz, <500 Token) → `ollama run qwen3.5:0.8b <Prompt>` → Antwort.
+- **Retrieval (CLI/agent-loop):** `obsidian search` (lexikalisch) → NOTE → `obsidian read` → Note-Body (frontmatter + Inhalt — kurz, <500 Token) → `ollama run qwen3.5:2b <Prompt>` → Antwort.
   - L2 (structured): `python3` Filter+Sort auf `index/index.json` (context-minimal) — [agent-loop.sh L2].
-- **Chat (GUI — Local LLM Helper):** Benutzerfrage + Plugin-Settings → `http://localhost:11434` → Modell `qwen3.5:0.8b` → Antwort (Streaming, explizite „Thinking“-Phase).
+- **Chat (GUI — Local LLM Helper):** Benutzerfrage + Plugin-Settings → `http://localhost:11434` → Modell `qwen3.5:2b` (Settings — [chat-optimization.md](chat-optimization.md)) → Antwort (Streaming, „Thinking“-Phase — intern — 2b outputs visible-internal-Analysis).
 - **Verarbeitung (Modell):** Input = System-Prompt + Frage + Context (Vault klein — ≤100 Files) — kurze Note-Bodies → direkte Antwort.
 
 ## Optimierungen (Diskussion + Implementiert)
 
-1. **Agent-Loop Prompt v3** (implementiert — [meta/agent-loop.sh](agent-loop.sh)): Geänderter System-Prompt — „kurz und strukturiert (2–3 Sätze): Fakten + Quellen-URLs (sources). Keine Übertragung von Standardtexten außerhalb der Daten.“ — Fokus: Output-Qualität für IEC-Fakten.
+1. **Agent-Loop Prompt v4** (implementiert — [meta/agent-loop.sh](agent-loop.sh)): System-Prompt — „kurz und strukturiert (2–3 Sätze): Fakten + Quellen-URLs (sources). Keine Übertragung von Standardtexten außerhalb der Daten. Nenne bei IEC-Kritik/Mustern (meta/iec-criticism.md): SLOW/Bureaucracy, 85%-Dominanz, Private SDO, Strategic Competition (ISO/IEC), Slow-Pattern — bei Kritik-Fragen: Kurz-Argument + Alternative (ANSI/ISO/ITU/Webstore-Preise, voluntary adoption)".
 2. **Chat-Settings + Optimierungsanalyse** (dokumentiert — dieser File): System-Prompt, Temperature, num_ctx, Endpoint/Model — GUI-Settings.
 
 ## Diskussionsliste (mit dir)
