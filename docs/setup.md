@@ -67,10 +67,32 @@ remains the default.
 ## Optional GUI extras
 
 - **One-click “Ask vault” (our own plugin):** `obsidian-plugin/` contains a small
-  plugin that wraps `tools/agent-loop.py` in a modal. Copy `manifest.json` and
-  `main.js` into the GUI vault's `.obsidian/plugins/iec-vault-ask/` and enable it
-  in Settings → Community plugins; restart Obsidian once. It is a UI wrapper
-  only — GUI answers are not an independent QA path.
+  plugin that wraps `tools/agent-loop.py` in a modal.
+
+  Install on any machine:
+
+  ```sh
+  cp obsidian-plugin/manifest.json obsidian-plugin/main.js \
+     <GUI-vault>/.obsidian/plugins/iec-vault-ask/
+  ```
+
+  Then enable **IEC Vault Ask** in Settings → Community plugins and restart
+  Obsidian once (or use `obsidian plugin:reload id=iec-vault-ask`).
+
+  Use it:
+
+  1. Click the ribbon icon **Ask IEC vault** (message icon), or press `Cmd+P`
+     and run **“Ask IEC vault”**.
+  2. Type a question in the modal, e.g.
+     `What is the price of IEC 62443-4-1:2018?`
+  3. Click **Ask** and wait roughly 60–90 seconds (thinking mode).
+  4. The answer appears in the modal with `[Source: …]` labels.
+
+  The plugin discovers the repo folder by looking for `tools/agent-loop.py` in
+  the vault's subfolders, then runs the CLI with a 180 s timeout. If it reports
+  “no vault repo with tools/agent-loop.py found”, check that the repo folder is
+  directly inside the vault. No service or port is involved. GUI answers are a
+  convenience only — verify anything used as evidence with the CLI.
 - **Terminal in Obsidian (optional, third-party):** community plugins such as
   Terminal, Lean Terminal or Terminal Tabs can embed a real shell. This project
   does not ship a terminal plugin. If you install one, configure a profile named
