@@ -12,7 +12,7 @@ beyond the review threshold in `tools/config.py`, IEC should be consulted.
   committees, ICS codes, languages, status.
 - Price snapshots from public product pages, marked with the collection date.
 - Links to official product pages and public process documents.
-- Original summaries and short attributed quotations from public pages.
+- Original summaries and source links; no direct quotations.
 
 ## Never included
 
@@ -28,10 +28,10 @@ beyond the review threshold in `tools/config.py`, IEC should be consulted.
 3. Record the source URL in frontmatter and the collection date in the note.
 4. Use `null` or omit unverifiable facts; never invent values.
 
-## Quotation rules
+## No direct quotations
 
-Keep quotes under ~25 words, in quotation marks, attributed and linked. Never
-reproduce a paragraph, abstract, section, or table. When in doubt, link instead.
+Do not reproduce wording from IEC/ISO pages. Paraphrase the fact and link the
+source. Never copy a paragraph, abstract, section, or table.
 
 ## AI/RAG rules
 

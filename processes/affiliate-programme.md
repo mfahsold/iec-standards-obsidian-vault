@@ -20,10 +20,6 @@ The programme does **not** allow free redistribution. It is prohibited to make,
 or allow others to make, IEC International Standards or their adoptions and
 translations available free of charge.
 
-> “It is prohibited to make, or allow others, to make available free of charge
-> IEC International Standards and other publications, their respective
-> adoptions and translations.”
-
 ## Other publication types
 
 The IEC also produces technical specifications, technical reports, guides,

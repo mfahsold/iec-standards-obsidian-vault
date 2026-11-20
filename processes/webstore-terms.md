@@ -18,8 +18,6 @@ and international law. Copying, transferring, selling, licensing, publishing,
 modifying, or creating derivative works from IEC products requires written
 permission from the IEC.
 
-> “You shall not copy … IEC Products … without permission in writing from IEC.”
-
 ## No scraping or data mining
 
 The terms prohibit using robots, scripts, or other manual or automatic
@@ -32,10 +30,6 @@ The terms prohibit using publications and documents sold through the Webstore
 to develop algorithms, digital models, software programs, or AI tools,
 including machine-learning or AI systems. They also prohibit introducing IEC
 products into AI technologies without specific permission.
-
-> “You shall not use publications and documents sold through IEC Webstore for
-> the development of any algorithm, digital model, software program, or AI
-> tool…”
 
 ## Trademarks
 
@@ -54,7 +48,7 @@ IEC does not accept returns for electronic documents in PDF format.
 - Uses **no automated Webstore scraper**. Public pages were reviewed by hand;
   whether that counts as “data mining” under these terms is being clarified with
   IEC (see `../docs/iec-engagement.md`).
-- Uses only short, attributed quotations from public pages.
+- Paraphrases public pages and links sources; no direct quotations.
 - Does **not** feed purchased IEC content into a model or embedding index.
 
 See [`../docs/data-policy.md`](../docs/data-policy.md) and

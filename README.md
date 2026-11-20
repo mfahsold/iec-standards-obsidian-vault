@@ -44,7 +44,7 @@ catalog/index statistics — no hardcoded counts in this documentation.
 ## Rules in one paragraph
 
 We store only public metadata, links, original summaries, and short attributed
-quotations — no document bodies, PDFs, scraped or purchased content. Prices and
+direct quotations — no document bodies, PDFs, scraped or purchased content. Prices and
 dates are collection-time snapshots. Answers must cite a source and say “not in
 the vault” rather than invent facts. Full rules: [`docs/data-policy.md`](docs/data-policy.md).
 

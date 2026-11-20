@@ -45,10 +45,6 @@ A publication has many contributors and is exchanged repeatedly. Keeping one
 central reference document and avoiding parallel versions is essential;
 parallel development causes confusion and repeated work.
 
-## Short quotation
-
-> “The IEC generates the cover pages and prepares the document for publication.”
-
 ## MASTER
 
 - [`overview.md`](overview.md)

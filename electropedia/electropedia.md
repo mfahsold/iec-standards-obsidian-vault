@@ -41,8 +41,6 @@ referencing and citing Electropedia to identify or clarify electrotechnical
 concepts, and asks that IEC be referenced as the source. Duplicating
 Electropedia or using large portions of it requires contacting the IEC.
 
-> “We only ask that IEC is referenced as the source.”
-
 ## How this vault uses it
 
 - Links to Electropedia and the IEC page.

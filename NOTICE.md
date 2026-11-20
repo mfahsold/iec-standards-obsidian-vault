@@ -22,7 +22,7 @@ with attribution; IEC/ISO material is not relicensed.
 
 Public bibliographic metadata (references, titles, editions, dates, committees,
 ICS codes, price snapshots, links), original summaries, short attributed
-quotations from public pages, and local retrieval tooling.
+source links, and local retrieval tooling.
 
 There are **no IEC/ISO document bodies**, PDFs, substantial verbatim excerpts,
 logos, scraped Webstore content, or purchased standards.
@@ -48,7 +48,7 @@ Webstore: <https://webstore.iec.ch/>.
 
 Electropedia content is copyright IEC. The IEC encourages referencing and
 citation with attribution to IEC; large-scale duplication requires permission.
-This repository links to the live service and uses only short attributed quotes;
+This repository links to the live service and does not reproduce definitions; it links to the live service.
 see [`electropedia/electropedia.md`](electropedia/electropedia.md).
 
 ## Third-party tools

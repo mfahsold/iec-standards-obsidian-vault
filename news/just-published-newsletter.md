@@ -17,10 +17,6 @@ The newsletter is a useful signal for new editions and corrigenda. This vault
 records individual publications when they are verified; the newsletter itself
 is not mirrored here.
 
-## Short quotation
-
-> “Stay up to date with the free IEC Just Published newsletter.”
-
 ## MASTER
 
 - [`../index/index.md`](../index/index.md)

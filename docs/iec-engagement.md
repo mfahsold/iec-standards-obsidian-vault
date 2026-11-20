@@ -38,11 +38,10 @@ service.
 
 ### 3. Attribution
 
-What attribution wording and placement would IEC prefer? For example:
-
-> “IEC references and metadata used for identification only. Source: IEC Webstore.
-> Unofficial public-information aggregate; not official IEC documentation; may
-> contain errors; not affiliated with IEC.”
+What attribution wording and placement would IEC prefer? A possible wording is:
+IEC references and metadata are used for identification only, with IEC Webstore
+as the source; this is an unofficial aggregate of public information, not
+official IEC documentation, may contain errors, and is not affiliated with IEC.
 
 ### 4. Names and marks
 
@@ -56,22 +55,21 @@ Are there restrictions on displaying price snapshots from public product pages?
 We mark them “as of [date]” and link the official page, but we can remove prices
 entirely if preferred.
 
-### 6. Short quotations
+### 6. No direct quotations
 
-May we include occasional short quotations (target: 25 words or fewer) from
-public IEC web pages, with quotation marks, attribution, and a link? If not, we
-will paraphrase everything.
+We currently paraphrase all public pages and link the sources; we do not
+reproduce IEC wording. Is this the preferred approach, or is attribution alone
+sufficient if short quotations were used in future?
 
 ### 7. Electropedia / IEV
 
-For Electropedia terms, is linking plus short attributed term/definition
-quotations acceptable? We do not plan a bulk import. If a license is required
-for a larger term index, what is the process?
+Is linking to Electropedia without reproducing term definitions acceptable? We
+do not bulk-import or copy definitions.
 
 ### 8. Public process documents
 
-May we summarize and link public IEC Open PDFs (e.g., ISO/IEC Directives,
-stage codes) with short quotations? We currently link rather than copy.
+We summarize and link public IEC Open PDFs (e.g., ISO/IEC Directives, stage
+codes) without copying text. Is that acceptable?
 
 ### 9. Takedown / review
 
@@ -101,8 +99,8 @@ kind, that it is an unofficial aggregate of public information, and that it may
 contain errors.
 
 Could you please confirm whether this use is acceptable, what attribution you
-prefer, and whether you have any requirements for price snapshots or short
-quotations from public web pages? Do you consider this small, attributed,
+prefer, and whether you have any requirements for price snapshots? We currently
+paraphrase all public pages and do not reproduce IEC wording. Do you consider this small, attributed,
 non-exhaustive metadata catalog acceptable, or is a licence needed even for a
 subset? If a permission or license is required, we would appreciate guidance on
 the process.
@@ -121,7 +119,7 @@ Thank you.
   / `unofficial-iec-metadata-vault` (renamed 2026-11-20). GitHub redirects the old
   URL. The local folder name is unchanged for path stability.
 - Until clarification is received, the repository includes only metadata,
-  original summaries, links, and short attributed quotations.
+  original summaries, links, and paraphrases only.
 - If IEC requests changes, the maintainers will update or remove the affected
   content. The data policy is in [`data-policy.md`](data-policy.md).
 - This document is not legal advice.

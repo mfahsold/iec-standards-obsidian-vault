@@ -25,7 +25,7 @@ in that frontmatter and in `index/index.json`.
 | Code | MIT — `LICENSES/MIT.txt` |
 | Original content and metadata compilation | CC BY 4.0 — `LICENSES/CC-BY-4.0.txt` |
 | IEC/ISO names, titles, metadata | Owned by the respective organizations; identification only |
-| Short third-party quotations | Original terms; attributed and linked |
+| Third-party wording | Not reproduced; paraphrases and links only |
 
 No IEC/ISO document bodies, PDFs, or long verbatim excerpts are included. This is
 not official IEC/ISO material and may contain errors; see [`NOTICE.md`](../NOTICE.md).

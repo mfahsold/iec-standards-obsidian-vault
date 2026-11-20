@@ -10,8 +10,7 @@ contain errors; contributions must keep it copyright-safe and verifiable.
    catalogues. Never use paywalled, login-protected, scraped, or purchased content.
 2. **No document bodies.** No standard texts, PDFs, long verbatim excerpts,
    figures, or reconstructed tables of contents.
-3. **Own words.** Paraphrase descriptions; keep quotations under ~25 words with
-   quotation marks and a source link.
+3. **Own words.** Paraphrase descriptions; never add direct quotations — link the source instead.
 4. **Cite every fact.** Add a source URL to frontmatter and a collection date to
    the note body. Use `null` for unknown values — never invent data.
 5. **Prices are snapshots.** Mark them as of the collection date and link the
@@ -46,7 +45,7 @@ contain errors; contributions must keep it copyright-safe and verifiable.
 ## Pull requests
 
 Explain what changed and cite the public source for every new fact. Confirm that
-no standard body, long quotation, secret, or absolute path was added, and that
+no standard body, direct quotation, secret, or absolute path was added, and that
 all checks pass. By contributing, you license code under MIT and original
 content under CC BY 4.0.
 

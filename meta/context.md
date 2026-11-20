@@ -76,7 +76,7 @@ recurring patterns are:
   about strategic competition (USS; Outcome.co);
 - the "publicly available" label in PAS is a document type, not free access.
 
-These are short summaries with links; no extended quotations are reproduced.
+These are short summaries with links; no direct quotations are reproduced.
 IEC's own process changes (e.g., shorter target dates) are part of the same
 debate. See `processes/work-programme.md` for the target-date table.
 
