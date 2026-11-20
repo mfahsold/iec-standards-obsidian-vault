@@ -170,6 +170,10 @@ RAG_INDEX=index/embeddings-qwen3.json EMBED_MODEL=qwen3-embedding:0.6b \
 Compare retrieval hit rate and decision accuracy against the nomic baseline
 before switching. Both index files are gitignored.
 
+Measured result (2026-11-20): nomic-embed-text **12/12 retrieval, 10/12
+decisions**; qwen3-embedding:0.6b **12/12 retrieval, 7/12 decisions**. Nomic
+remains the default; the experimental model and index were removed.
+
 ## Validation
 
 ```sh
