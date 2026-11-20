@@ -65,6 +65,24 @@ python3 tools/agent-loop.py "What is the price of IEC 62443-4-1:2018?"
 
 A terminal runs with your user permissions; run only commands you understand.
 
+## Optional: one-click “Ask vault” button (custom plugin)
+
+`obsidian-plugin/` contains a minimal Obsidian plugin that wraps the same CLI
+engine in a modal (input → answer). It does not add QA logic, a service, or a
+port; it only calls `tools/agent-loop.py` in this repository.
+
+Install manually in the GUI vault:
+
+```sh
+mkdir -p <GUI-vault>/.obsidian/plugins/iec-vault-ask
+cp obsidian-plugin/manifest.json obsidian-plugin/main.js \
+   <GUI-vault>/.obsidian/plugins/iec-vault-ask/
+```
+
+Then enable **IEC Vault Ask** under Settings → Community plugins and use the
+ribbon icon or Cmd+P → “Ask IEC vault”. The CLI remains the authoritative
+answer path.
+
 ## CLI retrieval (portable)
 
 Requirements: Python 3.9+, Ollama with `qwen3.5:2b` and `nomic-embed-text`, and
