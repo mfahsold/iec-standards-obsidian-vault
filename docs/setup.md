@@ -66,12 +66,19 @@ remains the default.
 
 ## Optional GUI extras
 
-- **Terminal in Obsidian:** community plugins can embed a real shell. Configure a
-  profile named **IEC Vault** that starts in `iec-standards-obsidian-vault`.
-- **One-click “Ask vault”:** copy `obsidian-plugin/manifest.json` and `main.js`
-  into the GUI vault's `.obsidian/plugins/iec-vault-ask/` and enable it in
-  Settings → Community plugins. It only wraps the CLI; GUI answers are not an
-  independent QA path.
+- **One-click “Ask vault” (our own plugin):** `obsidian-plugin/` contains a small
+  plugin that wraps `tools/agent-loop.py` in a modal. Copy `manifest.json` and
+  `main.js` into the GUI vault's `.obsidian/plugins/iec-vault-ask/` and enable it
+  in Settings → Community plugins; restart Obsidian once. It is a UI wrapper
+  only — GUI answers are not an independent QA path.
+- **Terminal in Obsidian (optional, third-party):** community plugins such as
+  Terminal, Lean Terminal or Terminal Tabs can embed a real shell. This project
+  does not ship a terminal plugin. If you install one, configure a profile named
+  **IEC Vault** that starts in the repo folder (`iec-standards-obsidian-vault`
+  in this workspace).
+- **Local LLM Helper is not used.** If it was enabled previously, disable and
+  remove it from the GUI vault; it is not part of this stack and cannot run our
+  abstention stage.
 
 ## Validation
 
