@@ -129,9 +129,9 @@ metadata with the IEC; see [`docs/iec-engagement.md`](docs/iec-engagement.md).
 ## Status and roadmap
 
 - **Status:** prototype; 23 verified catalog entries across 52 Markdown notes.
-- **Verified:** CLI golden questions (ICS, price, definition), RAG retrieval
-  top-1 on the ICS question, validator/CI.
-- **Next:** expand verified coverage, add more golden questions, improve
+- **Verified:** data-generated probes (ICS, price, committee, type, abstention),
+  RAG retrieval, validator/CI.
+- **Next:** expand verified coverage, add more probe templates, improve
   product→ICS→standard mapping, and complete the IEC clarification.
 
 ## Disclaimer

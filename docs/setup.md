@@ -132,8 +132,10 @@ state.
 
 ## Evaluation
 
-The golden set lives in `tools/golden-questions.json` (9 answerable + 3
-out-of-vault probes). Run the fast check — retrieval and sufficiency decisions:
+There is no hardcoded question list. `tools/probes.py` generates questions and
+expected values from `index/index.json` (ICS, price, committee, type) plus
+synthetic out-of-vault references for abstention. Run the fast check — retrieval
+and sufficiency decisions:
 
 ```sh
 python3 tools/evaluate.py
@@ -149,9 +151,10 @@ The harness reports retrieval hit rate, decision accuracy, and — with
 `--generate` — answer accuracy. Every change to chunking, embeddings, or prompts
 should be re-evaluated with this command.
 
-Current baseline: retrieval **12/12**, sufficiency decisions **10/12**. Two
-open-ended/multi-part cases are a known limitation of the 2B judge and are
-tracked; factual and out-of-vault cases are correct. If generation returns no
+Current baseline with generated probes: retrieval **13/13**, sufficiency
+decisions **13/13**. The earlier hardcoded set exposed two brittle open-ended
+cases; data-generated probes avoid that brittleness and follow catalog changes.
+If generation returns no
 content, the model's thinking consumed the output budget; raise `NUM_PREDICT`
 (e.g. 16384). Under Ollama contention, stop unused models with `ollama stop`.
 
@@ -170,9 +173,11 @@ RAG_INDEX=index/embeddings-qwen3.json EMBED_MODEL=qwen3-embedding:0.6b \
 Compare retrieval hit rate and decision accuracy against the nomic baseline
 before switching. Both index files are gitignored.
 
-Measured result (2026-11-20): nomic-embed-text **12/12 retrieval, 10/12
-decisions**; qwen3-embedding:0.6b **12/12 retrieval, 7/12 decisions**. Nomic
-remains the default; the experimental model and index were removed.
+Historical A/B measurement (2026-11-20, with the earlier static probe set):
+nomic-embed-text scored 12/12 retrieval and 10/12 decisions;
+qwen3-embedding:0.6b scored 12/12 retrieval and 7/12 decisions. Nomic remains
+the default; the experimental model and index were removed. With today's
+data-generated probes, nomic scores 13/13 on both metrics.
 
 ## Validation
 

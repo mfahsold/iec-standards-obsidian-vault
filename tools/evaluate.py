@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Evaluate the RAG pipeline against the golden-question set.
+"""Evaluate the RAG pipeline against data-generated probes.
 
 Default: retrieval + sufficiency decisions only (fast).
 --generate: also generate answers and check expected strings/citations (slow).
@@ -20,12 +20,11 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 ROOT = Path(__file__).resolve().parent.parent
-QUESTIONS = ROOT / "tools" / "golden-questions.json"
 
 
-def load_agent_loop():
-    path = ROOT / "tools" / "agent-loop.py"
-    spec = importlib.util.spec_from_file_location("agent_loop", path)
+def load_module(name: str):
+    path = ROOT / "tools" / name
+    spec = importlib.util.spec_from_file_location(name.replace(".py", ""), path)
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
     spec.loader.exec_module(module)
@@ -37,8 +36,9 @@ def main() -> int:
     parser.add_argument("--generate", action="store_true")
     args = parser.parse_args()
 
-    al = load_agent_loop()
-    cases: List[Dict[str, Any]] = json.loads(QUESTIONS.read_text(encoding="utf-8"))
+    al = load_module("agent-loop.py")
+    probes = load_module("probes.py")
+    cases: List[Dict[str, Any]] = probes.generate()
     url = os.environ.get("OLLAMA_URL", "http://localhost:11434").rstrip("/")
     model = os.environ.get("OLLAMA_MODEL", "qwen3.5:2b")
     embed_model = os.environ.get("EMBED_MODEL", "nomic-embed-text")

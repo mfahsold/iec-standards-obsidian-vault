@@ -10,7 +10,8 @@ standards — not a copy of the standards themselves.
 - Improve the process documentation in `processes/`.
 - Fix a broken link, typo, or inconsistent metadata field.
 - Improve the retrieval tools in `tools/`.
-- Add a golden question with an evidence-backed expected answer.
+- Add a probe template to `tools/probes.py`; questions and expected values are
+  generated from `index/index.json`, never hardcoded.
 
 ## Ground rules (important)
 

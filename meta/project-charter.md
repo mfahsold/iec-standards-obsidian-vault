@@ -80,7 +80,7 @@ Verified stack: Obsidian 1.15.1 (navigation only), Ollama 0.40.15,
 
 ### A prompt, retrieval or configuration change
 
-- Golden question with evidence-backed answer defined (`docs/setup.md`).
+- A data-generated probe covers the changed behavior (`docs/setup.md`).
 - Passes on the **CLI path**, the only QA implementation (hybrid retrieval,
   sufficiency judgement, abstention, thinking generation).
 - Obsidian has no chat role; it is used for navigation and editing only.
@@ -109,7 +109,7 @@ Verified stack: Obsidian 1.15.1 (navigation only), Ollama 0.40.15,
 ## 7. Key documents
 
 - `README.md` — entry point
-- `docs/setup.md` — toolchain, CLI, RAG, golden questions, validation
+- `docs/setup.md` — toolchain, CLI, RAG, evaluation probes, validation
 - `docs/data-policy.md` — what may be stored and quoted
 - `docs/provenance.md` — sources and licensing status
 - `docs/iec-engagement.md` — open questions for IEC

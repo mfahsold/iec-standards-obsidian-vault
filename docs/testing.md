@@ -34,11 +34,11 @@ python3 tools/evaluate.py
 Expected:
 - compile: no output;
 - validator: `0 error(s), 0 warning(s)`;
-- evaluator: retrieval `12/12`, decisions `10/12`.
+- evaluator: retrieval `13/13`, decisions `13/13`.
 
-The two known judge limitations (multi-standard comparison and open-ended
-“name three patterns”) may show FAIL — record them, do not treat them as a
-release blocker.
+Probes are generated from `index/index.json`; no hardcoded question list exists.
+If a probe fails, report the generated question and the catalog entry it came
+from.
 
 ## 3. Critical CLI questions
 
@@ -98,8 +98,8 @@ Also confirm:
 | --- | --- | --- |
 | Index rebuild | chunks from 52 files | |
 | Compile + validator | 0 errors | |
-| Evaluator retrieval | 12/12 | |
-| Evaluator decisions | 10/12 | |
+| Evaluator retrieval | 13/13 | |
+| Evaluator decisions | 13/13 | |
 | CLI #1 ICS | 31.060.99 + citation | |
 | CLI #2 price | 335 CHF + citation | |
 | CLI #3 abstention | Not in the vault | |
@@ -113,8 +113,8 @@ Go public only if:
 
 - all three critical CLI questions pass;
 - validator reports 0 errors;
-- the repo is clean and in sync;
-- the two known judge limitations are recorded, not hidden.
+- the evaluator reports 13/13 retrieval and 13/13 decisions;
+- the repo is clean and in sync.
 
 If any critical CLI question fails, stop and report the exact question, mode and
 answer before flipping visibility.
