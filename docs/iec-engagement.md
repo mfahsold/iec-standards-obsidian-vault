@@ -120,7 +120,9 @@ For a copy-paste covering email with subject line and recipient, use
 
 - The project name and GitHub URL slug are now **Unofficial IEC Metadata Vault**
   / `unofficial-iec-metadata-vault` (renamed 2026-11-20). GitHub redirects the old
-  URL. The local folder name is unchanged for path stability.
+  URL. The local folder name is unchanged for path stability. The word “IEC” is
+  kept as nominative use with the “Unofficial” prefix, prominent disclaimer, and
+  no logos (decision 2026-11-20).
 - Until clarification is received, the repository includes only metadata,
   original summaries, links, and paraphrases only.
 - If IEC requests changes, the maintainers will update or remove the affected
