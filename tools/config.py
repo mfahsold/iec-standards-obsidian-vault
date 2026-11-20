@@ -31,6 +31,7 @@ EMBED_MODEL = env("EMBED_MODEL", "nomic-embed-text")
 
 NUM_CTX = env("NUM_CTX", 98304, int)
 NUM_PREDICT = env("NUM_PREDICT", 8192, int)
+FALLBACK_PREDICT = env("FALLBACK_PREDICT", 2048, int)
 TEMPERATURE = env("TEMPERATURE", 0.6, float)
 TOP_P = env("TOP_P", 0.95, float)
 TOP_K_SAMPLE = env("TOP_K_SAMPLE", 20, int)
@@ -44,6 +45,7 @@ BM25_K1 = env("BM25_K1", 1.2, float)
 BM25_B = env("BM25_B", 0.75, float)
 HYBRID = env("HYBRID", "1") == "1"
 REQUEST_TIMEOUT = env("REQUEST_TIMEOUT", 240, int)
+DEBUG = env("DEBUG", "0") == "1"
 
 KEEP_ALIVE = env("KEEP_ALIVE", "10m")
 EMBED_NUM_CTX = env("EMBED_NUM_CTX", 8192, int)

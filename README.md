@@ -1,7 +1,15 @@
 # Unofficial IEC Metadata Vault
 
-A local-first, offline, independent knowledge base of **public metadata about
-IEC/ISO standards**, plus a grounded CLI that answers questions with citations.
+**At a glance**
+
+- **What it is:** a local, offline knowledge base of public IEC/ISO catalog
+  metadata, plus a CLI that answers questions with citations.
+- **What it is not:** official IEC/ISO material, a standards library, a hosted
+  service, or legal/conformity advice.
+- **How it works:** Obsidian is for navigation; a Python CLI and Ollama run the
+  grounded retrieval locally. No cloud, no service, no port.
+- **What it contains:** public metadata, source links, original summaries and
+  collection-time snapshots — no standard document bodies.
 
 **NOT OFFICIAL IEC/ISO MATERIAL.** This is an unofficial aggregate of publicly
 available information. It is **not official IEC or ISO communication, documentation,
