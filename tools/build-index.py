@@ -44,7 +44,15 @@ def split_chunks(text: str) -> List[str]:
 
 
 def embed_batch(texts: List[str], url: str, model: str) -> List[List[float]]:
-    payload = {"model": model, "input": texts}
+    # nomic-embed-text v1.5 expects task prefixes in the model card.
+    if model.startswith("nomic-embed-text"):
+        texts = [f"search_document: {text}" for text in texts]
+    payload = {
+        "model": model,
+        "input": texts,
+        "options": {"num_ctx": 8192},
+        "keep_alive": "10m",
+    }
     request = urllib.request.Request(
         f"{url}/api/embed",
         data=json.dumps(payload).encode("utf-8"),

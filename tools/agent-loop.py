@@ -51,7 +51,7 @@ facts, references, ICS codes, prices, dates or citations. Prices are snapshots;
 point to the official catalog for current prices."""
 
 
-def post(url: str, path: str, payload: Dict[str, Any], timeout: int = 180) -> Dict[str, Any]:
+def post(url: str, path: str, payload: Dict[str, Any], timeout: int = 240) -> Dict[str, Any]:
     request = urllib.request.Request(
         f"{url}{path}",
         data=json.dumps(payload).encode("utf-8"),
@@ -62,7 +62,15 @@ def post(url: str, path: str, payload: Dict[str, Any], timeout: int = 180) -> Di
 
 
 def embed(text: str, url: str, model: str) -> List[float]:
-    return post(url, "/api/embed", {"model": model, "input": text})["embeddings"][0]
+    if model.startswith("nomic-embed-text"):
+        text = f"search_query: {text}"
+    payload = {
+        "model": model,
+        "input": text,
+        "options": {"num_ctx": 8192},
+        "keep_alive": "10m",
+    }
+    return post(url, "/api/embed", payload)["embeddings"][0]
 
 
 def cosine(a: List[float], b: List[float]) -> float:
@@ -125,6 +133,7 @@ def judge(question: str, contexts: List[Dict[str, str]], url: str,
         ],
         "think": False,
         "options": {"temperature": 0, "num_predict": 512},
+        "keep_alive": "10m",
         "stream": False,
     }
     body = post(url, "/api/chat", payload)
@@ -152,6 +161,7 @@ def generate(question: str, contexts: List[Dict[str, str]], url: str, model: str
             "num_ctx": num_ctx,
             "num_predict": num_predict,
         },
+        "keep_alive": "10m",
         "stream": False,
     }
     body = post(url, "/api/chat", payload)

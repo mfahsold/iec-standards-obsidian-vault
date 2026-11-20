@@ -123,7 +123,9 @@ python3 tools/build-index.py
 
 The builder chunks every Markdown file (800 characters, 100 overlap), embeds the
 chunks with `nomic-embed-text`, and writes `index/embeddings.json`. The file is
-gitignored; it is local state derived from the notes.
+gitignored; it is local state derived from the notes. Nomic task prefixes
+(`search_document:` for chunks, `search_query:` for questions) and an 8K
+embedding context are applied; chat calls keep the model resident for 10 minutes.
 
 ## Golden questions
 
