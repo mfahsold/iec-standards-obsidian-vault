@@ -63,5 +63,14 @@ def generate(index_json: Path = INDEX_JSON) -> List[Dict[str, Any]]:
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--cli", action="store_true",
+                        help="print ready-to-run agent-loop.py commands")
+    args = parser.parse_args()
     for case in generate():
-        print(("REFUSE " if case["expect_refusal"] else "ANSWER ") + case["question"])
+        if args.cli:
+            print(f'python3 tools/agent-loop.py "{case["question"]}"')
+        else:
+            print(("REFUSE " if case["expect_refusal"] else "ANSWER ") + case["question"])

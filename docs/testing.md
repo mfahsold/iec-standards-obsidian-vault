@@ -42,19 +42,21 @@ from.
 
 ## 3. Critical CLI questions
 
-Run these three and compare with the expected outcome:
+Questions are generated from the catalog — nothing to hardcode:
 
 ```sh
-python3 tools/agent-loop.py "What are the ICS tags of IEC 62813:2025/COR1:2026?"
-python3 tools/agent-loop.py "What is the price of IEC 62443-4-1:2018?"
-python3 tools/agent-loop.py "What is IEC 65000-1:2099? Give me its ICS and price."
+python3 tools/probes.py --cli | head -3 | sh
 ```
 
-| # | Expected |
-| --- | --- |
-| 1 | `31.060.99` with a `[Source: …]` citation |
-| 2 | `335 CHF`, snapshot hint, with a citation |
-| 3 | “Not in the vault …” — no invented standard, no unrelated note cited |
+This runs the first three generated probes (currently ICS and price questions).
+For the abstention check, run one generated `REFUSE` probe:
+
+```sh
+python3 tools/probes.py --cli | tail -1 | sh
+```
+
+Expected: the value from `index/index.json` with a `[Source: …]` citation for
+`ANSWER` probes; “Not in the vault …” with no invented data for `REFUSE` probes.
 
 Pass rule: 2–3 sentences, correct value, citation present, no invented facts.
 
@@ -100,9 +102,8 @@ Also confirm:
 | Compile + validator | 0 errors | |
 | Evaluator retrieval | 13/13 | |
 | Evaluator decisions | 13/13 | |
-| CLI #1 ICS | 31.060.99 + citation | |
-| CLI #2 price | 335 CHF + citation | |
-| CLI #3 abstention | Not in the vault | |
+| First 3 generated ANSWER probes | catalog value + citation | |
+| One generated REFUSE probe | Not in the vault | |
 | Obsidian navigation | links/graph/search work | |
 | Repo clean | clean, in sync | |
 | Public decision | yes/no | |
@@ -111,7 +112,7 @@ Also confirm:
 
 Go public only if:
 
-- all three critical CLI questions pass;
+- the generated ANSWER and REFUSE probes pass;
 - validator reports 0 errors;
 - the evaluator reports 13/13 retrieval and 13/13 decisions;
 - the repo is clean and in sync.
