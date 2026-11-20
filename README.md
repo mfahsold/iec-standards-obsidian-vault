@@ -57,7 +57,8 @@ Setup details (including optional GUI extras): [`docs/setup.md`](docs/setup.md).
 ## Contributing and licensing
 
 Contributions: [`CONTRIBUTING.md`](CONTRIBUTING.md). Code is MIT, original content
-is CC BY 4.0; IEC/ISO material is not relicensed. See [`LICENSE`](LICENSE) and
+is CC BY 4.0; IEC/ISO material is not relicensed. “Non-commercial” describes our
+intent, not a license restriction. See [`LICENSE`](LICENSE) and
 [`NOTICE.md`](NOTICE.md).
 
 This repository is informational only — no certification, legal, or conformity

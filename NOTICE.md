@@ -14,7 +14,9 @@ official catalogs and current editions of standards are authoritative.
   compilation): CC BY 4.0 — `LICENSES/CC-BY-4.0.txt`.
 - **Third-party material**: not covered by these licenses.
 
-See [`LICENSE`](LICENSE) for details.
+See [`LICENSE`](LICENSE) for details. “Non-commercial” describes our intent, not
+a restriction on CC BY 4.0, which allows commercial reuse of original content
+with attribution; IEC/ISO material is not relicensed.
 
 ## What is here
 

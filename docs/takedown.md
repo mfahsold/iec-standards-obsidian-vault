@@ -31,6 +31,6 @@ the project's public-safety rules.
 
 ## Contact
 
-GitHub issues: <https://github.com/mfahsold/iec-standards-obsidian-vault/issues>
+GitHub issues: <https://github.com/mfahsold/unofficial-iec-metadata-vault/issues>
 
 For IEC-specific questions about reuse terms, see `docs/iec-engagement.md`.

@@ -108,9 +108,9 @@ Thank you.
 
 ## Internal notes
 
-- The human-readable project name is **Unofficial IEC Metadata Vault**. The
-  GitHub URL slug `iec-standards-obsidian-vault` is intentionally kept for link
-  stability (decision 2026-11-20); disclaimers carry the legal signal.
+- The project name and GitHub URL slug are now **Unofficial IEC Metadata Vault**
+  / `unofficial-iec-metadata-vault` (renamed 2026-11-20). GitHub redirects the old
+  URL. The local folder name is unchanged for path stability.
 - Until clarification is received, the repository includes only metadata,
   original summaries, links, and short attributed quotations.
 - If IEC requests changes, the maintainers will update or remove the affected
