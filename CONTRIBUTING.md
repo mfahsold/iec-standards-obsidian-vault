@@ -70,7 +70,7 @@ string, never invented data.
 - Keep the CLI loop POSIX `sh` compatible.
 - Prefer the Python standard library; do not add dependencies without a clear
   reason.
-- Run `make validate` and, if available, `shellcheck tools/agent-loop.sh`.
+- Run `python3 tools/validate_vault.py` and `python3 -m py_compile tools/*.py`.
 - Keep prompts grounded: answers must cite the source note and must refuse to
   invent standards, ICS codes, prices, or citations.
 

@@ -15,9 +15,10 @@ supported ways to query the vault.
 | RAG index | Local, derived from the notes | Rebuild after note changes; counts vary with content |
 | Python | 3.9+ | Validator uses the standard library only |
 
-Thinking cannot be disabled through this plugin's OpenAI-compatible endpoint;
-allow enough output tokens. The model is used because it is the smallest local
-model that answered the golden questions reliably with citations.
+The CLI tool uses Ollama’s native `/api/chat`, where `think` is a supported
+top-level field. The Obsidian plugin uses the OpenAI-compatible endpoint, which
+does not expose `think`; this is why the GUI and CLI are configured differently.
+The RAG index is produced by the plugin and consumed by the CLI tool.
 
 ## Open the vault
 
@@ -31,21 +32,33 @@ canonical data store.
 
 ## CLI retrieval (portable)
 
-Requirements: Python 3.9+, Ollama with `qwen3.5:2b`. The Obsidian CLI is
-optional; the loop falls back to local file search.
+Requirements: Python 3.9+, Ollama with `qwen3.5:2b` and `nomic-embed-text`, and
+a RAG index built by the Obsidian plugin (the default path is the sibling GUI
+vault’s `.obsidian/plugins/local-llm-helper/embeddings.json`).
 
 ```sh
 ollama pull qwen3.5:2b
+ollama pull nomic-embed-text
 
-./tools/agent-loop.sh "What is IEC 62443-4-1?"
-./tools/agent-loop.sh -l 2 "What is the price of IEC 62443-4-1:2018?"
-./tools/agent-loop.sh -l 3 "Which TC owns IEC 62813:2025/COR1:2026?"
+python3 tools/agent-loop.py "What is the price of IEC 62443-4-1:2018?"
+python3 tools/agent-loop.py "What is IEC 65000-1:2099? Give me its ICS and price."
 ```
 
-Environment variables: `VAULT_DIR`, `OBSIDIAN_BIN`, `OLLAMA_BIN`,
-`OLLAMA_MODEL`. The prompt is grounded: use only the supplied note and index
-data, cite the source note, and answer "Not in the vault" instead of inventing
-facts.
+The tool implements the standard grounded-QA pipeline:
+
+1. **Retrieve** the top-5 note chunks from the RAG index by cosine similarity.
+2. **Judge sufficiency** with a structured, non-thinking call. If the evidence
+   does not contain the requested fact, the tool abstains — no model-generated
+   guess, no irrelevant notes.
+3. **Answer** with thinking enabled and Qwen’s recommended sampling
+   (`temperature 0.6`, `top_p 0.95`, `top_k 20`, `min_p 0`), citing each claim.
+
+Because the chunker omits YAML frontmatter, the tool also adds matching records
+from `index/index.json` so that `price_chf` and `ics` are available as evidence.
+This is hybrid retrieval over the project’s single canonical dataset.
+
+Environment variables: `OLLAMA_URL`, `OLLAMA_MODEL`, `EMBED_MODEL`, `RAG_INDEX`,
+`TOP_K`, `NUM_CTX`, `NUM_PREDICT`.
 
 ## RAG chat in Obsidian
 
@@ -95,7 +108,7 @@ A General-mode result is not a valid test.
 
 ```sh
 python3 tools/validate_vault.py
-shellcheck tools/agent-loop.sh   # optional
+python3 -m py_compile tools/*.py
 ```
 
 CI runs the validator on every push and pull request. It checks JSON,

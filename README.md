@@ -37,7 +37,7 @@ citations — without copying the standards themselves.
 | `index/index.json` | Machine-readable catalog for tools and agents. |
 | `index/index.md` | Master index / map of contents (MOC). |
 | `meta/` | Project charter, provenance, source list, setup notes, design history. |
-| `tools/agent-loop.sh` | Portable CLI retrieval loop (local Ollama; optional Obsidian CLI). |
+| `tools/agent-loop.py` | Grounded CLI retrieval loop via Ollama’s native API (stdlib only). |
 | `tools/validate_vault.py` | Data, link, and public-safety validator used in CI. |
 | `docs/` | Data policy, IEC engagement questionnaire. |
 
@@ -63,21 +63,16 @@ Requirements:
 
 ```sh
 # Level 1: find a note, read it, answer with a citation
-./tools/agent-loop.sh "What is IEC 62443-4-1?"
-
-# Level 2: also query index/index.json
-./tools/agent-loop.sh -l 2 "What is the price of IEC 62443-4-1:2018?"
-
-# Level 3: also show incoming links
-./tools/agent-loop.sh -l 3 "Which technical committee owns IEC 62813:2025/COR1:2026?"
+python3 tools/agent-loop.py "What is the price of IEC 62443-4-1:2018?"
+python3 tools/agent-loop.py "What is IEC 65000-1:2099? Give me its ICS and price."
 ```
 
 Environment variables:
 
 ```sh
-VAULT_DIR=/path/to/vault \
+OLLAMA_URL=http://localhost:11434 \
 OLLAMA_MODEL=qwen3.5:2b \
-./tools/agent-loop.sh "What are the ICS tags of IEC 62813:2025/COR1:2026?"
+python3 tools/agent-loop.py "What are the ICS tags of IEC 62813:2025/COR1:2026?"
 ```
 
 The prompt is deliberately strict: use only the supplied note/index data, cite
@@ -111,7 +106,7 @@ quotations from public pages are attributed and linked. See
 
 ```sh
 python3 tools/validate_vault.py
-make lint
+python3 -m py_compile tools/*.py
 ```
 
 The validator checks:

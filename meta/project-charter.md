@@ -54,8 +54,12 @@ repository/
 ├─ processes/, electropedia/, guides/, news/
 ├─ docs/                     data policy, IEC engagement, setup, provenance
 ├─ meta/                     charter, context
-└─ tools/                    agent-loop.sh, validate_vault.py
+└─ tools/                    agent-loop.py, validate_vault.py
 ```
+
+The CLI tool uses hybrid retrieval (RAG chunks + `index/index.json`), a
+structured sufficiency check with explicit abstention, and grounded generation
+with thinking enabled. The GUI uses the plugin’s built-in RAG prompt.
 
 Verified stack: Obsidian 1.15.1, Local LLM Helper 2.6.2, Ollama 0.40.15,
 `qwen3.5:2b` (8,192 tokens), `nomic-embed-text` (768 dims). The RAG index is
@@ -82,10 +86,12 @@ local and rebuilt after note changes. Plugin settings and the index live in the 
 - Answer checked against `index/index.json` / frontmatter.
 - Known failure patterns guarded (no invented data, no "IEC standards are
   free", no missing citations).
+- Out-of-vault questions abstain before generation; unrelated notes are never
+  substituted for a missing answer.
 
 ### A release
 
-- Validator and shellcheck pass; working tree clean.
+- Validator and Python compile check pass; working tree clean.
 - No new orphans in Obsidian.
 - Documentation in English and consistent with the verified stack.
 - Commit message states the evidence, not the intention.
