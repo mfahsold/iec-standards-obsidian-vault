@@ -2,8 +2,14 @@
 
 Source: <https://webstore.iec.ch/en/terms-conditions/> (terms dated 2025-08-04)
 
-This is a short, unofficial summary for contributors. It is **not legal
-advice**. Read the official terms before reusing IEC material.
+This is a short, unofficial summary for contributors. It is **not legal advice**
+and is **not the license of this repository**. Read the official terms before
+reusing IEC material.
+
+These terms govern IEC Products (publications, drafts and value-added products)
+ordered from the IEC Webstore. They are summarized here for context; this project
+does not sell, purchase, or distribute IEC Products and uses only public
+bibliographic metadata and links.
 
 ## Copyright
 

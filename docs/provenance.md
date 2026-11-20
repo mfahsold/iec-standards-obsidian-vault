@@ -54,9 +54,17 @@ dates.
 | Third-party quotations | Original terms; short, attributed, linked |
 
 The vault contains no IEC or ISO document bodies, PDFs, or long verbatim
-excerpts. It is not affiliated with or endorsed by any standards body.
+excerpts. It is **not official IEC or ISO communication or documentation of any
+kind**, is not affiliated with or endorsed by any standards body, and is an
+unofficial aggregate of public information that may contain errors.
 
-The exact reuse terms for IEC-derived metadata and its use in a local retrieval
+The IEC Webstore Terms and Conditions (version 2025-08-04) govern IEC Products
+sold through the Webstore: copyright, no copying or redistribution without written
+permission, no scraping, and no use of those publications in AI/ML systems without
+specific permission. This project uses only public bibliographic metadata and
+links, not IEC Products, and does not ingest purchased IEC content into any model
+or index. We make no claim that those terms do or do not extend to our metadata;
+the exact reuse terms and the use of IEC-derived metadata in a local retrieval
 tool are being clarified with the IEC. See `docs/iec-engagement.md`. Any changes
 requested by the IEC will be applied to the catalog and documentation.
 

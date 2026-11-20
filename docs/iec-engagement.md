@@ -38,8 +38,9 @@ service.
 
 What attribution wording and placement would IEC prefer? For example:
 
-> “IEC standard references and metadata are used for identification only.
-> Source: IEC Webstore. This project is not affiliated with or endorsed by IEC.”
+> “IEC references and metadata used for identification only. Source: IEC Webstore.
+> Unofficial public-information aggregate; not official IEC documentation; may
+> contain errors; not affiliated with IEC.”
 
 ### 4. Names and marks
 
@@ -85,7 +86,10 @@ catalogs public metadata about IEC standards (references, titles, editions,
 committees, ICS codes, dates, prices with source links) and provides original
 short summaries. It contains no IEC document bodies, PDFs, or long excerpts.
 The metadata is also used in a local, offline retrieval tool that cites the
-catalog. We are not affiliated with IEC and do not use IEC logos.
+catalog. We are not affiliated with IEC and do not use IEC logos. We state
+prominently that this is not official IEC communication or documentation of any
+kind, that it is an unofficial aggregate of public information, and that it may
+contain errors.
 
 Could you please confirm whether this use is acceptable, what attribution you
 prefer, and whether you have any requirements for price snapshots or short

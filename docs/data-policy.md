@@ -1,7 +1,9 @@
 # Data Policy — Public, Copyright-Safe Metadata
 
-This project is a **metadata and retrieval** knowledge base. It is not a
-replacement for the official standards, and it does not distribute standard
+This project is an independent, unofficial **metadata and retrieval** knowledge
+base. It is an aggregate of publicly available information, **not official IEC or
+ISO communication or documentation of any kind**, and may contain errors. It is
+not a replacement for the official standards and does not distribute standard
 texts.
 
 ## What we include
@@ -88,5 +90,5 @@ and remove or amend the material promptly.
 
 - [`NOTICE.md`](../NOTICE.md) — third-party notices and disclaimers.
 - [`docs/iec-engagement.md`](iec-engagement.md) — questions prepared for IEC.
-- [`docs/provenance.md`](../docs/provenance.md) — summary of IEC terms.
-- [`docs/provenance.md`](../docs/provenance.md) — source list.
+- [`docs/provenance.md`](../docs/provenance.md) — source list and licensing status.
+- [`processes/webstore-terms.md`](../processes/webstore-terms.md) — summary of IEC terms.

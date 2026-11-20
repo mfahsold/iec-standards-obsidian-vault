@@ -1,7 +1,8 @@
 # Master Index (MOC)
 
 Data as of 2026-11-20. Source list and licensing status: `docs/provenance.md`.
-Not affiliated with IEC or ISO; no document bodies are included.
+Independent, unofficial aggregate of public information — not official IEC or ISO
+communication or documentation, may contain errors; no document bodies included.
 
 ## Entry points
 

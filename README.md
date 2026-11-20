@@ -4,10 +4,13 @@ A local-first, open-source Obsidian vault and retrieval stack for **public
 metadata about IEC/ISO standards** — built for humans, agents, and
 citation-grounded question answering.
 
-> **Not affiliated with IEC or ISO.** This repository contains **no standard
-> document bodies**, no PDFs, and no long verbatim excerpts. It contains public
-> catalog metadata, links, and original summaries. See
-> [`NOTICE.md`](NOTICE.md) and [`docs/data-policy.md`](docs/data-policy.md).
+**NOT OFFICIAL IEC/ISO MATERIAL.** This is an independent, unofficial aggregate of
+publicly available information. It is **not official IEC or ISO communication,
+documentation, catalog, or a source of record of any kind**, is not affiliated with
+or endorsed by IEC/ISO, **may contain errors or outdated values**, and contains
+**no standard document bodies**, PDFs, or long verbatim excerpts. Only the official
+IEC/ISO catalogs and current editions are authoritative. See [`NOTICE.md`](NOTICE.md)
+and [`docs/data-policy.md`](docs/data-policy.md).
 
 ## Why this exists
 
@@ -136,6 +139,10 @@ metadata with the IEC; see [`docs/iec-engagement.md`](docs/iec-engagement.md).
 
 ## Disclaimer
 
-This project is informational. It is not certification, legal, or conformity
-advice. Always verify against the official IEC/ISO catalog and the current
-edition of a standard before making commercial or safety-critical decisions.
+This repository is an independent, unofficial aggregate of publicly available
+information. It is **not official IEC or ISO communication or documentation of any
+kind**, is not affiliated with or endorsed by IEC/ISO, and may contain errors,
+omissions, or outdated data. It is informational only and provides no
+certification, legal, or conformity advice. Always verify against the official
+IEC/ISO catalog and the current edition of a standard before making commercial or
+safety-critical decisions.

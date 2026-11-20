@@ -4,7 +4,8 @@ Copyright (c) 2026 IEC Standards Knowledge Vault contributors
 
 This repository uses two licenses:
 
-- **Code** — scripts and executable tooling (`tools/agent-loop.sh`,
+- **Code** — scripts and executable tooling (`tools/agent-loop.py`,
+  `tools/build-index.py`, `tools/evaluate.py`, `tools/probes.py`,
   `tools/validate_vault.py`) are licensed under the **MIT License**. Full text:
   [LICENSES/MIT.txt](LICENSES/MIT.txt).
 - **Original content** — notes, documentation, tables, original summaries and the
@@ -22,6 +23,11 @@ licensed by this project. They remain the property of their respective owners an
 referenced for identification only. See [NOTICE.md](NOTICE.md).
 
 No IEC document bodies are included in this repository.
+
+This repository is **not official IEC or ISO communication, documentation, or a
+source of record of any kind**. It is an independent, unofficial aggregate of
+publicly available information and may contain errors. Always verify against the
+official IEC/ISO catalog and the current editions of standards.
 
 ## SPDX identifiers
 

@@ -1,5 +1,13 @@
 # Notice — Scope of the License and Attribution
 
+**IMPORTANT — NOT OFFICIAL IEC/ISO MATERIAL.** This repository is an independent,
+unofficial aggregate of publicly available information about IEC and ISO/IEC
+publications. It is **not official IEC or ISO communication, documentation, catalog,
+or a source of record of any kind**, and it is not affiliated with, endorsed by, or
+sponsored by IEC or ISO. It may contain errors, omissions, or outdated values.
+Only the official IEC/ISO catalogs and the current editions of standards are
+authoritative.
+
 This repository combines original project content with references to publicly available
 information about IEC and ISO/IEC publications. The licenses in [LICENSE](LICENSE) apply
 only to the original content of this repository, to the extent the contributors hold
@@ -38,9 +46,17 @@ the International Organization for Standardization (ISO). They are referenced he
 identification and citation purposes only. Nothing in the MIT or CC BY 4.0 licenses grants
 rights to IEC or ISO publication content, trademarks or other intellectual property.
 
-This project is **not affiliated with, endorsed by, or sponsored by IEC or ISO**. For the
-authoritative text of a standard, its current price and its legal terms of use, always
-consult the official IEC Webstore: <https://webstore.iec.ch/>.
+The IEC Webstore Terms and Conditions (version 2025-08-04) state that IEC Products sold
+through the Webstore are protected by copyright, may not be copied or redistributed
+without written permission, may not be scraped, and may not be used to develop AI or
+machine-learning systems without specific permission. This repository does **not** use or
+distribute IEC Products as defined by those terms: it contains only public bibliographic
+metadata, links, original summaries, and short attributed quotations. It does not ingest
+purchased IEC documents into any model or index. The maintainers are clarifying the
+reuse of IEC-derived metadata with IEC; see `docs/iec-engagement.md`.
+
+For the authoritative text of a standard, its current price and its legal terms of use,
+always consult the official IEC Webstore: <https://webstore.iec.ch/>.
 
 ## Electropedia / IEV
 
@@ -56,7 +72,6 @@ with attribution.
 This repository references but does not bundle third-party software or models:
 
 - **Obsidian** — <https://obsidian.md/> (proprietary application; separate license).
-- **Local LLM Helper** — Obsidian community plugin (separate license).
 - **Ollama** — <https://ollama.com/> (open-source runtime; separate license).
 - **Qwen models** — separate model license from the model publisher.
 - **nomic-embed-text** — separate model license.
