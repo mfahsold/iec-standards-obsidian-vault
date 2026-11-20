@@ -99,7 +99,9 @@ python3 tools/agent-loop.py "What is IEC 65000-1:2099? Give me its ICS and price
 
 The tool implements the standard grounded-QA pipeline:
 
-1. **Retrieve** the top-5 note chunks from the RAG index by cosine similarity.
+1. **Retrieve** the top-5 chunks with hybrid search: dense cosine similarity
+   plus a BM25 lexical leg (distinctive tokens only), merged with Reciprocal
+   Rank Fusion (`RRF_K=60`). Set `HYBRID=0` for dense-only comparison.
 2. **Judge sufficiency** with a structured, non-thinking call. If the evidence
    does not contain the requested fact, the tool abstains — no model-generated
    guess, no irrelevant notes.
@@ -121,21 +123,52 @@ After adding or changing notes:
 python3 tools/build-index.py
 ```
 
-The builder chunks every Markdown file (800 characters, 100 overlap), embeds the
-chunks with `nomic-embed-text`, and writes `index/embeddings.json`. The file is
-gitignored; it is local state derived from the notes. Nomic task prefixes
-(`search_document:` for chunks, `search_query:` for questions) and an 8K
-embedding context are applied; chat calls keep the model resident for 10 minutes.
+Chunks follow Markdown headings (~800 characters, 100 overlap). Each embedded
+chunk receives a deterministic header (`Document: <ref> / Section: <heading>`);
+the clean text is kept separately for display. Nomic task prefixes
+(`search_document:` / `search_query:`) and an 8K embedding context are applied;
+chat calls keep the model resident for 10 minutes. Output is gitignored local
+state.
 
-## Golden questions
+## Evaluation
 
-| Question | Expected |
-| --- | --- |
-| What are the ICS tags of IEC 62813:2025/COR1:2026? | 31.060.99, cited to that note |
-| What is the price of IEC 62443-4-1:2018? | 335 CHF, "as of collection date", catalog link |
-| What is IEC 65000-1:2099? Give its ICS and price. | "Not in the vault"; no invented data |
+The golden set lives in `tools/golden-questions.json` (9 answerable + 3
+out-of-vault probes). Run the fast check — retrieval and sufficiency decisions:
 
-Only `tools/agent-loop.py` results are valid evidence.
+```sh
+python3 tools/evaluate.py
+```
+
+For the full check, including generated answers and citations (slow):
+
+```sh
+python3 tools/evaluate.py --generate
+```
+
+The harness reports retrieval hit rate, decision accuracy, and — with
+`--generate` — answer accuracy. Every change to chunking, embeddings, or prompts
+should be re-evaluated with this command.
+
+Current baseline: retrieval **12/12**, sufficiency decisions **10/12**. Two
+open-ended/multi-part cases are a known limitation of the 2B judge and are
+tracked; factual and out-of-vault cases are correct. If generation returns no
+content, the model's thinking consumed the output budget; raise `NUM_PREDICT`
+(e.g. 16384). Under Ollama contention, stop unused models with `ollama stop`.
+
+### Embedding model A/B
+
+The index builder can write an alternative index for comparison:
+
+```sh
+ollama pull qwen3-embedding:0.6b
+EMBED_MODEL=qwen3-embedding:0.6b RAG_INDEX=index/embeddings-qwen3.json \
+  python3 tools/build-index.py
+RAG_INDEX=index/embeddings-qwen3.json EMBED_MODEL=qwen3-embedding:0.6b \
+  python3 tools/evaluate.py
+```
+
+Compare retrieval hit rate and decision accuracy against the nomic baseline
+before switching. Both index files are gitignored.
 
 ## Validation
 

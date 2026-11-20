@@ -15,6 +15,7 @@ import argparse
 import json
 import math
 import os
+import re
 import sys
 import urllib.request
 from pathlib import Path
@@ -32,7 +33,8 @@ Ignore differences in punctuation, spaces and hyphens when comparing standard
 identifiers; a value stated for the same standard is sufficient even if its
 formatting differs from the question. Do not demand that a value be labelled
 "official" or "complete": if the excerpt states the requested attribute for the
-referenced document, that is sufficient.
+referenced document, that is sufficient. Judge only whether the needed facts are
+present, not whether you can format them into the answer the question requests.
 
 Examples:
 - Question: "What are the ICS tags of IEC 62813:2025/COR1:2026?", excerpt:
@@ -79,39 +81,104 @@ def cosine(a: List[float], b: List[float]) -> float:
     return dot / norm if norm else 0.0
 
 
+def tokenize(text: str) -> List[str]:
+    return [token for token in re.findall(r"\w+", text.lower()) if len(token) > 1]
+
+
+def bm25_rank(question: str, chunks: List[Dict[str, Any]]) -> List[int]:
+    """Lexical ranking for exact tokens (standard refs, ICS codes, dates)."""
+    # Only distinctive tokens: codes, references, years. Common words ("what",
+    # "standard", "price") add noise to the lexical leg.
+    query = [token for token in tokenize(question)
+             if any(char.isdigit() for char in token) or len(token) >= 6]
+    docs = [tokenize(chunk["excerpt"]) for chunk in chunks]
+    count = len(docs)
+    if not count:
+        return []
+    doc_freq: Dict[str, int] = {}
+    for doc in docs:
+        for token in set(doc):
+            doc_freq[token] = doc_freq.get(token, 0) + 1
+    avg_len = sum(len(doc) for doc in docs) / count
+    k1, b = 1.2, 0.75
+    scored: List[Tuple[float, int]] = []
+    for index, doc in enumerate(docs):
+        score = 0.0
+        for token in query:
+            freq = doc.count(token)
+            if not freq:
+                continue
+            df = doc_freq.get(token, 0)
+            idf = math.log(1 + (count - df + 0.5) / (df + 0.5))
+            denominator = freq + k1 * (1 - b + b * len(doc) / avg_len) if avg_len else freq
+            score += idf * (freq * (k1 + 1)) / denominator
+        scored.append((score, index))
+    scored.sort(reverse=True)
+    return [index for _, index in scored]
+
+
+def rrf_merge(rankings: List[List[int]], k: int = 60) -> List[int]:
+    """Reciprocal Rank Fusion: score = sum(1 / (k + rank))."""
+    scores: Dict[int, float] = {}
+    for ranking in rankings:
+        for rank, index in enumerate(ranking, start=1):
+            scores[index] = scores.get(index, 0.0) + 1.0 / (k + rank)
+    return [index for index, _ in sorted(scores.items(), key=lambda item: -item[1])]
+
+
 def retrieve(question: str, index_path: Path, url: str, embed_model: str,
              top_k: int) -> List[Dict[str, str]]:
     index = json.loads(index_path.read_text(encoding="utf-8"))
-    query_vector = embed(question, url, embed_model)
-    ranked: List[Tuple[float, Dict[str, Any]]] = []
+    chunks: List[Dict[str, Any]] = []
     for entry in index["embeddings"]:
-        score = cosine(query_vector, entry["vector"])
-        if score > 0:
-            ranked.append((score, entry))
-    ranked.sort(key=lambda item: item[0], reverse=True)
-    return [
-        {
+        chunks.append({
             "citationLabel": f"[Source: {entry['metadata']['source']}]",
-            "excerpt": entry["content"],
-        }
-        for _, entry in ranked[:top_k]
+            "excerpt": entry.get("display", entry["content"]),
+            "vector": entry["vector"],
+        })
+
+    query_vector = embed(question, url, embed_model)
+    vector_scores = [(cosine(query_vector, chunk["vector"]), index)
+                     for index, chunk in enumerate(chunks)]
+    vector_scores = [item for item in vector_scores if item[0] > 0]
+    vector_scores.sort(reverse=True)
+    vector_rank = [index for _, index in vector_scores]
+
+    rankings = [vector_rank]
+    if os.environ.get("HYBRID", "1") == "1":
+        rankings.append(bm25_rank(question, chunks))
+    order = rrf_merge(rankings, int(os.environ.get("RRF_K", "60")))
+
+    return [
+        {"citationLabel": chunks[index]["citationLabel"],
+         "excerpt": chunks[index]["excerpt"]}
+        for index in order[:top_k]
     ]
 
 
-def structured_context(question: str, index_json: Path, top_k: int = 3) -> List[Dict[str, str]]:
-    """Add machine-readable catalog records for referenced standards.
+def structured_context(question: str, index_json: Path, top_k: int = 2) -> List[Dict[str, str]]:
+    """Add catalog records only for an exactly referenced standard.
 
     The RAG chunker omits YAML frontmatter, so price_chf and ics live only in
-    index/index.json. Hybrid retrieval (chunks + structured records) is the
-    project's single-source-of-truth design.
+    index/index.json. Substring matching here pulled in unrelated entries and
+    inflated the prompt; exact reference matching is the safe rule.
     """
     normalize = lambda text: "".join(ch for ch in text.lower() if ch.isalnum())
-    q = normalize(question)
+    match = re.search(
+        r"(?:IEC|ISO|CISPR)(?:[ /-]*(?:TR|TS|PAS|TRF|GUIDE))?[ /-]*[0-9][0-9A-Za-z./:_-]*",
+        question,
+        re.I,
+    )
+    if not match:
+        return []
+    wanted = normalize(match.group(0))
     data = json.loads(index_json.read_text(encoding="utf-8"))
     hits = [
         entry for entry in data
-        if normalize(str(entry.get("ref", ""))) in q
-        or normalize(str(entry.get("name", ""))) in q
+        if wanted in {
+            normalize(str(entry.get("ref", ""))),
+            normalize(str(entry.get("name", ""))),
+        }
     ]
     return [
         {

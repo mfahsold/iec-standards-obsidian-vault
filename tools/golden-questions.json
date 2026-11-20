@@ -1,0 +1,74 @@
+[
+  {
+    "question": "What are the ICS tags of IEC 62813:2025/COR1:2026?",
+    "expect_refusal": false,
+    "expected": ["31.060.99"],
+    "source": "IEC-62813-2025-COR1-2026"
+  },
+  {
+    "question": "What is the price of IEC 62443-4-1:2018?",
+    "expect_refusal": false,
+    "expected": ["335", "CHF"],
+    "source": "IEC-62443-4-1-2018"
+  },
+  {
+    "question": "What is IEC 62443-4-1?",
+    "expect_refusal": false,
+    "expected": ["secure", "development"],
+    "source": "IEC-62443-4-1-2018"
+  },
+  {
+    "question": "Which technical committee owns IEC 62813:2025/COR1:2026, and what is its title?",
+    "expect_refusal": false,
+    "expected": ["TC 40", "Resistors"],
+    "source": "IEC-62813-2025-COR1-2026"
+  },
+  {
+    "question": "Compare IEC 62443-4-1:2018 and IEC 62443-4-2:2019 - who is each for?",
+    "expect_refusal": false,
+    "expected": ["development", "components"],
+    "source": "IEC-62443-4-1-2018"
+  },
+  {
+    "question": "Which standards in this vault are PAS documents? What does PAS mean here?",
+    "expect_refusal": false,
+    "expected": ["PAS", "document type"],
+    "source": "publicly-available-specifications"
+  },
+  {
+    "question": "What is IEC 65000-1:2099? Give me its ICS and price.",
+    "expect_refusal": true,
+    "expected": [],
+    "source": ""
+  },
+  {
+    "question": "Why are IEC/ISO standards criticized? Name three patterns from the vault.",
+    "expect_refusal": false,
+    "expected": ["bureaucratic", "85"],
+    "source": "context"
+  },
+  {
+    "question": "Is ISO 14678 about the Internet?",
+    "expect_refusal": false,
+    "expected": ["No", "adhesives"],
+    "source": "ISO-14678-2005"
+  },
+  {
+    "question": "What is IEC 65000-2:2099? Give me its price.",
+    "expect_refusal": true,
+    "expected": [],
+    "source": ""
+  },
+  {
+    "question": "What is the price of IEC 99999:2020?",
+    "expect_refusal": true,
+    "expected": [],
+    "source": ""
+  },
+  {
+    "question": "Which TC owns IEC 12345:1999?",
+    "expect_refusal": true,
+    "expected": [],
+    "source": ""
+  }
+]
