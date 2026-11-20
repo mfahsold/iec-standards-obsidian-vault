@@ -6,7 +6,7 @@ Work through the checks in order and tick them. Live values come from
 ## A. Local data and code
 
 ```sh
-cd unofficial-iec-metadata-vault
+cd <repo-folder>    # new clones: unofficial-iec-metadata-vault; this workspace: iec-standards-obsidian-vault
 python3 tools/build-index.py
 python3 tools/config.py --show
 python3 -m py_compile tools/*.py

@@ -51,7 +51,7 @@ Obsidian vault and a machine-readable dataset with a local retrieval stack.
 
 ```sh
 git clone https://github.com/mfahsold/unofficial-iec-metadata-vault.git
-cd unofficial-iec-metadata-vault
+cd unofficial-iec-metadata-vault   # in this workspace: cd iec-standards-obsidian-vault
 
 # Install Ollama from https://ollama.com/ and start it, then:
 ollama pull qwen3.5:2b
