@@ -94,6 +94,8 @@ python3 tools/validate_vault.py
 python3 -m py_compile tools/*.py
 ```
 
+For a manual pre-release check, follow [`docs/testing.md`](docs/testing.md).
+
 The validator checks:
 
 - JSON validity and index/note consistency;
