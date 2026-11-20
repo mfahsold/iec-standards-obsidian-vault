@@ -2,7 +2,7 @@
 """Grounded question answering for the IEC metadata vault.
 
 Pipeline (standard RAG with explicit abstention):
-  1. retrieve note chunks from the Local LLM Helper RAG index
+  1. retrieve note chunks from the local RAG index
   2. judge whether the evidence is sufficient (structured, non-thinking call)
   3. answer with citations (thinking call) or abstain
 
@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_INDEX = ROOT.parent / ".obsidian/plugins/local-llm-helper/embeddings.json"
+DEFAULT_INDEX = ROOT / "index" / "embeddings.json"
 INDEX_JSON = ROOT / "index" / "index.json"
 
 JUDGE_SYSTEM = """You evaluate evidence sufficiency for a question-answering system.

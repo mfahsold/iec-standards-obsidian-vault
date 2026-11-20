@@ -8,6 +8,7 @@ desktop.ini
 .trash/
 
 # Local models, indexes and caches
+index/embeddings.json
 *.pdf
 *.gguf
 *.bin

@@ -55,8 +55,8 @@ maintainers may remove content that does not meet these rules.
    python3 tools/validate_vault.py
    ```
 
-7. If you use the Obsidian GUI with the Local LLM Helper plugin, rebuild the
-   RAG index after adding files. See [`docs/setup.md`](docs/setup.md).
+7. Rebuild the RAG index after adding files:
+   `python3 tools/build-index.py`. See [`docs/setup.md`](docs/setup.md).
 
 ## Frontmatter schema
 

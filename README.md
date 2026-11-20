@@ -78,22 +78,6 @@ python3 tools/agent-loop.py "What are the ICS tags of IEC 62813:2025/COR1:2026?"
 The prompt is deliberately strict: use only the supplied note/index data, cite
 the source note, and say “Not in the vault” instead of inventing facts.
 
-## Optional: exploratory chat in Obsidian (not authoritative)
-
-The vault was also tested with the **Local LLM Helper** community plugin and
-Ollama:
-
-- Chat model: `qwen3.5:2b`
-- Embedding model: `nomic-embed-text`
-- Use **Notes / RAG chat**, not **General chat**. General chat sends no note
-  context and will hallucinate.
-- After adding notes, reload the plugin before rebuilding the index (the plugin
-  caches its file list).
-
-This chat cannot run our abstention stage and cannot disable thinking, so it is
-not a QA authority. Use the CLI tool for verified answers. Details:
-[`docs/setup.md`](docs/setup.md).
-
 ## Data policy in one paragraph
 
 We include public metadata (references, titles, editions, dates, committees,

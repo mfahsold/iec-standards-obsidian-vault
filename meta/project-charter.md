@@ -59,12 +59,12 @@ repository/
 
 The CLI tool uses hybrid retrieval (RAG chunks + `index/index.json`), a
 structured sufficiency check with explicit abstention, and grounded generation
-with thinking enabled. The GUI uses the plugin’s built-in RAG prompt.
+with thinking enabled. `tools/build-index.py` produces the local index from the
+vault notes; no chat plugin is required.
 
-Verified stack: Obsidian 1.15.1, Local LLM Helper 2.6.2, Ollama 0.40.15,
-`qwen3.5:2b` (8,192 tokens), `nomic-embed-text` (768 dims). The RAG index is
-local and rebuilt after note changes. Plugin settings and the index live in the GUI vault's
-`.obsidian/`, outside git.
+Verified stack: Obsidian 1.15.1 (navigation only), Ollama 0.40.15,
+`qwen3.5:2b` (8,192 tokens), `nomic-embed-text` (768 dims). The RAG index at
+`index/embeddings.json` is gitignored and rebuilt after note changes.
 
 ## 5. Definition of Done
 
@@ -76,17 +76,14 @@ local and rebuilt after note changes. Plugin settings and the index live in the 
 - Entry present in `index/index.json`, `standards/index-standards.md`, and
   `index/index.md`.
 - Note is linked from the catalog/MOC; `python3 tools/validate_vault.py` passes.
-- RAG index rebuilt with a plugin reload first if files were added.
+- RAG index rebuilt with `python3 tools/build-index.py` if files were added.
 
 ### A prompt, retrieval or configuration change
 
 - Golden question with evidence-backed answer defined (`docs/setup.md`).
-- Passes on the **CLI path**, which is the authoritative QA implementation
-  (hybrid retrieval, sufficiency judgement, abstention, thinking generation).
-- The Obsidian chat is a navigation/exploration aid, not an equivalent test
-  surface: the third-party plugin uses an OpenAI-compatible endpoint that cannot
-  run our abstention stage or control thinking. Any GUI answer used as evidence
-  must be re-verified with the CLI tool.
+- Passes on the **CLI path**, the only QA implementation (hybrid retrieval,
+  sufficiency judgement, abstention, thinking generation).
+- Obsidian has no chat role; it is used for navigation and editing only.
 - Answer checked against `index/index.json` / frontmatter.
 - Known failure patterns guarded (no invented data, no "IEC standards are
   free", no missing citations).
@@ -104,7 +101,7 @@ local and rebuilt after note changes. Plugin settings and the index live in the 
 
 - Coverage is 23 verified entries; absence is not evidence that a standard does
   not exist.
-- The chat panel opens in General mode by default; use Notes/RAG for facts.
+- No GUI chat is provided; all QA goes through `tools/agent-loop.py`.
 - Prices and dates are collection-time snapshots.
 - External commentary in `meta/context.md` is attributed, not a project position.
 - No conformity advice.

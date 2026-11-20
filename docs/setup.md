@@ -1,26 +1,23 @@
 # Setup and Toolchain
 
-This is the single setup reference. It records the verified stack and the two
-supported ways to query the vault.
+This is the single setup reference. It records the verified stack and the one
+supported QA path.
 
 ## Verified versions and capabilities
 
 | Component | Version | Role |
 | --- | --- | --- |
-| Obsidian | 1.15.1 | Vault GUI; CLI available |
-| Local LLM Helper | 2.6.2 | Community plugin; general chat + grounded RAG chat |
+| Obsidian | 1.15.1 | Vault GUI for navigation; no chat plugin required |
 | Ollama | 0.40.15 | Local inference and embedding server (`localhost:11434`) |
 | Chat model | `qwen3.5:2b` | Thinking enabled; 8,192-token budget |
 | Embedding model | `nomic-embed-text` | 768 dimensions |
-| RAG index | Local, derived from the notes | Rebuild after note changes; counts vary with content |
-| Python | 3.9+ | Validator uses the standard library only |
+| RAG index | `index/embeddings.json` (gitignored) | Built by `tools/build-index.py` |
+| Python | 3.9+ | All tools use the standard library only |
 
-The CLI tool is the authoritative QA path. The Obsidian chat is an exploration
-aid only: the third-party plugin hardcodes the OpenAI-compatible endpoint, where
-`think` and `/no_think` are ignored and our sufficiency/abstention stage cannot be
-injected. Do not treat a GUI answer as verified evidence; re-run the question
-with `tools/agent-loop.py`. The RAG index is produced by the plugin and consumed
-by the CLI tool.
+There is no third-party chat plugin. The CLI tool is the only QA path: it
+retrieves from the local index, judges sufficiency, abstains when evidence is
+missing, and generates cited answers with Ollama’s native API. Obsidian is used
+only for navigation and editing the vault.
 
 ## Open the vault
 
@@ -35,12 +32,12 @@ canonical data store.
 ## CLI retrieval (portable)
 
 Requirements: Python 3.9+, Ollama with `qwen3.5:2b` and `nomic-embed-text`, and
-a RAG index built by the Obsidian plugin (the default path is the sibling GUI
-vault’s `.obsidian/plugins/local-llm-helper/embeddings.json`).
+the local index at `index/embeddings.json` (build it as shown below).
 
 ```sh
 ollama pull qwen3.5:2b
 ollama pull nomic-embed-text
+python3 tools/build-index.py
 
 python3 tools/agent-loop.py "What is the price of IEC 62443-4-1:2018?"
 python3 tools/agent-loop.py "What is IEC 65000-1:2099? Give me its ICS and price."
@@ -62,41 +59,19 @@ This is hybrid retrieval over the project’s single canonical dataset.
 Environment variables: `OLLAMA_URL`, `OLLAMA_MODEL`, `EMBED_MODEL`, `RAG_INDEX`,
 `TOP_K`, `NUM_CTX`, `NUM_PREDICT`.
 
-## RAG chat in Obsidian
-
-Install the Local LLM Helper plugin and configure:
-
-- Endpoint: `http://localhost:11434`
-- Model: `qwen3.5:2b`
-- Embedding model: `nomic-embed-text`
-- Max tokens: `8192`
-- Temperature: `0.3`
-
-Settings live in the **GUI vault's** `.obsidian/plugins/local-llm-helper/data.json`,
-not in the repository's `.obsidian/`.
-
-Use **Notes/RAG chat**, never **General chat**:
-
-- Command palette: `Chat: Notes (RAG)` (`local-llm-helper:rag-chat`)
-- Panel: the **Notes** toggle (not "General")
-- Ribbon: `Chat with notes (RAG)`
-
-General chat sends no note context and will fabricate answers. RAG chat retrieves
-note chunks and cites them.
-
-### Rebuild the index
+## Rebuild the index
 
 After adding or changing notes:
 
 ```sh
-obsidian plugin:reload id=local-llm-helper
-obsidian command id=local-llm-helper:index-notes-rag
+python3 tools/build-index.py
 ```
 
-The reload is required first: the plugin caches the file list and silently skips
-new notes otherwise.
+The builder chunks every Markdown file (800 characters, 100 overlap), embeds the
+chunks with `nomic-embed-text`, and writes `index/embeddings.json`. The file is
+gitignored; it is local state derived from the notes.
 
-### Golden questions
+## Golden questions
 
 | Question | Expected |
 | --- | --- |
@@ -104,7 +79,7 @@ new notes otherwise.
 | What is the price of IEC 62443-4-1:2018? | 335 CHF, "as of collection date", catalog link |
 | What is IEC 65000-1:2099? Give its ICS and price. | "Not in the vault"; no invented data |
 
-A General-mode result is not a valid test.
+Only `tools/agent-loop.py` results are valid evidence.
 
 ## Validation
 

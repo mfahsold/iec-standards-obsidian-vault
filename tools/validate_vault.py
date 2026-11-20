@@ -465,6 +465,8 @@ def check_links() -> None:
 
 def check_public_safety() -> None:
     for path in iter_files():
+        if path.name == "embeddings.json":
+            continue
         if path.suffix.lower() == ".pdf":
             error(f"PDF found in repository: {rel(path)}")
             continue
