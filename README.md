@@ -1,4 +1,4 @@
-# IEC Standards Knowledge Vault
+# Unofficial IEC Metadata Vault
 
 A local-first, offline, independent knowledge base of **public metadata about
 IEC/ISO standards**, plus a grounded CLI that answers questions with citations.

@@ -57,5 +57,5 @@ third-party catalogues used only for identifiers. Each retains its own license.
 ## Prices, dates, and advice
 
 Prices and dates are collection-time snapshots, not authoritative. This project
-provides no legal, certification, or conformity advice. Rights-holder requests:
-open an issue for prompt review and removal.
+provides no legal, certification, or conformity advice. Rights-holder and
+takedown requests: [`docs/takedown.md`](docs/takedown.md).

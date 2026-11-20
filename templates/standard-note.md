@@ -56,7 +56,7 @@ Original paraphrase of the public product page. No document bodies or long verba
 
 ## Metadata
 
-- **Data as of:** YYYY-MM-DD — data from the official product page (manual collection).
+- **Data as of:** YYYY-MM-DD — data from the official public product page.
 - **Price:** CHF <...> — snapshot from the collection date (see [docs/provenance.md](../docs/provenance.md)).
 - **Languages:** English.
 

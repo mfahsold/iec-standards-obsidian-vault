@@ -4,6 +4,6 @@
   "version": "0.1.0",
   "minAppVersion": "1.4.0",
   "description": "Ask the IEC metadata vault from Obsidian. Thin UI wrapper around tools/agent-loop.py; no network service.",
-  "author": "IEC Standards Knowledge Vault contributors",
+  "author": "Unofficial IEC Metadata Vault contributors",
   "isDesktopOnly": true
 }

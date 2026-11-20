@@ -1,8 +1,10 @@
 # Provenance and Licensing Status
 
-Data was collected manually from public pages on 2026-11-19/20. No Webstore
-scraping was used. Third-party aggregators appear only as identifier references
-in `standards/classics.md`. The current catalog size is reported by
+Data was taken from public pages on 2026-11-19/20. No automated Webstore scraper
+was used. Whether systematic manual collection of public catalog pages counts as
+“data mining” under the IEC terms is one of the questions submitted to IEC;
+see `docs/iec-engagement.md`. Third-party aggregators appear only as identifier
+references in `standards/classics.md`. The current catalog size is reported by
 `python3 tools/config.py --show`.
 
 ## Sources

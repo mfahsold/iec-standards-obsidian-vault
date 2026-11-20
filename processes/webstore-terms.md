@@ -51,8 +51,9 @@ IEC does not accept returns for electronic documents in PDF format.
 - Uses **public catalog metadata** (references, titles, editions, dates,
   committees, ICS codes, price snapshots, links) for identification.
 - Does **not** include IEC document bodies, PDFs, or purchased content.
-- Does **not** scrape the Webstore; data is collected manually from public
-  pages.
+- Uses **no automated Webstore scraper**. Public pages were reviewed by hand;
+  whether that counts as “data mining” under these terms is being clarified with
+  IEC (see `../docs/iec-engagement.md`).
 - Uses only short, attributed quotations from public pages.
 - Does **not** feed purchased IEC content into a model or embedding index.
 
