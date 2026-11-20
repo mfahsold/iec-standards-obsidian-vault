@@ -21,6 +21,8 @@ Do not rely on hardcoded versions or counts in documentation — use that comman
   ```
 
 - Python 3.9+; all tools use the standard library only.
+- Hardware: ~4 GB disk for models/index, minimum ~8 GB RAM (16 GB recommended),
+  CPU works but GPU/Metal is recommended. Details: [`../README.md`](../README.md#requirements).
 
 ## CLI question answering
 
