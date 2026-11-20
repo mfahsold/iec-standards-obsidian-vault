@@ -2,11 +2,11 @@
 
 Obsidian vault with publicly available IEC information — built for Obsidian, optimized for LLM/agent usage, and vault-internal navigation via Obsidian wikilinks.
 
-> **Status: Prototype, Data Stand: 2026-11-19** — Repo is currently **private** (local, no push). See [meta/licensing.md](meta/licensing.md) for public-setup notes.
+> **Status: Prototype, Data Stand: 2026-11-20** — Repo is **private** on GitHub (`main` pushed, clean). See [meta/licensing.md](meta/licensing.md) for public-setup notes and **[meta/project-charter.md](meta/project-charter.md) for vision, scope and definition of done**.
 
 ## Quick Start (Obsidian)
 
-- Open the vault folder `iec-standards-obsidian-vault/` in Obsidian.
+- In the Obsidian GUI, the active vault is the **parent** folder `IEC_Agentic/`; this repository is its subfolder `iec-standards-obsidian-vault/`. (The CLI loop runs from the repo folder.)
 - **Home/Welcome:** this `README.md` (vault root) + `index/index.md` (MOC — fully linked).
 - **Search** (Ctrl+Shift+F or Ctrl+P): full-text search.
 - **Quick Switcher** (Ctrl/Cmd+O): jump to any note.
@@ -21,12 +21,12 @@ Obsidian vault with publicly available IEC information — built for Obsidian, o
 - 🧭 **Graph View:** core plugin (`graph`) — enabled by default in this vault.
 - ⚙️ **Backlinks / Outgoing Links:** right sidebar — see connections of the current note.
 
-## Stats (2026-11-19)
+## Stats (2026-11-20)
 
-- Files: 56 (47 Markdown); Notes: 47
-- Standards: 18 product notes (+ classics set)
-- Types: IS 7, ISO/IEC 1, TRF 1, PAS 3, TR 6
-- Words: ~17.5k (`find . -type f -not -path "./.git/*" -print0 | xargs -0 wc -w | tail -1` → 17,539 words)
+- Files: 67 (61 Markdown); `index/index.json`: 23 verified entries.
+- Standards: 18 base notes + 5 new (2025/2026) + classics set.
+- Types: IS, ISO/IEC, TRF, PAS, TR, COR1, AMD2, ISO.
+- Chat/AI: Local LLM Helper 2.6.2 + Ollama 0.40.15 — `qwen3.5:2b` (chat) + `nomic-embed-text` (RAG, 241 chunks).
 
 ## What is in this vault
 
@@ -37,13 +37,19 @@ Obsidian vault with publicly available IEC information — built for Obsidian, o
 - **`news/` — Free newsletter “IEC Just Published”** (monthly, 1st).
 - **`index/` — Master index**: `index.md` (MOC), `index.json` (machine-readable).
 - **`meta/` — sources, licensing, data provenance, IEC logic/structure, Obsidian usage, Obsidian CLI check.**
-- **[meta/agent-loop.sh](meta/agent-loop.sh) — minimaler Agent-Loop: Obsidian CLI liest die Note, Ollama antwortet (`qwen3.5:0.8b`).**
+- **[meta/agent-loop.sh](meta/agent-loop.sh)** — minimal agent loop: Obsidian CLI reads the note, Ollama (`qwen3.5:2b`) answers — L1/L2/L3; proof tests documented in [meta/chat-optimization.md](meta/chat-optimization.md).
 - **`templates/` — standard note template** (Obsidian Templates plugin).
 
 ## LLM/agent optimization
 
 - Atomic notes with YAML frontmatter (`ref`, `type`, `edition`, `technical_committee`, `published`, `ics`, `status`, `price_chf`, `sources[]`, `tags`) — machine-readable.
 - `index/index.json` — machine-readable index mirroring the frontmatter.
+
+### Local RAG chat (GUI) — important
+
+- Use **Notes chat / RAG chat** (`local-llm-helper:rag-chat`) for IEC facts. The *general* chat (`llm-chat`) is **not** grounded in the vault and will say it has no access to documents.
+- RAG index (`embeddings.json`, 241 chunks) lives in the GUI vault's `.obsidian/plugins/local-llm-helper/`; rebuild after note changes with `obsidian command id=local-llm-helper:index-notes-rag`.
+- Configuration, settings location and verified golden-question tests: [meta/chat-optimization.md](meta/chat-optimization.md).
 
 ## Obsidian Best Practices used
 

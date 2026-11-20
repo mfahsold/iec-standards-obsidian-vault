@@ -9,9 +9,16 @@
   - Model: `qwen3.5:2b` (genau wie in `api/tags` gelistet — string-equal).
   - Temperature: 0.3–0.6 (kurze, präzise IEC-Fakten-Antworten).
   - Context Window (num_ctx): **16384** (vorgeschlagen — Phase N: „deutlich größeres Kontextfenster" — GUI: 0.8b-Notiz → 2b: Settings → Local LLM Helper → Context Window —EMP: 8192–16384 verwertbar; 16384 = maximal „available" bei diesem Host).
-  - **Data-File:** `$V/.obsidian/plugins/local-llm-helper/data.json` (Batch N2a — aktualisiert: llmModel=`qwen3.5:2b`, endpoint, num_ctx=16384, temperature, maxTokens) — GUI-Pfad, falls GUI-Entry-Point geändert (Sandboxed-Plugin).
+  - **Data-File (real, GUI vault):** `/Users/matthiasfahsold/Projects/IEC_Agentic/.obsidian/plugins/local-llm-helper/data.json` — **the repo's own `.obsidian/` is NOT read by the GUI** (this caused the "chat has no access to documents" answer). Verified keys: `llmModel: qwen3.5:2b`, `embeddingModelName: nomic-embed-text`, `embeddingServerAddress: http://localhost:11434`, `maxTokens: 4096`, `temperature: 0.3`, `providerType: ollama`. (This plugin version has no `num_ctx` setting — the earlier num_ctx note was an assumption.)
   - **Thinking:** Standard ON (Qwen3.5 — „mehr Thinking“ — Chunk N1 —beobachtet: Thinking + Content im Streaming-Response (Ollama 0.40 — `message.thinking`/`message.content`).
   - System-Prompt (empfohlen): „Du bist der Obsidian-Agent für den IEC-Standards-Vault. Antworte kurz und strukturiert: Fakten + Quellen-URLs (sources). Antworte auf ICS-Fragen mit den ICS-Werten aus `index/index.json` (z. B. IEC 62813:2025/COR1:2026 → ICS 31.060.99). Antworte bei Preisfragen mit `price_chf` aus `index/index.json` (z. B. IEC 62443-4-1:2018 → 335 CHF — „For prices, see current catalogue"; freie IEC-Standards gibt es nicht).“
+
+## RAG chat — verified 2026-11-20 (grounded vs. ungrounded)
+
+- `llm-chat` = **general chat** → sends only the prompt, **no note context** → answers like "I cannot access external documents…" — **not valid for IEC facts**.
+- `rag-chat` = **grounded chat** → embeds the question, retrieves top-k note chunks from `embeddings.json`, sends them with the prompt → cited answers. Commands: `local-llm-helper:rag-chat`, `rag-chat-current-note`, `rag-chat-current-folder`, `rag-diagnostics`.
+- Embedding model: `nomic-embed-text` (768 dims); index: 241 chunks; rebuild with `obsidian command id=local-llm-helper:index-notes-rag`.
+- End-to-end verification: question "What are the ICS tags of IEC 62813:2025/COR1:2026?" → retrieval top-1 = `iec-standards-obsidian-vault/standards/IEC-62813-2025-COR1-2026.md` (score 0.767) → answer: "… the ICS tag is explicitly listed as 31.060.99 …" — `qwen3.5:2b`, `maxTokens: 4096` (thinking consumes ~12.8k chars / ~3.9k tokens — a 1024-token budget yields an empty answer!).
 
 ## Wie das Modell Daten abruft und verarbeitet (aktuell)
 
