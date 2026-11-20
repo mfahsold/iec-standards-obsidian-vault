@@ -10,6 +10,16 @@ python3 tools/config.py --show
 
 Do not rely on hardcoded versions or counts in documentation — use that command.
 
+**Context window:** `NUM_CTX` defaults to 16384 tokens. This is a deliberate
+fixed value, not a dynamic per-request calculation: our prompts are a system
+message plus five retrieved chunks (well under 8K tokens), and 16K is the
+common RAG floor. Ollama allocates the KV cache when the model is loaded — a
+changing `num_ctx` per request forces a model reload and adds seconds of
+latency, so one standardised value is the current best practice for this
+workload. It also cut observed peak memory from ~6.3 GiB at 98K context.
+Setting `OLLAMA_CONTEXT_LENGTH` server-side or baking `PARAMETER num_ctx` into a
+derived model are alternatives if every client must share the same window.
+
 ## Prerequisites
 
 - Obsidian (desktop) for browsing/editing the vault; no community plugin is required.

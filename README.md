@@ -49,7 +49,7 @@ Obsidian vault and a machine-readable dataset with a local retrieval stack.
 **Hardware**
 - About 4 GB free disk for the two models plus the local index.
 - Minimum ~8 GB RAM/unified memory; **16 GB recommended** (chat model ~3.2 GB at
-  runtime plus KV-cache/context; runtime context is 98,304 tokens).
+  runtime plus KV-cache/context; the context budget is in `tools/config.py`).
 - CPU-only works but is slow. Apple Silicon/Metal or an NVIDIA GPU is recommended
   for reasonable answer latency. No GPU is strictly required.
 - Network access is needed only to install Ollama, pull models and clone this repo;

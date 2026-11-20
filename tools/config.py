@@ -29,7 +29,7 @@ OLLAMA_URL = env("OLLAMA_URL", "http://localhost:11434").rstrip("/")
 OLLAMA_MODEL = env("OLLAMA_MODEL", "qwen3.5:2b")
 EMBED_MODEL = env("EMBED_MODEL", "nomic-embed-text")
 
-NUM_CTX = env("NUM_CTX", 98304, int)
+NUM_CTX = env("NUM_CTX", 16384, int)
 NUM_PREDICT = env("NUM_PREDICT", 8192, int)
 FALLBACK_PREDICT = env("FALLBACK_PREDICT", 2048, int)
 TEMPERATURE = env("TEMPERATURE", 0.6, float)
