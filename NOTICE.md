@@ -1,91 +1,61 @@
-# Notice — Scope of the License and Attribution
+# Notice — Scope, Attribution and Disclaimers
 
-**IMPORTANT — NOT OFFICIAL IEC/ISO MATERIAL.** This repository is an independent,
-unofficial aggregate of publicly available information about IEC and ISO/IEC
-publications. It is **not official IEC or ISO communication, documentation, catalog,
-or a source of record of any kind**, and it is not affiliated with, endorsed by, or
-sponsored by IEC or ISO. It may contain errors, omissions, or outdated values.
-Only the official IEC/ISO catalogs and the current editions of standards are
-authoritative.
+**NOT OFFICIAL IEC/ISO MATERIAL.** This repository is an independent, unofficial
+aggregate of publicly available information about IEC and ISO/IEC publications.
+It is **not official IEC or ISO communication, documentation, catalog, or a source
+of record of any kind**, is not affiliated with, endorsed by, or sponsored by IEC
+or ISO, and **may contain errors, omissions, or outdated values**. Only the
+official catalogs and current editions of standards are authoritative.
 
-This repository combines original project content with references to publicly available
-information about IEC and ISO/IEC publications. The licenses in [LICENSE](LICENSE) apply
-only to the original content of this repository, to the extent the contributors hold
-rights in it. They do not apply to third-party works.
+## License scope
 
-- **Code** (scripts and tooling) is licensed under the **MIT License**.
-- **Original content** (notes, documentation, tables, summaries and the metadata
-  compilation) is licensed under **CC BY 4.0**. Reuse requires attribution to
-  "IEC Standards Knowledge Vault contributors" and a link to this repository and the
-  license.
+- **Code** (scripts and tooling under `tools/`): MIT — `LICENSES/MIT.txt`.
+- **Original content** (notes, documentation, tables, summaries, metadata
+  compilation): CC BY 4.0 — `LICENSES/CC-BY-4.0.txt`.
+- **Third-party material**: not covered by these licenses.
 
-## What this repository contains
+See [`LICENSE`](LICENSE) for details.
 
-- **Bibliographic metadata** — standard references, titles, document types, editions,
-  technical committees, ICS classifications, dates, prices and links, collected manually
-  from official IEC Webstore product pages and other public catalogues.
-- **Original summaries and navigation** — short factual descriptions, process overviews,
-  tables, links, and the local retrieval scripts.
-- **Short attributed quotations** — brief excerpts from public IEC web pages (for example
-  the Webstore terms and process definitions), used for documentation and commentary with
-  the source URL given next to each quotation.
+## What is here
 
-## What this repository does not contain
+Public bibliographic metadata (references, titles, editions, dates, committees,
+ICS codes, price snapshots, links), original summaries, short attributed
+quotations from public pages, and local retrieval tooling.
 
-- **No IEC or ISO document bodies.** No full standard texts, no PDFs, no substantial
-  verbatim reproductions of IEC publications.
-- **No IEC logos or cover images.**
-- **No scraped Webstore content.** Data was collected manually; automated crawling of the
-  IEC Webstore is not part of this project.
+There are **no IEC/ISO document bodies**, PDFs, substantial verbatim excerpts,
+logos, scraped Webstore content, or purchased standards.
 
-## IEC and ISO/IEC publications
+## IEC and ISO rights
 
-IEC, ISO and ISO/IEC designations, publication titles and the publications themselves are
-the property of the International Electrotechnical Commission (IEC) and, where applicable,
-the International Organization for Standardization (ISO). They are referenced here for
-identification and citation purposes only. Nothing in the MIT or CC BY 4.0 licenses grants
-rights to IEC or ISO publication content, trademarks or other intellectual property.
+IEC, ISO, ISO/IEC designations, publication titles, and the publications
+themselves belong to their respective owners. They are referenced only for
+identification. No rights in IEC/ISO content, trademarks, or logos are granted.
 
-The IEC Webstore Terms and Conditions (version 2025-08-04) state that IEC Products sold
-through the Webstore are protected by copyright, may not be copied or redistributed
-without written permission, may not be scraped, and may not be used to develop AI or
-machine-learning systems without specific permission. This repository does **not** use or
-distribute IEC Products as defined by those terms: it contains only public bibliographic
-metadata, links, original summaries, and short attributed quotations. It does not ingest
-purchased IEC documents into any model or index. The maintainers are clarifying the
-reuse of IEC-derived metadata with IEC; see `docs/iec-engagement.md`.
+The IEC Webstore Terms and Conditions (version 2025-08-04) state that IEC Products
+sold through the Webstore are copyrighted, may not be copied or redistributed
+without written permission, may not be scraped, and may not be used to develop
+AI/ML systems without specific permission. This project uses only public
+bibliographic metadata and links, not IEC Products, and does not ingest purchased
+IEC documents into any model or index. Exact reuse terms for IEC-derived metadata
+are being clarified with IEC: [`docs/iec-engagement.md`](docs/iec-engagement.md).
 
-For the authoritative text of a standard, its current price and its legal terms of use,
-always consult the official IEC Webstore: <https://webstore.iec.ch/>.
+For authoritative text, current prices, and legal terms, use the official
+Webstore: <https://webstore.iec.ch/>.
 
 ## Electropedia / IEV
 
-Short terminology references are attributed to IEC Electropedia (IEV Online,
-<https://www.electropedia.org/>). Electropedia's structure and content are copyright IEC.
-Electropedia encourages referencing and citation with attribution to IEC; large-scale
-duplication requires permission from IEC. This repository does not duplicate the
-Electropedia database — it links to the live service and quotes individual definitions
-with attribution.
+Electropedia content is copyright IEC. The IEC encourages referencing and
+citation with attribution to IEC; large-scale duplication requires permission.
+This repository links to the live service and uses only short attributed quotes;
+see [`electropedia/electropedia.md`](electropedia/electropedia.md).
 
-## Third-party tools and data
+## Third-party tools
 
-This repository references but does not bundle third-party software or models:
+Referenced, not bundled: Obsidian, Ollama, Qwen and nomic models, plus public
+third-party catalogues used only for identifiers. Each retains its own license.
 
-- **Obsidian** — <https://obsidian.md/> (proprietary application; separate license).
-- **Ollama** — <https://ollama.com/> (open-source runtime; separate license).
-- **Qwen models** — separate model license from the model publisher.
-- **nomic-embed-text** — separate model license.
-- **Third-party catalogues** (normfile.com, standards.iteh.ai) — referenced only as
-  pointers for classic standard identifiers; their content is not relicensed here.
+## Prices, dates, and advice
 
-## Prices and dates
-
-Prices, publication dates and status information are **collection-time snapshots** taken from
-public product pages. They change over time. They are provided for orientation only and
-must be re-checked against the current IEC catalogue before any commercial use.
-
-## No legal, certification or conformity advice
-
-This repository is an informational knowledge base. It does not provide legal advice,
-certification, product-safety assessment or conformity assessment. Selecting and applying a
-standard for a product remains an engineering and regulatory decision.
+Prices and dates are collection-time snapshots, not authoritative. This project
+provides no legal, certification, or conformity advice. Rights-holder requests:
+open an issue for prompt review and removal.

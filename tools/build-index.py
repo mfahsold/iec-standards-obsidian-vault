@@ -10,19 +10,22 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import re
 import sys
 import urllib.request
 from pathlib import Path
 from typing import Any, Dict, Iterator, List, Tuple
 
-ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = ROOT / "index" / "embeddings.json"
+import sys
 
-CHUNK_SIZE = 800
-CHUNK_OVERLAP = 100
-MIN_CONTENT = 50
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import config  # noqa: E402
+
+ROOT = config.ROOT
+OUTPUT = config.RAG_INDEX
+CHUNK_SIZE = config.CHUNK_SIZE
+CHUNK_OVERLAP = config.CHUNK_OVERLAP
+MIN_CONTENT = config.MIN_CONTENT
 
 REF_RE = re.compile(r'^ref:\s*"?([^"\n]+)"?', re.M)
 TITLE_RE = re.compile(r'^title:\s*"?([^"\n]+)"?', re.M)
@@ -99,23 +102,23 @@ def embed_batch(texts: List[str], url: str, model: str) -> List[List[float]]:
     payload = {
         "model": model,
         "input": texts,
-        "options": {"num_ctx": 8192},
-        "keep_alive": "10m",
+        "options": {"num_ctx": config.EMBED_NUM_CTX},
+        "keep_alive": config.KEEP_ALIVE,
     }
     request = urllib.request.Request(
         f"{url}/api/embed",
         data=json.dumps(payload).encode("utf-8"),
         headers={"Content-Type": "application/json"},
     )
-    with urllib.request.urlopen(request, timeout=180) as response:
+    with urllib.request.urlopen(request, timeout=config.REQUEST_TIMEOUT) as response:
         return json.load(response)["embeddings"]
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--model", default=os.environ.get("EMBED_MODEL", "nomic-embed-text"))
-    parser.add_argument("--url", default=os.environ.get("OLLAMA_URL", "http://localhost:11434"))
-    parser.add_argument("--output", default=os.environ.get("RAG_INDEX", str(OUTPUT)))
+    parser.add_argument("--model", default=config.EMBED_MODEL)
+    parser.add_argument("--url", default=config.OLLAMA_URL)
+    parser.add_argument("--output", default=str(OUTPUT))
     args = parser.parse_args()
     output_path = Path(args.output)
 

@@ -16,7 +16,9 @@ communication or documentation, may contain errors; no document bodies included.
 - `standards/index-standards.md` — compact catalog
 - `index/index.json` — machine-readable catalog
 
-## Catalog (23 entries)
+## Catalog
+
+The current entry count is reported by `python3 tools/config.py --show`.
 
 | Ref | Type | Ed. | TC/SC | ICS | CHF | Status |
 | --- | --- | --- | --- | --- | --- | --- |

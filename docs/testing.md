@@ -1,27 +1,16 @@
 # Manual Test Plan (before going public)
 
-Keep this simple. Work through the steps in order and record the results in the
-table at the end. Expected total time: ~15 minutes.
+Work through these steps and record the results below. No counts or settings are
+hardcoded here — get live values from `python3 tools/config.py --show`.
 
-## 0. Prerequisites
-
-- Ollama is running and both models are present:
-
-  ```sh
-  ollama list | grep -E 'qwen3.5:2b|nomic-embed-text'
-  ```
-
-- Obsidian opens this repository as a vault.
-- You are in the repository root in your terminal.
-
-## 1. Rebuild the index
+## 1. Rebuild local state
 
 ```sh
 python3 tools/build-index.py
+python3 tools/config.py --show
 ```
 
-Expected: a line like `Indexed 300 chunks from 52 files`. If note files changed,
-this is required before any question test.
+Confirm the RAG index was rebuilt and the catalog entries match `index/index.json`.
 
 ## 2. Automated checks
 
@@ -31,53 +20,27 @@ python3 tools/validate_vault.py
 python3 tools/evaluate.py
 ```
 
-Expected:
-- compile: no output;
-- validator: `0 error(s), 0 warning(s)`;
-- evaluator: retrieval `13/13`, decisions `13/13`.
+Expect: no compile errors, `0 error(s), 0 warning(s)`, and all generated probes
+passing. The evaluator prints the current scores; record them.
 
-Probes are generated from `index/index.json`; no hardcoded question list exists.
-If a probe fails, report the generated question and the catalog entry it came
-from.
+## 3. Generated CLI smoke tests
 
-## 3. Critical CLI questions
-
-Questions are generated from the catalog — nothing to hardcode:
+Questions are generated from the catalog, not hardcoded:
 
 ```sh
-python3 tools/probes.py --cli | head -3 | sh
+python3 tools/probes.py --cli | head -3 | sh    # ANSWER probes
+python3 tools/probes.py --cli | tail -1 | sh    # REFUSE probe
 ```
 
-This runs the first three generated probes (currently ICS and price questions).
-For the abstention check, run one generated `REFUSE` probe:
+Expect: catalog values with `[Source: …]` citations for ANSWER probes; “Not in
+the vault …” with no invented data for REFUSE probes. Pass rule: 2–3 sentences,
+correct value, citation present, no invented facts.
 
-```sh
-python3 tools/probes.py --cli | tail -1 | sh
-```
+## 4. Obsidian GUI
 
-Expected: the value from `index/index.json` with a `[Source: …]` citation for
-`ANSWER` probes; “Not in the vault …” with no invented data for `REFUSE` probes.
-
-Pass rule: 2–3 sentences, correct value, citation present, no invented facts.
-
-Optional full answer check (slow, ~2 minutes):
-
-```sh
-python3 tools/evaluate.py --generate
-```
-
-## 4. Obsidian GUI check
-
-- Open the vault; start at `README.md` and `index/index.md` (MOC).
-- Confirm links, graph view, backlinks and search work.
-- Optional: install a terminal plugin with the **IEC Vault** profile from
-  `docs/setup.md`, then run one CLI question from inside Obsidian.
-- Optional: copy `obsidian-plugin/` into the GUI vault and enable **IEC Vault
-  Ask**; click the ribbon icon and ask one question. The answer must match the
-  CLI result — the plugin is only a wrapper.
-
-There is no chat authority in the GUI; any GUI answer must be re-verified with
-the CLI.
+Open the vault; check the MOC, links, graph, backlinks, and search. Optional: test
+the IEC Vault terminal profile or the “Ask vault” plugin; its answer must match
+the CLI. GUI answers are not authoritative.
 
 ## 5. Repository readiness
 
@@ -86,36 +49,25 @@ git status --short --branch
 git diff --check
 ```
 
-Expected: clean tree, on `main`, in sync with `origin/main`.
-
-Also confirm:
-- `LICENSE`, `NOTICE.md`, `CONTRIBUTING.md` exist;
-- no `*.pdf`, no `.env`, no absolute `/Users/…` paths in tracked files;
-- `index/embeddings*.json` is gitignored;
-- all documentation is in English.
+Expect clean tree, in sync with `origin/main`. Confirm license/notice files, no
+PDFs/secrets/absolute paths, `index/embeddings*.json` gitignored, English-only
+docs, and the non-official disclaimer present.
 
 ## 6. Result record
 
-| Check | Expected | Result (OK / FAIL) |
+| Check | Expected | Result |
 | --- | --- | --- |
-| Index rebuild | chunks from 52 files | |
+| Index rebuild + config view | matches catalog | |
 | Compile + validator | 0 errors | |
-| Evaluator retrieval | 13/13 | |
-| Evaluator decisions | 13/13 | |
-| First 3 generated ANSWER probes | catalog value + citation | |
-| One generated REFUSE probe | Not in the vault | |
+| Evaluator | all probes pass | |
+| Generated ANSWER probes | values + citations | |
+| Generated REFUSE probe | Not in the vault | |
 | Obsidian navigation | links/graph/search work | |
 | Repo clean | clean, in sync | |
 | Public decision | yes/no | |
 
 ## Release gate
 
-Go public only if:
-
-- the generated ANSWER and REFUSE probes pass;
-- validator reports 0 errors;
-- the evaluator reports 13/13 retrieval and 13/13 decisions;
-- the repo is clean and in sync.
-
-If any critical CLI question fails, stop and report the exact question, mode and
-answer before flipping visibility.
+Go public only if all generated probes pass, the validator reports 0 errors, the
+repo is clean, and the results are recorded. If anything fails, stop and report
+the exact generated question and answer before flipping visibility.

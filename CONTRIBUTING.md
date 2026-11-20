@@ -1,106 +1,57 @@
 # Contributing
 
-Thanks for your interest in improving the IEC Standards Knowledge Vault. This
-project is a public, local-first knowledge base for **metadata about** IEC/ISO
-standards — not a copy of the standards themselves.
+Thanks for helping improve this independent, unofficial aggregate of public
+IEC/ISO metadata. This repository is not official IEC/ISO material and may
+contain errors; contributions must keep it copyright-safe and verifiable.
 
-## Ways to contribute
+## Ground rules
 
-- Add or correct a standard note in `standards/`.
-- Improve the process documentation in `processes/`.
-- Fix a broken link, typo, or inconsistent metadata field.
-- Improve the retrieval tools in `tools/`.
-- Add a probe template to `tools/probes.py`; questions and expected values are
-  generated from `index/index.json`, never hardcoded.
-
-## Ground rules (important)
-
-This project is built to be copyright-safe. By contributing, you agree that:
-
-1. **No document bodies.** Do not paste IEC/ISO/CISPR standard texts, PDFs,
-   tables of contents, figures, or long verbatim excerpts.
-2. **Public sources only.** Use official public pages (IEC Webstore, IEC
-   website, public IEC Open PDFs, Electropedia, ISO pages) or clearly identified
-   public third-party catalogs. Do not use paywalled, login-protected, or
-   scraped content.
-3. **Write your own summaries.** Descriptions must be paraphrases in your own
-   words. Short quotations are allowed only when necessary: keep them under
-   about 25 words, put them in quotation marks, and link the source.
-4. **Cite every fact.** Add the source URL to the note's `sources` frontmatter
-   and record the collection date.
-5. **Prices are snapshots.** Mark them “as of” the collection date and link the
-   official product page. Never present a price as current or authoritative.
-6. **No personal data or secrets.** Do not commit API keys, tokens, local
-   absolute paths, email addresses, or machine-specific configuration.
-
-The full policy is in [`docs/data-policy.md`](docs/data-policy.md). The
-maintainers may remove content that does not meet these rules.
+1. **Public sources only.** Use official public pages or clearly labelled public
+   catalogues. Never use paywalled, login-protected, scraped, or purchased content.
+2. **No document bodies.** No standard texts, PDFs, long verbatim excerpts,
+   figures, or reconstructed tables of contents.
+3. **Own words.** Paraphrase descriptions; keep quotations under ~25 words with
+   quotation marks and a source link.
+4. **Cite every fact.** Add a source URL to frontmatter and a collection date to
+   the note body. Use `null` for unknown values — never invent data.
+5. **Prices are snapshots.** Mark them as of the collection date and link the
+   official catalog.
+6. **No personal data or secrets.**
+7. **Queries are generated.** Add probe templates to `tools/probes.py`; do not
+   hardcode question lists.
 
 ## Adding or updating a standard note
 
-1. Copy [`templates/standard-note.md`](templates/standard-note.md) into
-   `standards/` and name it after the reference, e.g.
-   `standards/IEC-62443-4-1-2018.md`.
-2. Fill in the frontmatter. Required fields:
-   `ref`, `title`, `type`, `status`, `languages`, `price_chf`, `sources`,
-   `tags`.
-3. Write a short, original description (2–4 sentences) and a “Notes” section.
-4. Add the entry to **all three** places:
-   - `index/index.json`
-   - `standards/index-standards.md`
-   - `index/index.md`
-5. Link the note from at least one other note (the catalog/MOC links count).
-6. Run the validator:
+1. Copy `templates/standard-note.md` into `standards/`.
+2. Fill required frontmatter: `ref`, `title`, `type`, `status`, `languages`,
+   `price_chf`, `sources`, `tags`.
+3. Write a short original description; add source URLs and the collection date.
+4. Add the entry to `index/index.json`, `standards/index-standards.md`, and
+   `index/index.md`.
+5. Run:
 
    ```sh
    python3 tools/validate_vault.py
+   python3 tools/evaluate.py
+   python3 tools/build-index.py
    ```
 
-7. Rebuild the RAG index after adding files:
-   `python3 tools/build-index.py`. See [`docs/setup.md`](docs/setup.md).
+## Code changes
 
-## Frontmatter schema
-
-See [`templates/standard-note.md`](templates/standard-note.md) for the
-authoritative schema. Keep field names and value formats consistent with the
-existing notes. Dates use `YYYY-MM-DD`; unknown values use `null` or an empty
-string, never invented data.
-
-## Code contributions
-
-- Keep the CLI loop POSIX `sh` compatible.
-- Prefer the Python standard library; do not add dependencies without a clear
-  reason.
-- Run `python3 tools/validate_vault.py` and `python3 -m py_compile tools/*.py`.
-- Keep prompts grounded: answers must cite the source note and must refuse to
-  invent standards, ICS codes, prices, or citations.
+- Keep tools dependency-free (Python standard library).
+- Add runtime defaults to `tools/config.py`, not individual scripts.
+- Do not introduce a service, port, or daemon.
+- Run `python3 -m py_compile tools/*.py` and the evaluator.
 
 ## Pull requests
 
-A good PR:
+Explain what changed and cite the public source for every new fact. Confirm that
+no standard body, long quotation, secret, or absolute path was added, and that
+all checks pass. By contributing, you license code under MIT and original
+content under CC BY 4.0.
 
-- explains **what** changed and **why**;
-- states the evidence/source for any new or changed fact;
-- keeps unrelated changes out;
-- passes CI (`Validate vault`);
-- confirms that no copyrighted standard body or long verbatim excerpt was
-  added.
+## Reports
 
-Use clear commit messages. Small, focused commits are preferred.
-
-## Licensing of contributions
-
-By submitting a contribution, you agree that:
-
-- code contributions are licensed under the MIT License;
-- original content contributions are licensed under CC BY 4.0;
-
-as described in [`LICENSE`](LICENSE). You confirm that you have the right to
-submit the material and that it does not violate third-party rights.
-
-## Questions and reports
-
-Open a GitHub issue for questions and non-sensitive bug reports. For security
-concerns, use GitHub's private vulnerability reporting for this repository (or
-contact the maintainers privately through their GitHub profile). Do not commit
-secrets, tokens, or personal paths.
+Open a GitHub issue for questions or bugs. Use GitHub's private vulnerability
+reporting for security concerns; do not commit secrets. Rights holders can
+request review/removal via an issue.

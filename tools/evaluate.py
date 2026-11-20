@@ -13,13 +13,13 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
-import json
-import os
 import sys
 from pathlib import Path
 from typing import Any, Dict, List
 
-ROOT = Path(__file__).resolve().parent.parent
+import config  # noqa: E402
+
+ROOT = config.ROOT
 
 
 def load_module(name: str):
@@ -39,11 +39,11 @@ def main() -> int:
     al = load_module("agent-loop.py")
     probes = load_module("probes.py")
     cases: List[Dict[str, Any]] = probes.generate()
-    url = os.environ.get("OLLAMA_URL", "http://localhost:11434").rstrip("/")
-    model = os.environ.get("OLLAMA_MODEL", "qwen3.5:2b")
-    embed_model = os.environ.get("EMBED_MODEL", "nomic-embed-text")
-    top_k = int(os.environ.get("TOP_K", "5"))
-    index_path = Path(os.environ.get("RAG_INDEX", str(al.DEFAULT_INDEX)))
+    url = config.OLLAMA_URL
+    model = config.OLLAMA_MODEL
+    embed_model = config.EMBED_MODEL
+    top_k = config.TOP_K
+    index_path = config.RAG_INDEX
 
     hits = decisions = answers = 0
     print(f"{'#':>2}  {'retrieval':<9} {'decision':<8} {'answer':<8}  question")
@@ -63,8 +63,7 @@ def main() -> int:
         answer_ok = True
         if args.generate and decision_ok and sufficient:
             text = al.generate(question, contexts, url, model,
-                               int(os.environ.get("NUM_CTX", "98304")),
-                               int(os.environ.get("NUM_PREDICT", "8192")))
+                               config.NUM_CTX, config.NUM_PREDICT)
             lowered = text.lower()
             answer_ok = all(str(value).lower() in lowered for value in case.get("expected", []))
             answer_ok = answer_ok and "[Source:" in text

@@ -48,13 +48,13 @@ coverage of the standards universe; silent writes without human review.
 
 ```text
 repository/
-├─ index/index.json          machine-readable catalog (23 entries)
+├─ index/index.json          machine-readable catalog
 ├─ index/index.md            MOC
-├─ standards/                23 standard notes + catalog + classics
+├─ standards/                standard notes + catalog + classics
 ├─ processes/, electropedia/, guides/, news/
-├─ docs/                     data policy, IEC engagement, setup, provenance
+├─ docs/                     data policy, IEC engagement, setup, provenance, testing
 ├─ meta/                     charter, context
-└─ tools/                    agent-loop.py, validate_vault.py
+└─ tools/                    agent-loop.py, build-index.py, evaluator, config, validator
 ```
 
 The CLI tool uses hybrid retrieval (RAG chunks + `index/index.json`), a
@@ -62,9 +62,10 @@ structured sufficiency check with explicit abstention, and grounded generation
 with thinking enabled. `tools/build-index.py` produces the local index from the
 vault notes; no chat plugin is required.
 
-Verified stack: Obsidian 1.15.1 (navigation only), Ollama 0.40.15,
-`qwen3.5:2b` (8,192 tokens), `nomic-embed-text` (768 dims). The RAG index at
-`index/embeddings.json` is gitignored and rebuilt after note changes.
+Obsidian is used for navigation only; Ollama provides local inference and
+embeddings. All model/budget defaults live in `tools/config.py`; run
+`python3 tools/config.py --show` for the effective values and live counts. The
+RAG index at `index/embeddings.json` is gitignored and rebuilt after changes.
 
 ## 5. Definition of Done
 
@@ -99,8 +100,8 @@ Verified stack: Obsidian 1.15.1 (navigation only), Ollama 0.40.15,
 
 ## 6. Known limits
 
-- Coverage is 23 verified entries; absence is not evidence that a standard does
-  not exist.
+- Coverage is limited to verified entries; current counts come from
+  `tools/config.py --show`. Absence is not evidence that a standard does not exist.
 - No GUI chat is provided; all QA goes through `tools/agent-loop.py`.
 - Prices and dates are collection-time snapshots.
 - External commentary in `meta/context.md` is attributed, not a project position.

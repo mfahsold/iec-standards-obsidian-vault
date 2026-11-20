@@ -1,94 +1,60 @@
-# Data Policy — Public, Copyright-Safe Metadata
+# Data Policy
 
-This project is an independent, unofficial **metadata and retrieval** knowledge
-base. It is an aggregate of publicly available information, **not official IEC or
-ISO communication or documentation of any kind**, and may contain errors. It is
-not a replacement for the official standards and does not distribute standard
-texts.
+This is an independent, unofficial aggregate of publicly available information —
+not official IEC/ISO communication or documentation, and potentially erroneous.
+It is a metadata and retrieval knowledge base, not a replacement for standards.
 
-## What we include
+## Included
 
-- Standard references, titles, document types, editions, publication dates,
-  stability dates, technical committees, ICS codes, languages, and status.
+- Public metadata: references, titles, document types, editions, dates,
+  committees, ICS codes, languages, status.
 - Price snapshots from public product pages, marked with the collection date.
 - Links to official product pages and public process documents.
-- Our own short summaries of scope and context.
-- Short quotations from public pages, with quotation marks, attribution, and a
-  link.
-- Public terminology references (e.g., Electropedia) with attribution.
+- Original summaries and short attributed quotations from public pages.
 
-## What we never include
+## Never included
 
-- PDFs or full texts of IEC, ISO, CISPR or other standards.
-- Long verbatim excerpts, reconstructed tables of contents, figures, or
-  translated document bodies.
-- Content obtained by scraping paywalled, login-protected, or prohibited
-  sources.
-- Purchased standards content.
+- Standard bodies, PDFs, long verbatim excerpts, figures, or tables of contents.
+- Scraped, paywalled, login-protected, or purchased content.
 - Personal data, credentials, API keys, or machine-specific paths.
 
 ## Source rules
 
-1. Prefer official public sources: IEC Webstore product pages, IEC website
-   pages, public IEC Open PDFs, ISO pages, Electropedia.
-2. Third-party aggregators may be used only for references/titles, not as
-   authoritative sources for prices or technical details. Label them clearly.
-3. Record the source URL in the note's `sources` frontmatter.
-4. Record the collection date in the note body (e.g., “Data as of 2026-11-20”).
-5. If a fact cannot be verified from a public source, use `null` or omit it.
-   Never fill gaps with plausible-sounding data.
+1. Prefer official public sources: IEC Webstore, IEC website, IEC Open PDFs, ISO
+   pages, Electropedia.
+2. Third-party aggregators are allowed only for identifiers and must be labelled.
+3. Record the source URL in frontmatter and the collection date in the note.
+4. Use `null` or omit unverifiable facts; never invent values.
 
 ## Quotation rules
 
-- Keep quotations short — aim for **25 words or fewer**.
-- Use quotation marks and attribute the source inline.
-- Do not reproduce a complete paragraph, section, abstract, or table from a
-  standards body.
-- Paraphrase in your own words whenever possible.
-- When in doubt, link instead of quoting.
+Keep quotes under ~25 words, in quotation marks, attributed and linked. Never
+reproduce a paragraph, abstract, section, or table. When in doubt, link instead.
 
-## AI / RAG rules
+## AI/RAG rules
 
-- Index only the notes in this repository.
-- Do not feed purchased or paywalled IEC/ISO documents into a model, embedding
-  index, or retrieval system.
-- Answers must cite the note they came from.
-- If the vault does not contain the answer, the correct answer is “not in the
-  vault” — not an invented fact.
-- Treat contributed notes as untrusted input; review them before indexing.
+Index only this repository's notes. Never feed purchased IEC/ISO documents into
+a model or index. Answers must cite a source; absent facts produce “not in the
+vault”, not a guess. Treat contributed notes as untrusted input.
 
-## Prices and dates
+## Prices, dates, trademarks
 
-Prices change. Every price in this repository is a snapshot from the date shown
-and is **not authoritative**. The official catalog is the only current source.
-The same applies to publication dates, stability dates, and status values.
+Prices and dates are collection-time snapshots; the official catalog is current.
+IEC, ISO, CISPR names and marks belong to their owners and are used only for
+identification. This project is not affiliated with or endorsed by any standards
+body.
 
-## Trademarks and affiliation
+## Review checklist
 
-IEC, ISO, CISPR and related names are trademarks of their respective owners.
-They are used here only to identify the standards being discussed. This project
-is independent and is not affiliated with or endorsed by any standards body.
-
-## Review checklist for contributors
-
-- [ ] The note contains no standard body text, PDF, or long verbatim excerpt.
-- [ ] The description is an original paraphrase.
-- [ ] Every fact has a public source URL.
-- [ ] The collection date is recorded.
-- [ ] Prices are marked as snapshots.
-- [ ] No personal data, secrets, or absolute local paths.
-- [ ] The note is linked from the catalog and MOC.
+- [ ] No standard body, PDF, or long verbatim excerpt.
+- [ ] Description is an original paraphrase with source URL and date.
+- [ ] Prices marked as snapshots.
+- [ ] No personal data, secrets, or absolute paths.
+- [ ] Note linked from catalog/MOC.
 - [ ] `python3 tools/validate_vault.py` passes.
-
-## Rights-holder requests
-
-If you are a rights holder and believe content in this repository exceeds
-acceptable use, please open an issue or contact the maintainers. We will review
-and remove or amend the material promptly.
 
 ## Further reading
 
-- [`NOTICE.md`](../NOTICE.md) — third-party notices and disclaimers.
-- [`docs/iec-engagement.md`](iec-engagement.md) — questions prepared for IEC.
-- [`docs/provenance.md`](../docs/provenance.md) — source list and licensing status.
-- [`processes/webstore-terms.md`](../processes/webstore-terms.md) — summary of IEC terms.
+[`NOTICE.md`](../NOTICE.md), [`docs/provenance.md`](provenance.md),
+[`docs/iec-engagement.md`](iec-engagement.md),
+[`processes/webstore-terms.md`](../processes/webstore-terms.md).
