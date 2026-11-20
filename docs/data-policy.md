@@ -3,6 +3,8 @@
 This is an independent, unofficial aggregate of publicly available information —
 not official IEC/ISO communication or documentation, and potentially erroneous.
 It is a metadata and retrieval knowledge base, not a replacement for standards.
+The catalog is a **verified subset**, not a complete IEC catalog; before growing
+beyond the review threshold in `tools/config.py`, IEC should be consulted.
 
 ## Included
 

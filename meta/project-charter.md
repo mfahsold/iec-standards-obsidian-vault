@@ -100,8 +100,9 @@ RAG index at `index/embeddings.json` is gitignored and rebuilt after changes.
 
 ## 6. Known limits
 
-- Coverage is limited to verified entries; current counts come from
-  `tools/config.py --show`. Absence is not evidence that a standard does not exist.
+- Coverage is a **verified subset**, not a complete catalog; current counts and
+  the growth-review threshold come from `tools/config.py --show`. Absence is not
+  evidence that a standard does not exist.
 - No GUI chat is provided; all QA goes through `tools/agent-loop.py`.
 - Prices and dates are collection-time snapshots.
 - External commentary in `meta/context.md` is attributed, not a project position.

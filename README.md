@@ -10,6 +10,10 @@ IEC/ISO, **may contain errors or outdated values**, and contains no standard
 document bodies. Only the official IEC/ISO catalogs and current editions are
 authoritative. See [`NOTICE.md`](NOTICE.md).
 
+**Scope:** a small, verified subset of public catalog data — not a complete IEC
+catalog. The internal review threshold before growing further is reported by
+`python3 tools/config.py --show`.
+
 ## Start here
 
 Open this folder as an Obsidian vault and read [`index/index.md`](index/index.md)

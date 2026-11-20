@@ -78,6 +78,13 @@ stage codes) with short quotations? We currently link rather than copy.
 If any content is not acceptable, what is the preferred contact and process for
 review or removal?
 
+### 10. Database and compilation rights
+
+Does IEC consider a small, attributed, non-exhaustive catalog of public
+bibliographic metadata (references, titles, ICS codes, dates, price snapshots,
+source links) to be acceptable, or does it require a licence even for such a
+subset? At what size or scope would IEC consider it a database re-publication?
+
 ## Suggested message
 
 ```text
@@ -95,8 +102,10 @@ contain errors.
 
 Could you please confirm whether this use is acceptable, what attribution you
 prefer, and whether you have any requirements for price snapshots or short
-quotations from public web pages? If a permission or license is required, we
-would appreciate guidance on the process.
+quotations from public web pages? Do you consider this small, attributed,
+non-exhaustive metadata catalog acceptable, or is a licence needed even for a
+subset? If a permission or license is required, we would appreciate guidance on
+the process.
 
 Thank you.
 ```
