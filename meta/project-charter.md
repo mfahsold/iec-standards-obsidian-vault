@@ -81,8 +81,12 @@ local and rebuilt after note changes. Plugin settings and the index live in the 
 ### A prompt, retrieval or configuration change
 
 - Golden question with evidence-backed answer defined (`docs/setup.md`).
-- Passes on the CLI path and in Notes/RAG mode. A General-mode result is not a
-  valid test.
+- Passes on the **CLI path**, which is the authoritative QA implementation
+  (hybrid retrieval, sufficiency judgement, abstention, thinking generation).
+- The Obsidian chat is a navigation/exploration aid, not an equivalent test
+  surface: the third-party plugin uses an OpenAI-compatible endpoint that cannot
+  run our abstention stage or control thinking. Any GUI answer used as evidence
+  must be re-verified with the CLI tool.
 - Answer checked against `index/index.json` / frontmatter.
 - Known failure patterns guarded (no invented data, no "IEC standards are
   free", no missing citations).

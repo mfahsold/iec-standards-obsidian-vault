@@ -15,10 +15,12 @@ supported ways to query the vault.
 | RAG index | Local, derived from the notes | Rebuild after note changes; counts vary with content |
 | Python | 3.9+ | Validator uses the standard library only |
 
-The CLI tool uses Ollama’s native `/api/chat`, where `think` is a supported
-top-level field. The Obsidian plugin uses the OpenAI-compatible endpoint, which
-does not expose `think`; this is why the GUI and CLI are configured differently.
-The RAG index is produced by the plugin and consumed by the CLI tool.
+The CLI tool is the authoritative QA path. The Obsidian chat is an exploration
+aid only: the third-party plugin hardcodes the OpenAI-compatible endpoint, where
+`think` and `/no_think` are ignored and our sufficiency/abstention stage cannot be
+injected. Do not treat a GUI answer as verified evidence; re-run the question
+with `tools/agent-loop.py`. The RAG index is produced by the plugin and consumed
+by the CLI tool.
 
 ## Open the vault
 
