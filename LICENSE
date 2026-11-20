@@ -1,8 +1,33 @@
-Creative Commons CC0 1.0 Universal — Public Domain Dedication
+# License
 
-Except where noted otherwise (see `meta/licensing.md`):
+Copyright (c) 2026 IEC Standards Knowledge Vault contributors
 
-- Vault metadata, catalog data, process documentation and link structures are dedicated to the public domain (CC0) to the extent possible under law. Fact data (standard references, titles, ICS, dates, links) is treated as non-protected facts; IEC product data is quoted with attribution to IEC sources (`meta/sources.md`).
-- Electropedia-derived content: CC BY 4.0 (attribution required, see `meta/licensing.md`).
-- IEC document bodies (PDFs of IS/TS/TR/PAS/RLV/…) are NOT included (copyright IEC — see `meta/licensing.md`).
-- Note: see `meta/open-source-assessment.md` for the full "can we open source?" analysis (verbatim excerpts, action list).
+This repository uses two licenses:
+
+- **Code** — scripts and executable tooling (`tools/agent-loop.sh`,
+  `tools/validate_vault.py`) are licensed under the **MIT License**. Full text:
+  [LICENSES/MIT.txt](LICENSES/MIT.txt).
+- **Original content** — notes, documentation, tables, original summaries and the
+  compilation of metadata are licensed under the **Creative Commons Attribution 4.0
+  International** license (**CC BY 4.0**). Full text:
+  [LICENSES/CC-BY-4.0.txt](LICENSES/CC-BY-4.0.txt).
+
+If a file contains both code and content, the code portions are MIT-licensed and the
+content portions are CC BY 4.0.
+
+## What is not covered
+
+IEC and ISO publication content, titles, trademarks and other third-party material are not
+licensed by this project. They remain the property of their respective owners and are
+referenced for identification only. See [NOTICE.md](NOTICE.md).
+
+No IEC document bodies are included in this repository.
+
+## SPDX identifiers
+
+- Code (`tools/`): `SPDX-License-Identifier: MIT`
+- Original content (`standards/`, `processes/`, `docs/`, `meta/`, notes):
+  `SPDX-License-Identifier: CC-BY-4.0`
+
+The two licenses apply to different parts of the repository; there is no single
+combined identifier for the whole tree.

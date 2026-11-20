@@ -1,33 +1,55 @@
-# Work programme — TC/SC (from IEC Web: https://iec.ch/standards-development/work-programme)
+# Work Programme — TC/SC Projects and Target Dates
 
-> “The work programme of a technical committee or subcommittee (TC/SC) comprises the development of new standards and the maintenance of existing publications”
+Source: <https://iec.ch/standards-development/work-programme>
 
-> “Each TC/SC develops publications with an agreed technical scope, following requests initiated by sources inside and outside the IEC. The aim is to avoid overlaps and duplication of work between different TC/SCs.”
+## What the work programme contains
 
-> “Every project recieves an individual number that it retains until the work is completed. Occasionally a project may need to be divided into several parts. Each part receives a number, in addition to the original number. In all cases, all parts of the project must remain within the original scope. Otherwise a new work item propposal (NP) must be submitted.”
+Each technical committee or subcommittee (TC/SC) maintains a work programme
+covering new standards and the maintenance of existing publications. The
+programme is developed with an agreed technical scope and is intended to avoid
+overlap and duplication between TC/SCs.
 
-> “When a new technical committee is founded, a work programme is developed and submitted to the SMB for approval.”
+Every project receives an individual number that it keeps until the work is
+completed. If a project is divided into parts, each part receives a number in
+addition to the original number, and all parts must remain within the original
+scope. Otherwise a new work item proposal (NP) is required.
 
-## Target dates (for each project)
+When a new TC is founded, a work programme is developed and submitted to the
+Standardization Management Board (SMB) for approval.
 
-> “For each project in its work programme, the TC/SC establishes target dates for the completion of each of the following steps:
-> - first working draft developped (if the originator of the new work item proposal has only provided a brief outline)
-> - circulation of the first committee draft
-> - circulation of the enquiry draft
-> - circulation of the draft international standard (in agreement with the office of the CEO)
-> - publication of the final IEC International Standard (in agreement with the office of the CEO).”
+## Target dates
 
-> “The following provides guidance on target dates (after approval of the work item):
-> - availability of working draft (if not supplied with the proposal): 6 months
-> - availability of committee draft: 12 months
-> - availability of enquiry draft: 24 months
-> - availability of approval draft: 33 months
-> - availability of published standard: 36 months”
+For each project, the TC/SC establishes target dates for the main steps. The
+public IEC page gives the following guidance after approval of the work item:
 
-> “Target dates are continuously reviewed and adjusted as necessary. When target dates are changed, the TC/SC needs to inform the SMB. The SMB cancels any project that has been in development for more than 5 years without reaching the approval stage.”
+| Milestone | Target |
+| --- | --- |
+| Working draft available (if not supplied with the proposal) | 6 months |
+| Committee draft available | 12 months |
+| Enquiry draft available | 24 months |
+| Approval draft available | 33 months |
+| Published standard available | 36 months |
 
-## Progress-Reporting
+Target dates are reviewed and adjusted as necessary. The TC/SC informs the SMB
+when dates change. The SMB can cancel a project that has been in development
+for more than five years without reaching the approval stage.
 
-> “SCs, working groups, and project teams submit regular progress reports to their TC. Progress is also monitored by the IEC Secretariat who reports back to the SMB.”
+## Progress reporting
+
+Subcommittees, working groups, and project teams submit regular progress
+reports to their TC. The IEC Secretariat also monitors progress and reports
+back to the SMB.
+
+## Why this matters
+
+The target-date table explains why standards can take years even when the
+technical work is well advanced. It also explains why a catalog entry may show a
+publication date, a stability date, or a voting period rather than a final
+edition date.
 
 ## MASTER
+
+- [`overview.md`](overview.md)
+- [`development-stages.md`](development-stages.md)
+- [`publication-lifecycle.md`](publication-lifecycle.md)
+- [`../index/index.md`](../index/index.md)

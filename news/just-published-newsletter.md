@@ -1,14 +1,27 @@
-# News — IEC „Just Published“ — Free Newsletter
+# News — IEC “Just Published” Newsletter
 
-Quelle: https://webstore.iec.ch/en/faq/
+Source: <https://webstore.iec.ch/en/faq/>
 
-> „Stay up to date with the free IEC Just Published newsletter. This email will be sent on the 1st each month and will contain all publications issued the previous month.“
+The IEC offers a free monthly newsletter, “IEC Just Published”. It is sent on
+the first of each month and lists publications issued during the previous
+month.
 
 ## Details
 
-- Frequency: monthly (1st of each month)
-- Content: all publications issued previous month (IS/TS/TR/PAS/etc.)
-- Free: subscription via Email address + Subscribe (https://webstore.iec.ch/en/faq/)
-- Last-refresh of newsletter content: this file is informational; real subscriptions are via the linked service.
+- **Frequency:** monthly, on the 1st
+- **Content:** publications issued in the previous month (IS, TS, TR, PAS, etc.)
+- **Cost:** free
+- **Subscription:** via the Webstore FAQ page linked above
+
+The newsletter is a useful signal for new editions and corrigenda. This vault
+records individual publications when they are verified; the newsletter itself
+is not mirrored here.
+
+## Short quotation
+
+> “Stay up to date with the free IEC Just Published newsletter.”
 
 ## MASTER
+
+- [`../index/index.md`](../index/index.md)
+- [`../docs/provenance.md`](../docs/provenance.md)

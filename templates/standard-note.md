@@ -44,7 +44,7 @@ tags:
 
 ## Description
 
-Factual scope from the official product page/Webstore text.
+Original paraphrase of the public product page. No document bodies or long verbatim excerpts.
 
 ## Editions / Technical Committee
 
@@ -56,13 +56,13 @@ Factual scope from the official product page/Webstore text.
 
 ## Metadata
 
-- **Stand:** 2026-11-19 — data from official IEC Webstore pages (manual crawl).
-- **Price:** CHF <...> — “as of Crawl-Date” (see [meta/crawl-notes.md](../meta/crawl-notes.md)).
+- **Data as of:** YYYY-MM-DD — data from the official product page (manual collection).
+- **Price:** CHF <...> — snapshot from the collection date (see [docs/provenance.md](../docs/provenance.md)).
 - **Languages:** English.
 
 ## Notes
 
-- Preis dynamic — check current catalogue: [Webstore “All products”](https://webstore.iec.ch/en/products/).
+- Prices are dynamic — check the current catalog: [Webstore “All products”](https://webstore.iec.ch/en/products/).
 - [[standards/index-standards.md|Standards in this Vault]]
-- [[processes/webstore-terms.md|IEC Webstore AGBs]]
-- [[meta/licensing.md|Licensing & approach to IEC]]
+- [[processes/webstore-terms.md|IEC Webstore terms]]
+- [[docs/provenance.md|Licensing & approach to IEC]]

@@ -1,15 +1,21 @@
-# Technical Specification (TS) — IEC Technical Specification
+# Technical Specification (TS)
 
-Source: https://iec.ch/publications/specifications
+Source: <https://iec.ch/publications/specifications>
 
 ## Definition
 
-> “A technical specification approaches an international standard in terms of detail and completeness but has not yet passed through all approval stages, either because consensus has not been reached or because standardization is seen to be premature.”
+A Technical Specification approaches an International Standard in detail and completeness
+but has not passed through all approval stages — either because consensus was not reached
+or because standardization is considered premature.
 
 ## Approval
 
-> “Similar to an international standard (IS), a technical specification is normative in nature and developed according to the consensus procedure. The final vote takes place at the draft technical specification (DTS) stage, immediately following the committee draft (CD) stage. A TS is approved by 2/3 of participating IEC Members (P-members) of an IEC technical committee or subcommittee (TC/SC).”
+A TS is normative and follows the consensus procedure. The final vote takes place at the
+Draft Technical Specification (DTS) stage, immediately after the Committee Draft (CD)
+stage. Approval requires a two-thirds majority of the participating IEC Members
+(P-members) of the responsible TC/SC.
 
 ## MASTER
 
-TS products (sold via Webstore — see frontmatter in `standards/`).
+TS publications are Webstore products — see the `standards/` notes and
+[docs/provenance.md](../docs/provenance.md).

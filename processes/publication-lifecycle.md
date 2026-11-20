@@ -1,34 +1,57 @@
-# Publication Lifecycle — WD/CD/CDV/FDIS/Publication/Maintenance
+# Publication Lifecycle — WD/CD → CDV → FDIS → Publication → Maintenance
 
-Source: https://iec.ch/standards-development/drafting-publications-overview (“Lifecycle of an IEC publication”)
+Source: <https://iec.ch/standards-development/drafting-publications-overview>
 
-## WD/CD documents (Preparatory/Committee stage)
+## Starting points
 
-> “The development of a new publication has two possible starting points: either an existing publication is updated (maintenance), or a new one is created from scratch. Both scenarios are described in our page on the WD/CD documents.”
+A publication can start either as a maintenance update of an existing
+publication or as a new document created from scratch.
 
-## CDV documents (Enquiry stage)
+## WD/CD stage (preparatory / committee)
 
-> “When a document reaches CDV stage, the IEC Editing and Document preparation team starts working on it. For details on the interaction between the IEC and the TC at this stage, see our information on CDV documents.”
+The working draft and committee draft are prepared and discussed in the
+committee. The IEC editing and document-preparation team becomes involved as
+the document moves toward the enquiry stage.
 
-## FDIS documents (Approval stage)
+## CDV stage (enquiry)
 
-> “When the IEC receives a draft FDIS, it goes through an IEC entry control to ensure it meets our requirements, before being formatted and edited. For more details, see our information on FDIS documents.”
+At the committee draft for vote (CDV) stage, the document is circulated for
+comment and vote. The IEC editing team works with the TC on the document during
+this stage.
 
-### Inside FDIS (from the IEC process, as known from the draft-FDIS page)
+## FDIS stage (approval)
 
-- Entry control (Layout, tables, texts, Figures, Editing, linguistic completeness).
-- Formatting → Editing → Any questions sent to the TC Secretary (reply within 10 working days) → Figures review → Circulation for vote → (after FDIS vote: technical changes frozen).
+When the IEC receives a final draft International Standard (FDIS), it goes
+through entry control to check layout, tables, figures, editing, and linguistic
+completeness. After formatting and editing, questions may go to the TC
+Secretary, followed by figure review and circulation for vote. After the FDIS
+vote, technical changes are frozen.
 
 ## Publication stage
 
-> “The IEC generates the cover pages and prepares the document for publication. Then the document is published, normally within 1.5 months of approval of the FDIS, and put on sale in the IEC Web Store.”
+The IEC prepares the cover pages and publishes the document, normally within
+about 1.5 months of FDIS approval. The publication is then sold through the IEC
+Webstore.
 
-## Maintenance / updating a publication
+## Maintenance
 
-> “For maintenance work on a publication, it is essential for the TC to start their work on the basis of the publication files of the previous edition, not on intermediate versions in their possession. The TC can obtain the revisable files (Word version and, if available, editable images) through their IEC Technical Officer.”
+For maintenance, the TC should start from the publication files of the previous
+edition, not from intermediate versions. The TC can obtain the revisable files
+through its IEC Technical Officer.
 
 ## Version control
 
-> “Keeping control of document versions: When preparing a publication, different authors contribute to one document. Their contributions are merged, and the document is exchanged several times between various people. All across the development of your publication, it is of the utmost importance to have one central reference document, and to avoid developing two or more documents in parallel. Parallel document development can create massive confusion and often results in time-consuming, painful cycles of repeating work, once it is discovered that a more up-to-date version exists.”
+A publication has many contributors and is exchanged repeatedly. Keeping one
+central reference document and avoiding parallel versions is essential;
+parallel development causes confusion and repeated work.
+
+## Short quotation
+
+> “The IEC generates the cover pages and prepares the document for publication.”
 
 ## MASTER
+
+- [`overview.md`](overview.md)
+- [`development-stages.md`](development-stages.md)
+- [`work-programme.md`](work-programme.md)
+- [`../index/index.md`](../index/index.md)

@@ -1,25 +1,59 @@
-# IEC Webstore AGBs (Stand 2025-08-04) — Excerpts
+# IEC Webstore Terms — Summary
 
-Source: https://webstore.iec.ch/en/terms-conditions/
+Source: <https://webstore.iec.ch/en/terms-conditions/> (terms dated 2025-08-04)
 
-## Copyright (§2 “Copyright and other intellectual property rights”)
+This is a short, unofficial summary for contributors. It is **not legal
+advice**. Read the official terms before reusing IEC material.
 
-> “All IEC Products sold through IEC Webstore are protected by copyright pursuant to Swiss and international copyright laws. You shall not copy, transfer, sell, license, lease, give, modify, publish, assign, transmit or otherwise reproduce, disclose, make available to others or create derivative works from IEC Products, or any portion thereof, without permission in writing from IEC.”
+## Copyright
 
-> “Nothing in these terms shall be deemed to permit or licence you to use, modify or publish any trademarks, including any service or certification marks including any logos, of IEC.”
+IEC products sold through the Webstore are protected by copyright under Swiss
+and international law. Copying, transferring, selling, licensing, publishing,
+modifying, or creating derivative works from IEC products requires written
+permission from the IEC.
 
-## Scraping / robots (§2)
+> “You shall not copy … IEC Products … without permission in writing from IEC.”
 
-> “This prohibition includes the use of robots, scripts, or any other manual or automatic mechanism to data mine or scrape IEC Products without express written permission by IEC.”
+## No scraping or data mining
 
-## AI/ML (§3 “Artificial Intelligence”)
+The terms prohibit using robots, scripts, or other manual or automatic
+mechanisms to data mine or scrape IEC products without express written
+permission.
 
-> “You shall not use publications and documents sold through IEC Webstore for the development of any algorithm, digital model, software program, or AI tool, including for the development or operation of a machine learning or AI system. This prohibition includes the use of robots, scripts, or any other manual or automatic mechanism to data mine or scrape IEC Products without express written permission by IEC. You shall not, and shall not permit others to, introduce and/or otherwise use IEC Products and any intellectual property associated with them in any manner in AI technologies whether publicly available AI tools or privately licensed AI tools, unless you have obtained the specific and express permission of IEC.”
+## No use in AI/ML development
+
+The terms prohibit using publications and documents sold through the Webstore
+to develop algorithms, digital models, software programs, or AI tools,
+including machine-learning or AI systems. They also prohibit introducing IEC
+products into AI technologies without specific permission.
+
+> “You shall not use publications and documents sold through IEC Webstore for
+> the development of any algorithm, digital model, software program, or AI
+> tool…”
+
+## Trademarks
+
+Nothing in the terms grants a license to use IEC trademarks, service marks,
+certification marks, or logos.
 
 ## Returns
 
-> “IEC does not accept returns for purchases of electronic documents in PDF format. IEC reserves the right to revisit this no-refund policy at any time.”
+IEC does not accept returns for electronic documents in PDF format.
+
+## What this project does
+
+- Uses **public catalog metadata** (references, titles, editions, dates,
+  committees, ICS codes, price snapshots, links) for identification.
+- Does **not** include IEC document bodies, PDFs, or purchased content.
+- Does **not** scrape the Webstore; data is collected manually from public
+  pages.
+- Uses only short, attributed quotations from public pages.
+- Does **not** feed purchased IEC content into a model or embedding index.
+
+See [`../docs/data-policy.md`](../docs/data-policy.md) and
+[`../docs/iec-engagement.md`](../docs/iec-engagement.md).
 
 ## MASTER
 
-Details + discussion see [meta/licensing.md](../meta/licensing.md).
+- [`../docs/provenance.md`](../docs/provenance.md)
+- [`../index/index.md`](../index/index.md)

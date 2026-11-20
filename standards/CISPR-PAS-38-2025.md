@@ -16,7 +16,7 @@ tags: [CISPR, PAS, RB-WPT, EMC]
 
 # CISPR PAS 38:2025
 
-**Stand:** 2026-11-19 — product page (Webstore). No document bodies (copyright — see `meta/licensing.md`).
+**Data as of:** 2026-11-19 — product page (Webstore). No document bodies (copyright — see `docs/provenance.md`).
 
 ## Description
 

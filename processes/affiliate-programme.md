@@ -1,21 +1,43 @@
 # IEC Affiliate Programme — Rules for Affiliate Countries
 
-Source: https://www.prd.iec.ch/acp/standardization-affiliates (IEC Affiliate Country Programme)
+Source: <https://www.prd.iec.ch/acp/standardization-affiliates>
 
-## No-cost Rule (“make available free of charge”)
+## What the programme offers
 
-> “It is prohibited to make, or allow others, to make available free of charge IEC International Standards and other publications, their respective adoptions and translations.”
+The IEC Affiliate Country Programme gives participating countries access to a
+limited number of IEC International Standards free of charge for national
+adoption. The standard quota is 200 publications; “Affiliate Plus” increases it
+to 400.
 
-> “Affiliate countries are encouraged to adopt and reference IEC International Standards in their national laws and regulations and can select up to 200 IEC International Standards free of any commercial consideration, for national adoption.”
+Affiliate countries are encouraged to adopt and reference IEC International
+Standards in national laws and regulations. After national adoption, the
+affiliate country notifies the IEC Affiliate Secretariat using the Declaration
+of Adoption form.
 
-> “Once the IEC International Standard is adopted at the national level, the affiliate country shall notify the IEC Affiliate secretariat by completing the Declaration of Adoption form.”
+## Important restriction
 
-> “As part of the IEC Affiliate Country Programme, participants have access to a limited number of IEC International Standards free of charge in view of adoption.” (Quota 200; “Affiliate Plus” increases to 400)
+The programme does **not** allow free redistribution. It is prohibited to make,
+or allow others to make, IEC International Standards or their adoptions and
+translations available free of charge.
 
-## Other Publications
+> “It is prohibited to make, or allow others, to make available free of charge
+> IEC International Standards and other publications, their respective
+> adoptions and translations.”
 
-> “The IEC also produces other publications such as technical specifications, technical reports, guides, industry technical agreements (ITA) and publicly available specifications.”
+## Other publication types
+
+The IEC also produces technical specifications, technical reports, guides,
+industry technical agreements (ITA), and publicly available specifications.
+The affiliate rules and the Webstore terms apply to these publications as well.
+
+## Why this matters for the vault
+
+A standard being available to an affiliate country for national adoption does
+not make it free for everyone. The vault therefore treats all catalog entries
+as paid publications unless the official source explicitly says otherwise.
 
 ## MASTER
 
-Details: [meta/licensing.md](../meta/licensing.md).
+- [`webstore-terms.md`](webstore-terms.md)
+- [`../docs/provenance.md`](../docs/provenance.md)
+- [`../index/index.md`](../index/index.md)

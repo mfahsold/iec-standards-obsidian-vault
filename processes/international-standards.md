@@ -2,45 +2,59 @@
 
 Sources:
 
-- https://iec.ch/publications/international-standards (definition, Consensus, Public Enquiry, Approval, voluntary adoption)
-- ISO/IEC Directives, Part 1 + IEC Supplement (2024-05, public PDF): https://www.iec.ch/system/files/2024-05/consolidated_iso-iec_part-1_iecsupplement_2024.pdf
-- ISO Directives Part 2 (definitions “standard”/“international standard”): https://www.iso.org/sites/directives/current/part2/index.xhtml
+- <https://iec.ch/publications/international-standards> — definition, consensus, public
+  enquiry, approval, voluntary adoption.
+- ISO/IEC Directives, Part 1 + IEC Supplement (2024-05, public PDF):
+  <https://www.iec.ch/system/files/2024-05/consolidated_iso-iec_part-1_iecsupplement_2024.pdf>
+- ISO Directives Part 2 (definitions):
+  <https://www.iso.org/sites/directives/current/part2/index.xhtml>
 
-## Definition (all IEC standards)
+## Definition
 
-> “A normative document, developed according to consensus procedures, which has been approved by the IEC National Committee members of the responsible committee in accordance with Part 1 of the ISO/IEC Directives.”
+An IEC International Standard is a **normative document** developed through consensus
+procedures and approved by the IEC National Committee members of the responsible
+committee, in accordance with Part 1 of the ISO/IEC Directives.
 
-## Definition (ISO/IEC Guide 2:2004, Directives Part 2)
+ISO/IEC Guide 2 defines a **standard** as a document established by consensus and
+approved by a recognized body, providing rules, guidelines or characteristics for common
+and repeated use. An **international standard** is a standard adopted by an international
+standardizing organization and made available to the public.
 
-> “standard — document (3.1), established by consensus and approved by a recognized body, that provides, for common and repeated use, rules, guidelines or characteristics for activities or their results, aimed at the achievement of the optimum degree of order in a given context.”
+## WTO / Technical Barriers to Trade
 
-> “international standard — standard that is adopted by an international standardizing/standards organization and made available to the public.”
-
-## WTO (Technical Barriers to Trade)
-
-> “The IEC is one of the bodies recognized by the World Trade Organization (WTO) and entrusted by it for monitoring the national and regional organizations agreeing to use IEC International Standards as the basis for national or regional standards as part of the WTO Technical Barriers to Trade Agreement.”
+IEC is one of the bodies recognized by the World Trade Organization (WTO) in the context
+of the Technical Barriers to Trade Agreement. IEC standards are used as a basis for
+national and regional standards.
 
 ## Consensus
 
-> “In the IEC, consensus means:
-> - a 2/3 majority of participating IEC Members(National Committees) have approved the standard, and less than 25% of all IEC Members have voted negatively
-> - a 2/3 majority of all participating experts have agreed with the solution put forward in the standard
-> - all major opposition has been overcome
-> - all major issues have been addressed
-> - all views have been taken into account”
+In IEC practice, consensus means:
 
-## Public Enquiry
+- a two-thirds majority of participating IEC Members (National Committees) approve the
+  standard, and less than 25 % of all IEC Members vote negatively;
+- a two-thirds majority of participating experts agree with the proposed solution;
+- major opposition has been overcome and major issues addressed;
+- all views have been taken into account.
 
-> “Another vital feature of a truly international standard is the fact that it can be submitted to public enquiry in any of the IEC Member countries. Additionally, public commenting allows experts who don't participate in the IEC to comment any IEC Standard at the CDV stage. Thus, through the democratic tools of consensus, public enquiry, and public commenting, any interested party is able to speak up and have their say in the development and publication of an international standard.”
+## Public enquiry
+
+An international standard can be submitted to public enquiry in any IEC member country.
+Experts who do not participate in the IEC can comment at the CDV (committee draft for
+vote) stage. Consensus, public enquiry and public commenting are the democratic tools of
+the process.
 
 ## Approval
 
-> “An international standard is approved if: b) not more than 25% of the total number of votes cast are negative; a) a two-thirds majority of the votes cast by the P-members of the technical committee or subcommittee are in favour, and.”
+An international standard is approved when:
+
+- at least two-thirds of the votes cast by P-members of the TC/SC are in favour, and
+- not more than 25 % of the total votes cast are negative.
 
 ## Voluntary adoption
 
-> “Adoption and use of IEC International Standards is entirely voluntary, whether the country is an IEC Member or not.”
+Adoption and use of IEC International Standards is voluntary, whether or not a country is
+an IEC member.
 
 ## MASTER
 
-See [standards/](../standards/index-standards.md).
+→ [standards/index-standards.md](../standards/index-standards.md)

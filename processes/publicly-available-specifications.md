@@ -1,26 +1,32 @@
 # Publicly Available Specification (PAS)
 
-Source: https://iec.ch/publications/specifications
+Source: <https://iec.ch/publications/specifications>
 
 ## Objective
 
-> “The objective of a publicly available specification is to speed up standardization in areas of rapidly evolving technology and generally responds to an urgent market need. It is designed to bring the work of industry fora and consortia into the realm of the IEC.”
+A PAS speeds up standardization in areas of rapidly evolving technology and responds to an
+urgent market need. It brings the work of industry fora and consortia into the IEC.
 
-## PAS types (two possibilities)
+## Two routes
 
-> “PAS are either:
-> - the result of deliberations in an IEC working group or project team, when it is felt that an intermediary publication might be useful, or
-> - the technical agreement in an organization external to the IEC that has an A- or C-liaison with the TC concerned. It may be published as a dual-logo publication in which case the TC may decide to designate it as a pre-standard.”
+A PAS can be:
+
+- the result of deliberations in an IEC working group or project team, when an
+  intermediate publication is useful; or
+- a technical agreement from an external organization with an A- or C-liaison to the
+  responsible TC. It may be published as a dual-logo publication and designated as a
+  pre-standard by the TC.
 
 ## Rules
 
-> “Competing publicly available specifications on the same subject are permitted. A publicly available specification does not conflict with an international standard.”
+Competing PAS documents on the same subject are permitted. A PAS does not conflict with an
+International Standard.
 
 ## Approval
 
-> “A simple majority of the participating IEC Members of a TC/SC is sufficient to approve the document.”
+A simple majority of the participating IEC Members (P-members) of the TC/SC is sufficient.
 
-## Examples in the Vault
+## Examples in the vault
 
 - [standards/IEC-PAS-62443-2-2-2025.md](../standards/IEC-PAS-62443-2-2-2025.md)
 - [standards/IEC-PAS-63441-2022.md](../standards/IEC-PAS-63441-2022.md)
@@ -28,4 +34,6 @@ Source: https://iec.ch/publications/specifications
 
 ## MASTER
 
-IEC PAS documents are also Webstore products — see frontmatter in `standards/` and [../meta/licensing.md](../meta/licensing.md). The name “Publicly Available Specification” refers to the document type — **not** the distribution channel (PAS are also sold).
+PAS documents are Webstore products — see the `standards/` notes and
+[docs/provenance.md](../docs/provenance.md). "Publicly Available Specification" is the
+**document type**, not the distribution channel: PAS documents are also sold.

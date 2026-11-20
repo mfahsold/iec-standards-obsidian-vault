@@ -1,81 +1,159 @@
-# IEC Standards Obsidian Vault (Prototype)
+# IEC Standards Knowledge Vault
 
-Obsidian vault with publicly available IEC information — built for Obsidian, optimized for LLM/agent usage, and vault-internal navigation via Obsidian wikilinks.
+A local-first, open-source Obsidian vault and retrieval stack for **public
+metadata about IEC/ISO standards** — built for humans, agents, and
+citation-grounded question answering.
 
-> **Status: Prototype, Data Stand: 2026-11-20** — Repo is **private** on GitHub (`main` pushed, clean). See [meta/licensing.md](meta/licensing.md) for public-setup notes and **[meta/project-charter.md](meta/project-charter.md) for vision, scope and definition of done**.
+> **Not affiliated with IEC or ISO.** This repository contains **no standard
+> document bodies**, no PDFs, and no long verbatim excerpts. It contains public
+> catalog metadata, links, and original summaries. See
+> [`NOTICE.md`](NOTICE.md) and [`docs/data-policy.md`](docs/data-policy.md).
 
-## Quick Start (Obsidian)
+## Why this exists
 
-- In the Obsidian GUI, the active vault is the **parent** folder `IEC_Agentic/`; this repository is its subfolder `iec-standards-obsidian-vault/`. (The CLI loop runs from the repo folder.)
-- **Home/Welcome:** this `README.md` (vault root) + `index/index.md` (MOC — fully linked).
-- **Search** (Ctrl+Shift+F or Ctrl+P): full-text search.
-- **Quick Switcher** (Ctrl/Cmd+O): jump to any note.
-- **Graph View:** recommended; fully linked vault.
+IEC catalog data is public but scattered across product pages, PDFs, and
+process documents. Engineers and agents often need precise answers to narrow
+questions:
 
-## Quick Links (navigation)
+- What is the ICS code of this standard?
+- Which TC/SC owns it?
+- Is it an IS, TR, PAS, COR1, or AMD2?
+- What did it cost at the time of cataloging?
+- How does the IEC development process work?
+- Which standard applies to a given product category?
 
-- 🏠 **Vault Home (you are here):** [README.md](README.md) — also the vault root.
-- 📑 **MOC (Map of Contents):** [index/index.md](index/index.md) — master index + full standards table.
-- 🔍 **Quick Switcher:** `Ctrl/Cmd + O` — jump to any note.
-- 🌐 **Global Search:** `Ctrl + Shift + F` (or `Ctrl + P`) — full-text search.
-- 🧭 **Graph View:** core plugin (`graph`) — enabled by default in this vault.
-- ⚙️ **Backlinks / Outgoing Links:** right sidebar — see connections of the current note.
+This project turns that public metadata into a navigable Obsidian vault and a
+machine-readable index, then adds a local retrieval loop that answers with
+citations — without copying the standards themselves.
 
-## Stats (2026-11-20)
+## What is inside
 
-- Files: 67 (61 Markdown); `index/index.json`: 23 verified entries.
-- Standards: 18 base notes + 5 new (2025/2026) + classics set.
-- Types: IS, ISO/IEC, TRF, PAS, TR, COR1, AMD2, ISO.
-- Chat/AI: Local LLM Helper 2.6.2 + Ollama 0.40.15 — `qwen3.5:2b` (chat) + `nomic-embed-text` (RAG, 241 chunks).
+| Path | Purpose |
+| --- | --- |
+| `standards/` | 23 catalog notes with YAML frontmatter (ref, type, edition, TC/SC, ICS, dates, price snapshot, sources). |
+| `processes/` | Public IEC process and document-type notes (IS, TS, TR, PAS, stages, workflows, terms). |
+| `electropedia/` | Electropedia / IEV reference note (links + short attributed quotes). |
+| `guides/`, `news/` | IEC Guides and newsletter references. |
+| `index/index.json` | Machine-readable catalog for tools and agents. |
+| `index/index.md` | Master index / map of contents (MOC). |
+| `meta/` | Project charter, provenance, source list, setup notes, design history. |
+| `tools/agent-loop.sh` | Portable CLI retrieval loop (local Ollama; optional Obsidian CLI). |
+| `tools/validate_vault.py` | Data, link, and public-safety validator used in CI. |
+| `docs/` | Data policy, IEC engagement questionnaire. |
 
-## What is in this vault
+## Quick start (Obsidian)
 
-- **`standards/` — IEC product catalog** with metadata: Ref (e.g., `IEC 62443-4-1:2018`), Type (IS/TS/TR/PAS/...), Technical Area, Technical Committee, Edition date, Publication date, ICS, Price (CHF), Stability date, Languages, and source links. **No document bodies** of the IEC standards (copyright IEC — see `meta/licensing.md`).
-- **`processes/` — IEC processes and document types** (IS/TS/TR/PAS/ISH/IEV workflows, development stages, work programme, publication lifecycle, webstore AGBs, affiliate programme, OSD, Directives).
-- **`electropedia/` — IEV Online** (free): 22,000+ terms, ~30 languages.
-- **`guides/` — IEC Guides** (GUIDE 103, 104, 107, 108, 109, …).
-- **`news/` — Free newsletter “IEC Just Published”** (monthly, 1st).
-- **`index/` — Master index**: `index.md` (MOC), `index.json` (machine-readable).
-- **`meta/` — sources, licensing, data provenance, IEC logic/structure, Obsidian usage, Obsidian CLI check.**
-- **[meta/agent-loop.sh](meta/agent-loop.sh)** — minimal agent loop: Obsidian CLI reads the note, Ollama (`qwen3.5:2b`) answers — L1/L2/L3; proof tests documented in [meta/chat-optimization.md](meta/chat-optimization.md).
-- **`templates/` — standard note template** (Obsidian Templates plugin).
+1. Clone the repository.
+2. Open the repository folder as an Obsidian vault.
+3. Start at [`README.md`](README.md) or [`index/index.md`](index/index.md).
+4. Use Quick Switcher (`Cmd/Ctrl+O`), search (`Cmd/Ctrl+Shift+F`), backlinks,
+   and graph view to navigate.
 
-## LLM/agent optimization
+The vault is designed to work without community plugins. Dataview queries in
+[`docs/setup.md`](docs/setup.md) are optional.
 
-- Atomic notes with YAML frontmatter (`ref`, `type`, `edition`, `technical_committee`, `published`, `ics`, `status`, `price_chf`, `sources[]`, `tags`) — machine-readable.
-- `index/index.json` — machine-readable index mirroring the frontmatter.
+## Quick start (CLI)
 
-### Local RAG chat (GUI) — important
+Requirements:
 
-- Use **Notes chat / RAG chat** (`local-llm-helper:rag-chat`) for IEC facts. The *general* chat (`llm-chat`) is **not** grounded in the vault and will say it has no access to documents.
-- RAG index (`embeddings.json`, 241 chunks) lives in the GUI vault's `.obsidian/plugins/local-llm-helper/`; rebuild after note changes with `obsidian command id=local-llm-helper:index-notes-rag`.
-- Configuration, settings location and verified golden-question tests: [meta/chat-optimization.md](meta/chat-optimization.md).
+- Python 3.9+
+- [Ollama](https://ollama.com/) with a local model, e.g.
+  `ollama pull qwen3.5:2b`
+- Optional: the Obsidian CLI for backlinks (the loop falls back to local search)
 
-## Obsidian Best Practices used
+```sh
+# Level 1: find a note, read it, answer with a citation
+./tools/agent-loop.sh "What is IEC 62443-4-1?"
 
-- Wikilinks between notes (`[[Note]]`/`[[Note|Alias]]`), Backlinks panel, Outgoing links panel, Quick Switcher, Search, Graph view — see [meta/obsidian-usage.md](meta/obsidian-usage.md).
-- Frontmatter (Properties) as the canonical data store.
-- Tags on standard notes (`IEC`, `IS`, `TC-65`, `Security`, …).
-- Dataview (optional plugin): [meta/dataview.md](meta/dataview.md) — ready queries.
-- Templates (Obsidian Templates plugin): [templates/standard-note.md](templates/standard-note.md).
+# Level 2: also query index/index.json
+./tools/agent-loop.sh -l 2 "What is the price of IEC 62443-4-1:2018?"
 
-## IEC logic/structure (sorting)
+# Level 3: also show incoming links
+./tools/agent-loop.sh -l 3 "Which technical committee owns IEC 62813:2025/COR1:2026?"
+```
 
-- [meta/iec-structure.md](meta/iec-structure.md) — TC/SC names, ICS codes, SDG anchors, statuses, project stages, IEC views.
-- Sorting rules: [meta/iec-structure.md](meta/iec-structure.md) §Sorting Rules (Type → TC/SC → ICS → Status → Edition → Date → Price).
+Environment variables:
 
-## Scope ("all publicly available IEC standards")
+```sh
+VAULT_DIR=/path/to/vault \
+OLLAMA_MODEL=qwen3.5:2b \
+./tools/agent-loop.sh "What are the ICS tags of IEC 62813:2025/COR1:2026?"
+```
 
-- “All products” in the IEC Webstore: https://webstore.iec.ch/en/products/ (incl. “Just Published”, “Bestsellers”, “Products by technical area”).
-- IEC Library Server (login): https://library.iec.ch/ — full catalog (all IEC publications incl. “Replaced / Withdrawn”) for members/appointees.
-- Third-party aggregators: https://www.normfile.com/iec.html, https://www.bsbedge.com/free-downloads/international-electrotechnical-commission/ — large catalogs from foreign lists (references).
-- This vault currently contains **verified data from official webstore pages (18 product notes + classics set)** — see [index/index.md](index/index.md) for the catalog table.
+The prompt is deliberately strict: use only the supplied note/index data, cite
+the source note, and say “Not in the vault” instead of inventing facts.
 
-## Data Stand & Updates
+## Optional: grounded RAG chat in Obsidian
 
-- 2026-11-19: data retrieved from official webstore/IEC pages (manually, via browser) + IEC Webstore product pages (publication/33615, 63886, 106458, …).
-- Prices and publication dates are marked “as of Crawl-Date”; details in [meta/crawl-notes.md](meta/crawl-notes.md).
+The vault was also tested with the **Local LLM Helper** community plugin and
+Ollama:
 
-## CLI
+- Chat model: `qwen3.5:2b`
+- Embedding model: `nomic-embed-text`
+- Use **Notes / RAG chat**, not **General chat**. General chat sends no note
+  context and will hallucinate.
+- After adding notes, reload the plugin before rebuilding the index (the plugin
+  caches its file list).
 
-- Obsidian CLI: enabled (Settings > General > Advanced → “Command line interface”), version 1.15.1 — check: [meta/obsidian-cli.md](meta/obsidian-cli.md).
+Full setup, settings, and verified test results:
+[`docs/setup.md`](docs/setup.md).
+
+## Data policy in one paragraph
+
+We include public metadata (references, titles, editions, dates, committees,
+ICS codes, price snapshots, links) and our own short summaries. We do not
+include IEC/ISO document bodies, PDFs, long verbatim excerpts, paywalled
+content, or scraped content. Prices are snapshots, not authoritative. Short
+quotations from public pages are attributed and linked. See
+[`docs/data-policy.md`](docs/data-policy.md).
+
+## Validation
+
+```sh
+python3 tools/validate_vault.py
+make lint
+```
+
+The validator checks:
+
+- JSON validity and index/note consistency;
+- required frontmatter fields and source URLs;
+- catalog/MOC coverage;
+- broken Markdown links and unresolved wikilinks;
+- absolute local paths, secrets, PDFs, and overly long block quotes.
+
+CI runs the same checks on every push and pull request.
+
+## Contributing
+
+Contributions are welcome. Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) for
+the workflow and data rules. The short version: public sources only, paraphrase
+descriptions, cite every fact, never paste standard bodies, and run the
+validator. Report security concerns privately via GitHub, not in a public
+issue.
+
+## Licensing
+
+- **Code** (scripts, CI, tooling): MIT — see [`LICENSES/MIT.txt`](LICENSES/MIT.txt).
+- **Original content** (notes, documentation, metadata compilation): CC BY 4.0
+  — see [`LICENSES/CC-BY-4.0.txt`](LICENSES/CC-BY-4.0.txt).
+- **Third-party material**: not covered; see [`NOTICE.md`](NOTICE.md).
+
+IEC/ISO names, standard references, and titles remain the property of their
+respective owners. This project claims no rights in them and includes no
+document bodies. The maintainers are clarifying reuse terms for IEC-derived
+metadata with the IEC; see [`docs/iec-engagement.md`](docs/iec-engagement.md).
+
+## Status and roadmap
+
+- **Status:** prototype; 23 verified catalog entries across 52 Markdown notes.
+- **Verified:** CLI golden questions (ICS, price, definition), RAG retrieval
+  top-1 on the ICS question, validator/CI.
+- **Next:** expand verified coverage, add more golden questions, improve
+  product→ICS→standard mapping, and complete the IEC clarification.
+
+## Disclaimer
+
+This project is informational. It is not certification, legal, or conformity
+advice. Always verify against the official IEC/ISO catalog and the current
+edition of a standard before making commercial or safety-critical decisions.

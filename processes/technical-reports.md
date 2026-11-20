@@ -1,18 +1,19 @@
 # Technical Report (TR)
 
-Source: https://iec.ch/publications/technical-reports
+Source: <https://iec.ch/publications/technical-reports>
 
 ## Definition
 
-> “Technical reports are entirely informative, not normative.”
-
-> “Technical Reports (TR) focus on a particular subject and contain for example data, measurement techniques, test approaches, case studies, methodologies and other types of information that is useful for standards developers and other audiences. They are never normative.”
+Technical Reports are **entirely informative, never normative**. They address a particular
+subject and may contain data, measurement techniques, test approaches, case studies,
+methodologies and other useful information for standards developers and other audiences.
 
 ## Approval
 
-> “A TR is approved by a simple majority of participating IEC Member countries (P-members) of a TC/SC.”
+A TR is approved by a simple majority of the participating IEC Member countries
+(P-members) of the TC/SC.
 
-## Examples in the Vault
+## Examples in the vault
 
 - [standards/IEC-TR-63650-2026.md](../standards/IEC-TR-63650-2026.md)
 - [standards/IEC-TR-61869-103-2012.md](../standards/IEC-TR-61869-103-2012.md)
@@ -22,3 +23,5 @@ Source: https://iec.ch/publications/technical-reports
 - [standards/IEC-TR-62380-2004.md](../standards/IEC-TR-62380-2004.md)
 
 ## MASTER
+
+→ [standards/index-standards.md](../standards/index-standards.md)

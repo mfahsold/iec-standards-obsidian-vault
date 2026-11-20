@@ -1,19 +1,26 @@
 # Guides — IEC GUIDEs
 
-Quelle: https://iec.ch/news-resources/guides
+Source: <https://iec.ch/news-resources/guides>
 
-> „If you are a member, please log in and click on the download button in the right column. If you are not a member, please click on the title that allows you to buy the guide.“
+IEC Guides are publications that address horizontal or cross-cutting topics.
+Some are available to members through a login; others can be purchased. The
+table below records the public metadata for the guides referenced in this vault.
 
-| Guide | TC | Referenz / Edition / Datum | Note |
+| Guide | TC | Edition / date | Topic |
 | --- | --- | --- | --- |
-| IEC GUIDE 103:1980 | SMB | Edition 1.0 (1980-06-01) | Guide on dimensional co-ordination |
-| IEC GUIDE 104:2019 | ACOS | Edition 5.0 (2019-07-24) | The preparation of safety publications and the use of basic safety publications and group safety publications |
-| IEC GUIDE 107:2014 | ACEC | Edition 4.0 (2014-07-15) | Electromagnetic compatibility - Guide to the drafting of electromagnetic compatibility publications |
-| IEC GUIDE 108:2019 | SMB | Edition 3.0 (2019-11-14) | Guidelines for ensuring the coherence of IEC publications - Horizontal functions, horizontal publications and their application |
-| IEC GUIDE 109:2026 | ACEA | Edition 4.0 (2026-02-19) | Environmental aspects - Inclusion in electrotechnical product standards |
+| IEC GUIDE 103:1980 | SMB | Edition 1.0 (1980-06-01) | Dimensional co-ordination |
+| IEC GUIDE 104:2019 | ACOS | Edition 5.0 (2019-07-24) | Preparation of safety publications and use of basic/group safety publications |
+| IEC GUIDE 107:2014 | ACEC | Edition 4.0 (2014-07-15) | Drafting of electromagnetic compatibility publications |
+| IEC GUIDE 108:2019 | SMB | Edition 3.0 (2019-11-14) | Coherence of IEC publications; horizontal functions and publications |
+| IEC GUIDE 109:2026 | ACEA | Edition 4.0 (2026-02-19) | Environmental aspects in electrotechnical product standards |
 
-→ Details/Verknüpfungen: Webstore/member-login (s. [meta/licensing.md](../meta/licensing.md)); Verweise hier nachgehalten.
+## Access
+
+The IEC page indicates that members can log in to download guides, while
+non-members can purchase them. The vault does not include guide texts; it only
+records metadata and links.
 
 ## MASTER
 
-- [index/index.md](../index/index.md) — Vault MOC (links to this file).
+- [`../index/index.md`](../index/index.md)
+- [`../docs/provenance.md`](../docs/provenance.md)

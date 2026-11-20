@@ -1,2 +1,28 @@
-.obsidian/
+# macOS / Windows
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# Obsidian: local state only; the active GUI vault is outside this repository
+.obsidian/
+.trash/
+
+# Local models, indexes and caches
+*.pdf
+*.gguf
+*.bin
+.env
+.env.*
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
