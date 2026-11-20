@@ -33,6 +33,15 @@ beyond the review threshold in `tools/config.py`, IEC should be consulted.
 Do not reproduce wording from IEC/ISO pages. Paraphrase the fact and link the
 source. Never copy a paragraph, abstract, section, or table.
 
+## Bring-your-own documents
+
+This project processes **only public metadata**. If you add documents you are
+licensed to use to your own local vault, that is **outside this project's scope
+and solely your responsibility**: check your licence before indexing them, do
+not reproduce IEC text, do not publish derived content containing it, and never
+add such files or their embeddings to this repository. The CLI tool is designed
+for the public catalog in `index/index.json`, not for purchased publications.
+
 ## AI/RAG rules
 
 Index only this repository's notes. Never feed purchased IEC/ISO documents into

@@ -1,73 +1,68 @@
-# Manual Test Plan (before going public)
+# Manual Test Sheet
 
-Work through these steps and record the results below. No counts or settings are
-hardcoded here — get live values from `python3 tools/config.py --show`.
+Work through the checks in order and tick them. Live values come from
+`python3 tools/config.py --show`; nothing here hardcodes counts or versions.
 
-## 1. Rebuild local state
+## A. Local data and code
 
 ```sh
+cd unofficial-iec-metadata-vault
 python3 tools/build-index.py
 python3 tools/config.py --show
-```
-
-Confirm the RAG index was rebuilt and the catalog entries match `index/index.json`.
-
-## 2. Automated checks
-
-```sh
 python3 -m py_compile tools/*.py
 python3 tools/validate_vault.py
 python3 tools/evaluate.py
 ```
 
-Expect: no compile errors, `0 error(s), 0 warning(s)`, and all generated probes
-passing. The evaluator prints the current scores; record them.
+- [ ] Index rebuilt; chunk/file count matches the live catalog view.
+- [ ] Python compile produces no errors.
+- [ ] Validator: `0 error(s), 0 warning(s)`.
+- [ ] Evaluator: all generated probes pass; scores recorded below.
 
-## 3. Generated CLI smoke tests
-
-Questions are generated from the catalog, not hardcoded:
+## B. Answer quality (generated questions, nothing hardcoded)
 
 ```sh
 python3 tools/probes.py --cli | head -3 | sh    # ANSWER probes
 python3 tools/probes.py --cli | tail -1 | sh    # REFUSE probe
 ```
 
-Expect: catalog values with `[Source: …]` citations for ANSWER probes; “Not in
-the vault …” with no invented data for REFUSE probes. Pass rule: 2–3 sentences,
-correct value, citation present, no invented facts.
+- [ ] ANSWER probes: correct catalog value, 2–3 sentences, `[Source: …]` citation.
+- [ ] REFUSE probe: “Not in the vault …”, no invented standard, no unrelated source.
+- [ ] Optional full check: `python3 tools/evaluate.py --generate`.
 
-## 4. Obsidian GUI
+Record: retrieval ____/____ · decisions ____/____ · answers ____/____
 
-Open the vault; check the MOC, links, graph, backlinks, and search. Optional: test
-the IEC Vault terminal profile or the “Ask vault” plugin; its answer must match
-the CLI. GUI answers are not authoritative.
+## C. Obsidian / optional GUI
 
-## 5. Repository readiness
+- [ ] Vault opens; `index/index.md` (MOC) works; links, graph, backlinks and search respond.
+- [ ] Optional terminal profile **IEC Vault** starts in the repo folder.
+- [ ] Optional “Ask vault” plugin ribbon icon works and its answer matches the CLI.
+- [ ] GUI output is treated as non-authoritative.
+
+## D. Documentation and legal boundary
+
+- [ ] README has: description, disclaimer, scope, Vision/Scope/DoD, Requirements, Installation, Configuration, licensing.
+- [ ] `docs/data-policy.md` contains the **Bring-your-own documents** boundary.
+- [ ] No direct IEC quotations anywhere (`git grep -n '^> ' -- '*.md'` shows only the template TL;DR).
+- [ ] `NOTICE.md`, `LICENSE`, `docs/takedown.md`, `docs/iec-email.md` exist and are linked.
+- [ ] All documentation is in English; “non-commercial” is explained as intent, not a CC BY restriction.
+- [ ] Project/repo name is “Unofficial IEC Metadata Vault” / `unofficial-iec-metadata-vault`.
+
+## E. Repository and release
 
 ```sh
 git status --short --branch
 git diff --check
+gh repo view --json description,homepageUrl,repositoryTopics,visibility
+git ls-remote --tags origin v0.1.0
 ```
 
-Expect clean tree, in sync with `origin/main`. Confirm license/notice files, no
-PDFs/secrets/absolute paths, `index/embeddings*.json` gitignored, English-only
-docs, and the non-official disclaimer present.
-
-## 6. Result record
-
-| Check | Expected | Result |
-| --- | --- | --- |
-| Index rebuild + config view | matches catalog | |
-| Compile + validator | 0 errors | |
-| Evaluator | all probes pass | |
-| Generated ANSWER probes | values + citations | |
-| Generated REFUSE probe | Not in the vault | |
-| Obsidian navigation | links/graph/search work | |
-| Repo clean | clean, in sync | |
-| Public decision | yes/no | |
+- [ ] `main` clean and in sync with `origin/main`; no whitespace errors.
+- [ ] GitHub About has description, homepage and topics; repository is PUBLIC.
+- [ ] Tag `v0.1.0` points to the current release commit.
+- [ ] No PDFs, secrets, absolute paths, or `index/embeddings*.json` tracked.
 
 ## Release gate
 
-The release gate is: all generated probes pass, the validator reports 0 errors,
-the repo is clean, and results are recorded. If anything fails, stop and report
-the exact generated question and answer before publishing a new tag or release.
+Only publish a new tag/release if sections A, B, D and E are fully ticked. If a
+probe fails, stop and report the exact generated question, mode and answer.

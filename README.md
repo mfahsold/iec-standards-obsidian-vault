@@ -99,7 +99,9 @@ python3 tools/config.py --show
 We store only public metadata, links and original summaries — no document bodies,
 PDFs, direct quotations, scraped or purchased content. Prices and dates are
 collection-time snapshots. Answers must cite a source and say “not in the vault”
-rather than invent facts. Full rules: [`docs/data-policy.md`](docs/data-policy.md).
+rather than invent facts. Adding your own licensed documents locally is outside
+this project's scope and your responsibility. Full rules:
+[`docs/data-policy.md`](docs/data-policy.md).
 
 ## Validation and testing
 
