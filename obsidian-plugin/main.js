@@ -3,7 +3,18 @@ const { execFile } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-const REPO_FOLDER = 'iec-standards-obsidian-vault';
+function findRepoDir(base) {
+  try {
+    for (const entry of fs.readdirSync(base, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const candidate = path.join(base, entry.name, 'tools', 'agent-loop.py');
+      if (fs.existsSync(candidate)) return path.join(base, entry.name);
+    }
+  } catch (error) {
+    return null;
+  }
+  return null;
+}
 
 class AskModal extends obsidian.Modal {
   constructor(app, plugin) {
@@ -56,13 +67,11 @@ class IecVaultAskPlugin extends obsidian.Plugin {
     const base = this.app.vault.adapter.getBasePath
       ? this.app.vault.adapter.getBasePath()
       : '';
-    this.repoDir = path.join(base, REPO_FOLDER);
+    this.repoDir = findRepoDir(base);
 
     const open = () => {
-      if (!fs.existsSync(path.join(this.repoDir, 'tools', 'agent-loop.py'))) {
-        new obsidian.Notice(
-          `IEC Vault Ask: repo not found at ${this.repoDir}`
-        );
+      if (!this.repoDir || !fs.existsSync(path.join(this.repoDir, 'tools', 'agent-loop.py'))) {
+        new obsidian.Notice('IEC Vault Ask: no vault repo with tools/agent-loop.py found');
         return;
       }
       new AskModal(this.app, this).open();

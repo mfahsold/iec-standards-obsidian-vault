@@ -26,8 +26,7 @@ in that frontmatter and in `index/index.json`.
 | Short third-party quotations | Original terms; attributed and linked |
 
 No IEC/ISO document bodies, PDFs, or long verbatim excerpts are included. This is
-**not official IEC or ISO communication or documentation of any kind**, is not
-affiliated with or endorsed by any standards body, and may contain errors.
+not official IEC/ISO material and may contain errors; see [`NOTICE.md`](../NOTICE.md).
 
 The IEC Webstore Terms (version 2025-08-04) govern IEC Products sold through the
 Webstore: copyright, no unauthorised copying or scraping, and no AI/ML use of

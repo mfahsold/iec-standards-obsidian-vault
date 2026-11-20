@@ -40,16 +40,29 @@ JUDGE_PREDICT = env("JUDGE_PREDICT", 512, int)
 
 TOP_K = env("TOP_K", 5, int)
 RRF_K = env("RRF_K", 60, int)
+BM25_K1 = env("BM25_K1", 1.2, float)
+BM25_B = env("BM25_B", 0.75, float)
 HYBRID = env("HYBRID", "1") == "1"
 REQUEST_TIMEOUT = env("REQUEST_TIMEOUT", 240, int)
 
 KEEP_ALIVE = env("KEEP_ALIVE", "10m")
 EMBED_NUM_CTX = env("EMBED_NUM_CTX", 8192, int)
+EMBED_BATCH_SIZE = env("EMBED_BATCH_SIZE", 32, int)
+NOMIC_MODEL_PREFIX = env("NOMIC_MODEL_PREFIX", "nomic-embed-text")
 CHUNK_SIZE = env("CHUNK_SIZE", 800, int)
 CHUNK_OVERLAP = env("CHUNK_OVERLAP", 100, int)
 MIN_CONTENT = env("MIN_CONTENT", 50, int)
 
+BLOCK_QUOTE_ERROR = env("BLOCK_QUOTE_ERROR", 80, int)
+BLOCK_QUOTE_WARN = env("BLOCK_QUOTE_WARN", 40, int)
+BLOCK_QUOTE_TARGET = env("BLOCK_QUOTE_TARGET", 25, int)
+
 RAG_INDEX = Path(env("RAG_INDEX", str(ROOT / "index" / "embeddings.json")))
+
+
+def task_prefix(model: str, role: str) -> str:
+    """Return the task prefix required by the chosen embedding model."""
+    return f"{role}: " if model.startswith(NOMIC_MODEL_PREFIX) else ""
 
 
 def show() -> None:

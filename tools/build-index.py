@@ -97,8 +97,8 @@ def chunks_for_file(path: Path) -> List[Dict[str, Any]]:
 
 
 def embed_batch(texts: List[str], url: str, model: str) -> List[List[float]]:
-    if model.startswith("nomic-embed-text"):
-        texts = [f"search_document: {text}" for text in texts]
+    prefix = config.task_prefix(model, "search_document")
+    texts = [f"{prefix}{text}" for text in texts]
     payload = {
         "model": model,
         "input": texts,
@@ -132,7 +132,7 @@ def main() -> int:
         documents.extend(chunks_for_file(path))
 
     vectors: List[List[float]] = []
-    batch_size = 32
+    batch_size = config.EMBED_BATCH_SIZE
     for start in range(0, len(documents), batch_size):
         batch = documents[start:start + batch_size]
         vectors.extend(embed_batch([item["content"] for item in batch],

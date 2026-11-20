@@ -18,7 +18,9 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 from urllib.parse import unquote, urlparse
 
-ROOT = Path(__file__).resolve().parent.parent
+import config  # noqa: E402
+
+ROOT = config.ROOT
 STANDARDS_DIR = ROOT / "standards"
 INDEX_JSON = ROOT / "index" / "index.json"
 INDEX_MD = ROOT / "index" / "index.md"
@@ -506,15 +508,15 @@ def check_block_quotes() -> None:
             if not block:
                 return
             words = len(" ".join(block).split())
-            if words > 80:
+            if words > config.BLOCK_QUOTE_ERROR:
                 error(
                     f"{rel(path)}:{start_line}: block quote has {words} words "
-                    "(limit 80; paraphrase or shorten)"
+                    f"(limit {config.BLOCK_QUOTE_ERROR}; paraphrase or shorten)"
                 )
-            elif words > 40:
+            elif words > config.BLOCK_QUOTE_WARN:
                 warning(
                     f"{rel(path)}:{start_line}: long block quote ({words} words; "
-                    "target <= 25)"
+                    f"target <= {config.BLOCK_QUOTE_TARGET})"
                 )
             block = []
             start_line = 0

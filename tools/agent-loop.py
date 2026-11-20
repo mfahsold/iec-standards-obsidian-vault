@@ -41,10 +41,10 @@ referenced document, that is sufficient. Judge only whether the needed facts are
 present, not whether you can format them into the answer the question requests.
 
 Examples:
-- Question: "What are the ICS tags of IEC 62813:2025/COR1:2026?", excerpt:
-  "IEC 62813:2025/COR1:2026 ... ICS: 31.060.99" -> sufficient true.
-- Question: "What is the price of ISO 99999:2099?", excerpts about other
-  standards -> sufficient false, missing "price for ISO 99999:2099".
+- Question asks for an attribute of a referenced standard; excerpt states that
+  attribute for the same reference -> sufficient true.
+- Question asks for an attribute of a reference absent from all excerpts ->
+  sufficient false, missing that attribute for that reference.
 Return only one strict JSON object and no prose or Markdown fences, with two
 fields: "sufficient" (boolean) and "missing" (short string; empty when
 sufficient)."""
@@ -69,8 +69,7 @@ def post(url: str, path: str, payload: Dict[str, Any],
 
 
 def embed(text: str, url: str, model: str) -> List[float]:
-    if model.startswith("nomic-embed-text"):
-        text = f"search_query: {text}"
+    text = f"{config.task_prefix(model, 'search_query')}{text}"
     payload = {
         "model": model,
         "input": text,
@@ -105,7 +104,7 @@ def bm25_rank(question: str, chunks: List[Dict[str, Any]]) -> List[int]:
         for token in set(doc):
             doc_freq[token] = doc_freq.get(token, 0) + 1
     avg_len = sum(len(doc) for doc in docs) / count
-    k1, b = 1.2, 0.75
+    k1, b = config.BM25_K1, config.BM25_B
     scored: List[Tuple[float, int]] = []
     for index, doc in enumerate(docs):
         score = 0.0
@@ -122,7 +121,7 @@ def bm25_rank(question: str, chunks: List[Dict[str, Any]]) -> List[int]:
     return [index for _, index in scored]
 
 
-def rrf_merge(rankings: List[List[int]], k: int = 60) -> List[int]:
+def rrf_merge(rankings: List[List[int]], k: int = config.RRF_K) -> List[int]:
     """Reciprocal Rank Fusion: score = sum(1 / (k + rank))."""
     scores: Dict[int, float] = {}
     for ranking in rankings:
