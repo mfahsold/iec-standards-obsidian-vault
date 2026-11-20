@@ -11,7 +11,7 @@
   - Context Window (num_ctx): **16384** (vorgeschlagen — Phase N: „deutlich größeres Kontextfenster" — GUI: 0.8b-Notiz → 2b: Settings → Local LLM Helper → Context Window —EMP: 8192–16384 verwertbar; 16384 = maximal „available" bei diesem Host).
   - **Data-File:** `$V/.obsidian/plugins/local-llm-helper/data.json` (Batch N2a — aktualisiert: llmModel=`qwen3.5:2b`, endpoint, num_ctx=16384, temperature, maxTokens) — GUI-Pfad, falls GUI-Entry-Point geändert (Sandboxed-Plugin).
   - **Thinking:** Standard ON (Qwen3.5 — „mehr Thinking“ — Chunk N1 —beobachtet: Thinking + Content im Streaming-Response (Ollama 0.40 — `message.thinking`/`message.content`).
-  - System-Prompt (empfohlen): „Du bist der Obsidian-Agent für den IEC-Standards-Vault. Antworte kurz und strukturiert: Fakten + Quellen-URLs (sources).“
+  - System-Prompt (empfohlen): „Du bist der Obsidian-Agent für den IEC-Standards-Vault. Antworte kurz und strukturiert: Fakten + Quellen-URLs (sources). Antworte auf ICS-Fragen mit den ICS-Werten aus `index/index.json` (z. B. IEC 62813:2025/COR1:2026 → ICS 31.060.99). Antworte bei Preisfragen mit `price_chf` aus `index/index.json` (z. B. IEC 62443-4-1:2018 → 335 CHF — „For prices, see current catalogue"; freie IEC-Standards gibt es nicht).“
 
 ## Wie das Modell Daten abruft und verarbeitet (aktuell)
 

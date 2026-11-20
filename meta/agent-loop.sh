@@ -8,11 +8,12 @@ cd "$VAULT_DIR" || exit 1
 LEVEL=1; QUERY="Was ist IEC 62443-4-1?"
 if [ "$1" = "-l" ]; then LEVEL="$2"; QUERY="${3:-$QUERY}"; else QUERY="${1:-$QUERY}"; fi
 SQ=$(echo "$QUERY" | sed -E 's/^(Was|Wie|Welche?|Was sind|Was ist|Wann|Wozu|Wodurch|Womit|Welche|Welchen|Wo) *//; s/^(ist|sind|die|von|des|auf|welche) *//; s/\?+$//; s/^[ \t]+//')
+REF=$(echo "$QUERY" | grep -oE "[0-9][0-9-]*" | head -1)
 echo ">>> Level $LEVEL — Suche im Vault (Obsidian CLI)"
-NOTE=$(obsidian search query="IEC 62443-4-1" 2>/dev/null | grep -m1 "standards/IEC-62443-4-1-2018")
-[ -z "$NOTE" ] && NOTE=$(obsidian search query="$SQ" 2>/dev/null | grep -m1 "/standards/IEC-")
-[ -z "$NOTE" ] && NOTE=$(obsidian search query="$SQ" 2>/dev/null | head -1)
-case "$NOTE" in "" | "No matches found." | *"No matches found"*) NOTE="iec-standards-obsidian-vault/standards/IEC-62443-4-1-2018.md"; echo ">>> Fallback: $NOTE";; esac
+NOTE=$(obsidian search query="$REF" 2>/dev/null | grep -m1 "/standards/IEC-$REF")
+[ -z "$NOTE" ] && NOTE=$(obsidian search query="$REF" 2>/dev/null | grep -m1 "/standards/IEC-")
+[ -z "$NOTE" ] && NOTE=$(obsidian search query="$REF" 2>/dev/null | head -1)
+case "$NOTE" in "" | "No matches found." | *"No matches found"* | *"Error:"* | *"not recognized"*) NOTE="iec-standards-obsidian-vault/standards/IEC-$REF.md"; [ -f "$NOTE" ] || NOTE="iec-standards-obsidian-vault/standards/IEC-62443-4-1-2018.md"; echo ">>> Fallback: $NOTE";; esac
 echo ">>> Note: $NOTE"
 case "$LEVEL" in
   2|3)
@@ -42,4 +43,4 @@ case "$LEVEL" in
     ;;
 esac
 echo ">>> Antwort (Ollama, qwen3.5:2b)"
-ollama run qwen3.5:2b "System: Du bist der Obsidian-Agent für den IEC-Standards-Vault. Antworte kurz und strukturiert (2-3 Sätze max): Fakten + Quellen-URLs (sources). Keine Übertragung von Standardtexten außerhalb der Daten. Nenne bei IEC-Kritik/Mustern (siehe meta/iec-criticism.md): SLOW/Bureaucracy, 85%-Dominanz, Private SDO, Strategic Competition (ISO/IEC), Slow-Pattern — bei Kritik-Fragen: Kurz-Argument + Alternative (ANSI/ISO/ITU/Webstore-Preise, voluntary adoption) erwähnen. Frage: '$QUERY'. Daten: Note: $NOTE; index/index.json (Matrix: ref/title/type/edition/technical_committee/published/ics/status/price_chf/sources)." 2>/dev/null | head -25
+ollama run qwen3.5:2b "System: Du bist der Obsidian-Agent für den IEC-Standards-Vault. Antworte kurz und strukturiert (2-3 Sätze max): Fakten + Quellen-URLs (sources). Keine Übertragung von Standardtexten außerhalb der Daten. Achte auf ICS-Richtigkeit: Beantworte ICS-Fragen mit den Werten aus index/index.json (z. B. IEC 62813:2025/COR1:2026 → ICS 31.060.99; IEC 62443-4-1:2018 → 25.040.40 35.030) — keine sonstigen Bezüge (z. B. keine 'Sicherheits-Engineering'-Erweiterungen). Nenne bei IEC-Kritik/Mustern (siehe meta/iec-criticism.md): SLOW/Bureaucracy, 85%-Dominanz, Private SDO, Strategic Competition (ISO/IEC), Slow-Pattern — bei Kritik-Fragen: Kurz-Argument + Alternative (ANSI/ISO/ITU/Webstore-Preise, voluntary adoption) erwähnen. Frage: '$QUERY'. Daten: Note: $NOTE; index/index.json (Matrix: ref/title/type/edition/technical_committee/published/ics/status/price_chf/sources)." 2>/dev/null | head -25
