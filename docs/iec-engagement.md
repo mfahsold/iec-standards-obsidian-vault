@@ -1,7 +1,9 @@
 # IEC Engagement — Questions for Clarification
 
-Status: **pending** (the maintainers are clarifying reuse terms with the IEC).
-This document is a preparation aid, not legal advice.
+Status: **questionnaire to be sent in parallel with the public release**. The
+repository is already public under the disclaimers in `README.md` and `NOTICE.md`;
+if IEC requests changes, they will be applied. This document is a preparation
+aid, not legal advice.
 
 The goal is to publish a public, non-commercial, local-first knowledge base that
 contains **metadata about** IEC publications and **original summaries**, but no

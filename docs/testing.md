@@ -68,6 +68,6 @@ docs, and the non-official disclaimer present.
 
 ## Release gate
 
-Go public only if all generated probes pass, the validator reports 0 errors, the
-repo is clean, and the results are recorded. If anything fails, stop and report
-the exact generated question and answer before flipping visibility.
+The release gate is: all generated probes pass, the validator reports 0 errors,
+the repo is clean, and results are recorded. If anything fails, stop and report
+the exact generated question and answer before publishing a new tag or release.
