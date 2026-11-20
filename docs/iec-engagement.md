@@ -110,6 +110,9 @@ Thank you.
 
 ## Contact
 
+For a copy-paste covering email with subject line and recipient, use
+[`iec-email.md`](iec-email.md).
+
 - IEC Webstore contact: https://webstore.iec.ch/en/contact/
 - IEC terms: https://webstore.iec.ch/en/terms-conditions/
 
