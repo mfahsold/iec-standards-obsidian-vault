@@ -17,7 +17,7 @@
 
 - `llm-chat` = **general chat** → sends only the prompt, **no note context** → answers like "I cannot access external documents…" — **not valid for IEC facts**.
 - `rag-chat` = **grounded chat** → embeds the question, retrieves top-k note chunks from `embeddings.json`, sends them with the prompt → cited answers. Commands: `local-llm-helper:rag-chat`, `rag-chat-current-note`, `rag-chat-current-folder`, `rag-diagnostics`.
-- Embedding model: `nomic-embed-text` (768 dims); index: 241 chunks; rebuild with `obsidian command id=local-llm-helper:index-notes-rag`.
+- Embedding model: `nomic-embed-text` (768 dims); index: currently **269 chunks / 62 files**. Rebuild after note changes: `obsidian plugin:reload id=local-llm-helper` **before** the index command if files were added (the plugin caches its file list and silently skips new notes otherwise), then `obsidian command id=local-llm-helper:index-notes-rag`.
 - End-to-end verification: question "What are the ICS tags of IEC 62813:2025/COR1:2026?" → retrieval top-1 = `iec-standards-obsidian-vault/standards/IEC-62813-2025-COR1-2026.md` (score 0.767) → answer: "… the ICS tag is explicitly listed as 31.060.99 …" — `qwen3.5:2b`, `maxTokens: 4096` (thinking consumes ~12.8k chars / ~3.9k tokens — a 1024-token budget yields an empty answer!).
 
 ## Wie das Modell Daten abruft und verarbeitet (aktuell)

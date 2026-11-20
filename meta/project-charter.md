@@ -123,7 +123,7 @@ Work is "done" only at the level below that applies. Evidence, not intention, de
 - [ ] Entry added to **all three**: `index/index.json`, `standards/index-standards.md`, `index/index.md` (MOC).
 - [ ] Wikilinks to catalog/MOC/licensing; note is **not an orphan** (linked from MOC/catalog).
 - [ ] `python3 -c "import json; json.load(open('index/index.json'))"` succeeds; entry count matches expectation.
-- [ ] RAG index rebuilt: `obsidian command id=local-llm-helper:index-notes-rag`.
+- [ ] RAG index rebuilt: `obsidian plugin:reload id=local-llm-helper` **first** if files were added (the plugin caches the vault file list — without reload, new notes are silently skipped), then `obsidian command id=local-llm-helper:index-notes-rag`; verify with the index's `fileIndex` count (currently 62 files / 269 chunks).
 
 ### 5.2 For a prompt / retrieval / configuration change
 
