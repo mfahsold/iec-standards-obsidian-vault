@@ -41,10 +41,26 @@ shell in the workspace. Established options (desktop only):
 
 This is **UI convenience only**: it does not change the QA path or add a repo
 dependency. The plugin lives in the GUI vault's `.obsidian/plugins/`, not in this
-repository. Because the active GUI vault is the parent folder, start with:
+repository.
+
+### Vault-specific profile
+
+Configure one profile so the terminal opens directly in the repository:
+
+| Plugin | Setting | Value |
+| --- | --- | --- |
+| Terminal | Profile shell | `zsh --login` (or your shell) |
+| Terminal | Startup command | `cd iec-standards-obsidian-vault` |
+| Lean Terminal | Startup command | `cd iec-standards-obsidian-vault` |
+| Terminal Tabs | Custom working folder | `iec-standards-obsidian-vault` |
+
+Name the profile **IEC Vault** and bind it to a hotkey/command-palette entry. You
+then get a one-click terminal in the right place, with no extra code in this
+repository. From there the normal commands apply:
 
 ```sh
-cd iec-standards-obsidian-vault
+python3 tools/build-index.py
+python3 tools/agent-loop.py "What is the price of IEC 62443-4-1:2018?"
 ```
 
 A terminal runs with your user permissions; run only commands you understand.
