@@ -25,9 +25,29 @@ only for navigation and editing the vault.
 2. Open the repository folder as an Obsidian vault.
 3. Start at `README.md` or `index/index.md` (MOC).
 
-The vault works without community plugins. Dataview is optional; example
-queries are in the charter's context note only if needed. Frontmatter is the
-canonical data store.
+The vault works without community plugins. Frontmatter is the canonical data
+store.
+
+## Optional: terminal inside Obsidian
+
+Obsidian core has no terminal, but community plugins can embed a real system
+shell in the workspace. Established options (desktop only):
+
+- **Terminal** — integrated or external terminals, profiles, saved history;
+  Obsidian 1.4.11+, widely used.
+- **Lean Terminal** — embedded xterm.js + node-pty panel; Obsidian 1.7.2+.
+- **Terminal Tabs** — terminal as a docked tab, no network or telemetry;
+  Obsidian 1.14.4+, needs Python 3 for its PTY bridge.
+
+This is **UI convenience only**: it does not change the QA path or add a repo
+dependency. The plugin lives in the GUI vault's `.obsidian/plugins/`, not in this
+repository. Because the active GUI vault is the parent folder, start with:
+
+```sh
+cd iec-standards-obsidian-vault
+```
+
+A terminal runs with your user permissions; run only commands you understand.
 
 ## CLI retrieval (portable)
 
