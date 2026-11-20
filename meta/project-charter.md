@@ -128,7 +128,7 @@ Work is "done" only at the level below that applies. Evidence, not intention, de
 ### 5.2 For a prompt / retrieval / configuration change
 
 - [ ] At least one **golden question** with an evidence-backed expected answer is defined (see §2 table).
-- [ ] It passes on **both paths**: CLI (`agent-loop.sh` L1/L2) and GUI (`rag-chat`).
+- [ ] It passes on **both paths**: CLI (`agent-loop.sh` L1/L2) and GUI (**Notes/RAG mode** — confirm the "Notes" toggle or "Chat: Notes (RAG)" command; a General-mode result is not a valid test).
 - [ ] Answer is checked against `index/index.json` / note frontmatter (e.g. ICS 31.060.99, price 335 CHF).
 - [ ] Wrong-answer patterns are explicitly guarded in the prompt (e.g. "IEC standards are free" → price directive).
 - [ ] Documentation updated (`meta/chat-optimization.md`, this charter if behavior changed).
@@ -158,7 +158,7 @@ Q8 (product-concept / conformity) is **stretch**: it needs a documented product�
 ## 6. Known limitations (honest state)
 
 - **Coverage**: 23 verified entries out of a very large standards universe. Absence from the vault is not evidence that a standard does not exist.
-- **GUI pitfall**: the *general* chat is ungrounded; only RAG chat uses the notes. This is a plugin behavior, not a bug in the data.
+- **GUI pitfall**: the chat view opens in **General** mode by default — ungrounded. For IEC facts always use **"Chat: Notes (RAG)"** or the "Notes" toggle. `qwen3.5:2b` thinks very verbosely (an unknown-standard question consumed 8,192 tokens of reasoning and returned an empty answer in General mode); RAG mode grounds it and returns correct refusals with citations. Thinking cannot be disabled via this plugin's OpenAI-compatible endpoint.
 - **Vault split**: the repo is a subfolder of the GUI vault; settings and RAG index are outside git. Backups must include both locations.
 - **Prices/date** are crawl-time snapshots ("as of Crawl-Date") — always re-check the Webstore before relying on them commercially.
 - **Critical content** (85 % dominance, SLOW, etc.) is sourced commentary, consensus-view — see the linked notes for provenance.
